@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
+import com.example.hischool.adapter.FeedAdapter
 import com.example.hischool.adapter.NotificationAdapt
+import com.example.hischool.data.FeedRecyclerViewData
 import com.example.hischool.data.NotificationRecyclerViewData
+import kotlinx.android.synthetic.main.fragment_feed.*
 import kotlinx.android.synthetic.main.fragment_notifications.*
 
 
@@ -26,11 +29,12 @@ class NotificationsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val notificationList = arrayListOf(
-            NotificationRecyclerViewData("안녕하세요")
+            NotificationRecyclerViewData(
+                "안녕하세연"
+            )
         )
-        notification_recyclerview.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.VERTICAL, false )
+        notification_recyclerview.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
         notification_recyclerview.setHasFixedSize(true)
-
         notification_recyclerview.adapter = NotificationAdapt(notificationList)
     }
 
