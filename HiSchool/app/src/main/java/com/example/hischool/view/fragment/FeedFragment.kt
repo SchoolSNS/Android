@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
 import com.example.hischool.adapter.FeedAdapter
 import com.example.hischool.data.FeedRecyclerViewData
+import kotlinx.android.synthetic.main.activity_comment.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_feed.*
 
 class FeedFragment : Fragment() {
@@ -36,7 +38,10 @@ class FeedFragment : Fragment() {
         )
         feed_recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
         feed_recyclerView.setHasFixedSize(true)
-
         feed_recyclerView.adapter = FeedAdapter(feedList)
+
+        school_name_text.setOnClickListener {
+
+        }
     }
 }
