@@ -14,12 +14,12 @@ import kotlinx.android.synthetic.main.comment_item.view.*
 import org.w3c.dom.Text
 
 class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.comment_item, parent, false)
-        return CommentAdapter.ViewHolder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CommentAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(commentArrayList[position])
     }
 
