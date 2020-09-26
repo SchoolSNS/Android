@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
 import com.example.hischool.adapter.FeedAdapter
 import com.example.hischool.data.FeedRecyclerViewData
+import com.example.hischool.view.activity.SelectSchoolActivity
+import com.example.hischool.widget.startActivity
 import kotlinx.android.synthetic.main.activity_comment.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_feed.*
@@ -40,8 +43,6 @@ class FeedFragment : Fragment() {
         feed_recyclerView.setHasFixedSize(true)
         feed_recyclerView.adapter = FeedAdapter(feedList)
 
-        school_name_text.setOnClickListener {
 
-        }
     }
 }

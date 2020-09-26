@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="@+id/search_search_edit" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/select_school_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="40dp"
@@ -46,9 +46,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-        app:layout_constraintStart_toStartOf="@+id/recyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/select_school_recyclerView"
+        app:layout_constraintStart_toStartOf="@+id/select_school_recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/select_school_recyclerView"
         app:layout_constraintWidth_percent="0.85"
         android:text="다음"
         android:textColor="@color/colorWhite"
