@@ -6,4 +6,7 @@
     <color name="colorQuestionText">#757575</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGrayUnderline">#CFCFCF</color>
+    <color name="colorGrayBackGround">#F4F4F4</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSchoolAddress">#BFBFBF</color>
 </resources>
