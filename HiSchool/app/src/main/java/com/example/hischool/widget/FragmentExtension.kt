@@ -9,6 +9,10 @@ fun Fragment.startActivity(moveActivity: Class<*>) {
     activity!!.finish()
 }
 
+fun Fragment.noFinishStartActivity(moveActivity: Class<*>) {
+    startActivity(Intent(context!!.applicationContext, moveActivity).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+}
+
 fun Fragment.toast(message: String?) {
     Toast.makeText(context!!.applicationContext, message, Toast.LENGTH_SHORT).show()
 }
