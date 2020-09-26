@@ -25,7 +25,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="지나가는 익명의 족발"
-        android:textColor="#000000"
+        android:textColor="@color/colorBlack"
         android:fontFamily="@font/nixgon_bold"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/feed_time_text"
@@ -40,7 +40,7 @@
         android:layout_marginBottom="4dp"
         android:text="1분전"
         android:fontFamily="@font/nixgon_bold"
-        android:textColor="#949494"
+        android:textColor="@color/colorQuestionText"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/feed_profile_image"
         app:layout_constraintStart_toEndOf="@+id/feed_profile_image" />
@@ -68,7 +68,7 @@
         android:layout_marginTop="25dp"
         android:text="대구 소프트웨어 고등학교 좋나요?"
         android:fontFamily="@font/nixgon_bold"
-        android:textColor="#000000"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_profile_image" />
@@ -83,7 +83,7 @@
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="안녕하세요 저는 새론 중 재학중인 학생입니다. 대구소프트웨어 고등학교에
         진학을 희망하고 있는데 어떤 학교이고 어떤 점이 좋은지 궁금합니다."
-        android:textColor="#757575"
+        android:textColor="@color/colorQuestionText"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_title_text" />
@@ -111,7 +111,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="10"
-        android:textColor="#000000"
+        android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/feed_heart_btn"
         app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
@@ -136,7 +136,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="10"
-        android:textColor="#000000"
+        android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/feed_message_btn"
         app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
@@ -146,7 +146,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="22dp"
-        android:background="#CFCFCF"
+        android:background="@color/colorGrayUnderline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_heart_btn" />
@@ -201,7 +201,7 @@
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="4dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:fontFamily="@font/nixgonfontsmedium"
                 android:text="아주 좋은 학교에요 ㅎㅎㅎㅎ"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

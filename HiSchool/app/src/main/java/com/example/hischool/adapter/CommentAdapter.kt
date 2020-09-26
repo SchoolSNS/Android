@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
 import com.example.hischool.data.CommentRecyclerViewData
 import com.example.hischool.view.activity.CommentActivity
+import kotlinx.android.synthetic.main.comment_item.view.*
+import org.w3c.dom.Text
 
 class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentAdapter.ViewHolder {
@@ -26,9 +28,12 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>) :
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
+        val name  = itemView.findViewById<TextView>(R.id.comment_name)
+        val message = itemView.findViewById<TextView>(R.id.comment_message)
         fun bind(item : CommentRecyclerViewData)
         {
-
+            name.text = item.messsage
+            message.text = item.messsage
         }
     }
 }

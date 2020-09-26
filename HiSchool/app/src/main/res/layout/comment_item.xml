@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/comment_text"
+            android:id="@+id/comment_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
@@ -46,19 +46,20 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/comment_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginBottom="4dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="@font/nixgonfontsmedium"
             android:text="아주 좋은 학교에요 ㅎㅎㅎㅎ"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/comment_text"
-            app:layout_constraintTop_toBottomOf="@+id/comment_text" />
+            app:layout_constraintStart_toStartOf="@+id/comment_name"
+            app:layout_constraintTop_toBottomOf="@+id/comment_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
