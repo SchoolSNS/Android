@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hischool.R
+import com.example.hischool.widget.noFinishStartActivity
 import com.example.hischool.widget.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         school_name_text.setOnClickListener {
-            startActivity(SelectSchoolActivity::class.java)
+            noFinishStartActivity(SelectSchoolActivity::class.java)
         }
     }
 }
