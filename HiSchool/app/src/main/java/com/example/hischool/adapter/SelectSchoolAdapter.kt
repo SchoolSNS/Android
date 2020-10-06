@@ -28,7 +28,7 @@ class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SelectSchoolRecyc
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
 
         val schoolName: TextView = itemView.findViewById(R.id.select_school_school_name)
-        val schoolAddrees: TextView = itemView.findViewById(R.id.select_school_school_address)
+        val schoolAddrees: TextView = itemView  .findViewById(R.id.select_school_school_address)
 
         fun bind(item : SelectSchoolRecyclerViewData)
         {
