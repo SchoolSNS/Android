@@ -2,6 +2,8 @@ package com.example.hischool.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
 import com.example.hischool.adapter.CommentAdapter
@@ -23,7 +25,9 @@ class CommentActivity : AppCompatActivity() {
                 messsage = "안녕하세연"
             )
         )
-        comment_recyclerview.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false)
+        comment_recyclerview.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false).apply {
+            stackFromEnd = true
+        }
         comment_recyclerview.setHasFixedSize(true)
 
         comment_recyclerview.adapter = CommentAdapter(commentList)
