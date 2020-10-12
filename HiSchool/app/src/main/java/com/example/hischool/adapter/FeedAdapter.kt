@@ -37,13 +37,13 @@ class FeedAdapter(val feedList : ArrayList<FeedRecyclerViewData>) : RecyclerView
 
         fun bind(item : FeedRecyclerViewData)
         {
-            profile.setImageResource(item.profile)
-            nickname.text = item.nickname
-            time.text = item.time
+            profile.setImageResource(item.owner.profile.toInt())
+            nickname.text = item.owner.username
+            time.text = item.created_at
             title.text = item.title
-            question.text = item.question
-            count_heart.text = item.count_heart.toString()
-            count_message.text = item.count_message.toString()
+            question.text = item.text
+            count_heart.text = item.like_count.toString()
+            count_message.text = item.like_count.toString()
 
             itemView.setOnClickListener {
                 itemView.context.startActivity(Intent(itemView.context, CommentActivity::class.java))

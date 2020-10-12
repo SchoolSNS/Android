@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.QuestionActivity"></activity>
         <activity android:name=".view.activity.SelectSchoolActivity" />
-        <activity android:name=".view.activity.CommentActivity" />
+        <activity android:name=".view.activity.CommentActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".view.activity.SignUpActivity" />
         <activity android:name=".view.activity.SignInActivity" />
         <activity android:name=".view.activity.IntroActivity" />
