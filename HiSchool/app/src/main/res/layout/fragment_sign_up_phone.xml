@@ -46,43 +46,16 @@
             android:contentDescription="@string/x" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background_input_box"
-            android:hint="@string/email"
+            android:hint="@string/phone"
             android:textStyle="bold"
             android:padding="16dp"
-            android:layout_marginTop="78dp"
-            android:layout_marginStart="50dp"
+            android:layout_gravity="center"
             android:autofillHints=""
-            android:inputType="textEmailAddress"/>
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_input_box"
-            android:hint="@string/password"
-            android:textStyle="bold"
-            android:padding="16dp"
-            android:layout_marginTop="153dp"
-            android:layout_marginStart="50dp"
-            android:autofillHints=""
-            android:inputType="textPassword"/>
-
-        <EditText
-            android:id="@+id/passwordConfirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_input_box"
-            android:hint="@string/passwordConfirm"
-            android:textStyle="bold"
-            android:padding="16dp"
-            android:layout_marginTop="228dp"
-            android:layout_marginStart="50dp"
-            android:autofillHints=""
-            android:inputType="textPassword"/>
+            android:inputType="phone"/>
 
         <Button
             android:id="@+id/nextButton"

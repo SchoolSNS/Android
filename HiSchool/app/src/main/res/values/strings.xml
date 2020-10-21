@@ -14,4 +14,10 @@
     <string name="password">비밀번호</string>
     <string name="passwordConfirm">비밀번호 확인</string>
     <string name="next">다음</string>
+    <string name="signup">SignUp</string>
+    <string name="x">x 버튼</string>
+    <string name="name">이름</string>
+    <string name="phone">연락처</string>
+    <string name="profile">프로필 사진 설정</string>
+    <string name="background">background</string>
 </resources>
