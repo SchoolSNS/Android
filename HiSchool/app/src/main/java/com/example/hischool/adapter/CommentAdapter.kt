@@ -32,7 +32,7 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>) :
         val message = itemView.findViewById<TextView>(R.id.comment_message)
         fun bind(item : CommentRecyclerViewData)
         {
-            name.text = item.messsage
+            name.text = item.name
             message.text = item.messsage
         }
     }
