@@ -1,4 +1,4 @@
-package com.example.hischool.network
+package com.example.hischool.network.retrofit
 
 import com.example.hischool.data.FeedRecyclerViewData
 import retrofit2.Call
