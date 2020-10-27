@@ -1,6 +1,7 @@
 package com.example.hischool.view.fragment
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
 import com.example.hischool.adapter.SearchAdapter
 import com.example.hischool.data.SearchRecyclerViewData
+import com.example.hischool.data.SelectSchoolRecyclerViewData
+import com.example.hischool.network.RetrofitClient
+import com.example.hischool.network.Service
+import kotlinx.android.synthetic.main.activity_question.*
+import kotlinx.android.synthetic.main.activity_select_school.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.search_item.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class SearchFragment : Fragment() {
+
+    lateinit var myAPI : Service
+    lateinit var retrofit: Retrofit
+    lateinit var schoolList: ArrayList<SelectSchoolRecyclerViewData>
 
 
     override fun onCreateView(
@@ -26,54 +40,37 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val searchList = arrayListOf(
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 족발",
-                "1분전",
-                "대구 소프트웨어 고등학교 좋나요?",
-                "좋나요?",
-                10,
-                10),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 문영",
-                "11분전",
-                "문영이는 바보인가요?",
-                "맞나요?",
-                1,
-                0),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 규락",
-                "21분전",
-                "규락이는 다이어트 중인가요?",
-                "아니던데요?",
-                2,
-                10),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 초현",
-                "30분전",
-                "태국 언제 다녀왔나요?",
-                "제발 알려주세요",
-                4,
-                20),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 준환",
-                "44분전",
-                "주나니는 나나요?",
-                "나나요?",
-                10,
-                10),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 세연",
-                "58분전",
-                "안녕하세연?",
-                "안녕히가세연",
-                10,
-                10)
-        )
-        search_recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
-        search_recyclerView.setHasFixedSize(true)
+        retrofit = RetrofitClient.getInstance()
 
-        search_recyclerView.adapter = SearchAdapter(searchList )
+        select_school_recyclerView.layoutManager = LinearLayoutManager(activity)
+
+        search_search_edit.setOnKeyListener { v, keyCode, event ->
+
+            when {
+                ((keyCode == KeyEvent.KEYCODE_ENTER) && (event.action == KeyEvent.ACTION_DOWN)) -> {
+
+
+                    return@setOnKeyListener true
+                }
+                else -> false
+            }
+
+
+        }
+    }
+
+    fun getSchoolList() {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.getSearchFeed(token = "Token bb6847b4ed62374e7b8778d071f8eb669b3b2a42", page = 1, query = search_search_edit.text.toString()).enqueue(object : Callback<SearchRecyclerViewData> {
+            override fun onResponse(call: Call<SearchRecyclerViewData>, response: Response<SearchRecyclerViewData>) {
+
+            }
+
+            override fun onFailure(call: Call<SearchRecyclerViewData>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
 
