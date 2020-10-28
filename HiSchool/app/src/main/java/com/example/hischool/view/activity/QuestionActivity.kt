@@ -17,6 +17,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.hischool.R
 import com.example.hischool.data.PostResponse
 import com.example.hischool.module.RotateImage
@@ -25,6 +26,7 @@ import com.example.hischool.network.Service
 import com.example.hischool.widget.startActivity
 import com.example.hischool.widget.toast
 import kotlinx.android.synthetic.main.activity_question.*
+import kotlinx.android.synthetic.main.activity_select_school.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -45,6 +47,7 @@ class QuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
+
         question_image.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
@@ -69,6 +72,7 @@ class QuestionActivity : AppCompatActivity() {
             } else if (TextUtils.isEmpty(question_contents.text)) {
                 toast("내용을 입력해주세요");
             } else {
+                startActivity(MainActivity::class.java)
                 val body = MultipartBody.Builder().setType(MultipartBody.FORM).apply {
                     addFormDataPart("title", question_title.text.toString())
                     addFormDataPart("content", question_contents.text.toString())
@@ -183,12 +187,16 @@ class QuestionActivity : AppCompatActivity() {
 
                     returnCursor.close()
 
+
+                    Glide.with(this)
+                        .load(returnUri)
+                        .into(image)
+
                 }
 
                 else -> {
                     Toast.makeText(this, "이미지를 제대로 가져오지 못하였습니다.", Toast.LENGTH_LONG).show()
                 }
-
             }
         }
     }

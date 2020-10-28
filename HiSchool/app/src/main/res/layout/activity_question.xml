@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,11 +30,12 @@
         tools:ignore="UnknownId" />
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/question_image"
@@ -47,8 +49,8 @@
             android:id="@+id/button2"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/leftback"
             android:background="@android:color/transparent"
+            android:src="@drawable/leftback"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button" />
 
@@ -83,5 +85,14 @@
         app:layout_constraintEnd_toEndOf="@+id/question_title"
         app:layout_constraintStart_toStartOf="@+id/question_title"
         app:layout_constraintTop_toBottomOf="@+id/question_title" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/question_contents"
+        app:layout_constraintTop_toBottomOf="@+id/question_contents" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
