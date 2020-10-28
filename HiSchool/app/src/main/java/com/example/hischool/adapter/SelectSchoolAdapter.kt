@@ -1,15 +1,15 @@
 package com.example.hischool.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import com.example.hischool.data.CommentRecyclerViewData
-import com.example.hischool.data.SelectSchoolRecyclerViewData
+import com.example.hischool.data.SearchRecyclerViewData
 
-class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SelectSchoolRecyclerViewData>) : RecyclerView.Adapter<SelectSchoolAdapter.ViewHolder>(){
+class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SearchRecyclerViewData>) : RecyclerView.Adapter<SelectSchoolAdapter.ViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,18 +22,20 @@ class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SelectSchoolRecyc
     }
 
     override fun getItemCount(): Int {
+        Log.d("searchList", "data: ${selectSchoolArrayList.size}")
         return selectSchoolArrayList.size
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        val schoolName: TextView = itemView.findViewById(R.id.select_school_school_name)
-        val schoolAddrees: TextView = itemView  .findViewById(R.id.select_school_school_address)
+        val name: TextView = itemView.findViewById(R.id.select_school_school_name)
+        val address: TextView = itemView.findViewById(R.id.select_school_school_address)
 
-        fun bind(item : SelectSchoolRecyclerViewData)
+        fun bind(item : SearchRecyclerViewData)
         {
-            schoolName.text = item.schoolName
-            schoolAddrees.text = item.schoolAddress
+            Log.d("TAG", item.name)
+            name.text = item.name
+            address.text = item.address
         }
     }
 }

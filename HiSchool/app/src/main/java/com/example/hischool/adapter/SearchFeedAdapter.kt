@@ -7,27 +7,27 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import com.example.hischool.data.SearchRecyclerViewData
+import com.example.hischool.data.SearchFeedRecyclerViewData
 
-class SearchAdapter (val searchList : ArrayList<SearchRecyclerViewData>) : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+class SearchFeedAdapter(val searchFeedList: ArrayList<SearchFeedRecyclerViewData>) : RecyclerView.Adapter<SearchFeedAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchFeedAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.search_item, parent, false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return searchList.size
+        return searchFeedList.size
     }
 
-    override fun onBindViewHolder(holder: SearchAdapter.ViewHolder, position: Int) {
-        holder.profile.setImageResource(searchList.get(position).profile)
-        holder.nickname.text = searchList.get(position).nickname
-        holder.time.text = searchList.get(position).time
-        holder.title.text = searchList.get(position).title
-        holder.question.text = searchList.get(position).question
-        holder.count_heart.text = searchList.get(position).count_heart.toString()
-        holder.count_message.text = searchList.get(position).count_message.toString()
+    override fun onBindViewHolder(holder: SearchFeedAdapter.ViewHolder, position: Int) {
+        holder.profile.setImageResource(searchFeedList.get(position).id)
+        holder.nickname.text = searchFeedList.get(position).owner.username
+        holder.time.text = searchFeedList.get(position).created_at
+        holder.title.text = searchFeedList.get(position).title
+        holder.question.text = searchFeedList.get(position).text
+        holder.count_heart.text = searchFeedList.get(position).like_count.toString()
+        holder.count_message.text = searchFeedList.get(position).comment_count.toString()
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){

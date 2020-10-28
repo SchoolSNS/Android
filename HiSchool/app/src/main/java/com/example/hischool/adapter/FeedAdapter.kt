@@ -8,11 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import com.example.hischool.data.CommentRecyclerViewData
 import com.example.hischool.data.FeedRecyclerViewData
 import com.example.hischool.view.activity.CommentActivity
 
-class FeedAdapter(val feedList : ArrayList<FeedRecyclerViewData>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
+class FeedAdapter(val feedList: ArrayList<FeedRecyclerViewData>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.feed_item, parent, false)
         return ViewHolder(view)

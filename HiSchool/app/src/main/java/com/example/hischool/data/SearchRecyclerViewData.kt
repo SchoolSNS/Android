@@ -1,11 +1,9 @@
 package com.example.hischool.data
 
-class SearchRecyclerViewData (
-    val profile : Int,
-    val nickname : String,
-    val time : String,
-    val title : String,
-    val question : String,
-    val count_heart : Int,
-    val count_message : Int
+data class SearchRecyclerViewData (
+    val name : String,
+    val region : String,
+    val address : String,
+    val website : String,
+    val school_type : String
 )

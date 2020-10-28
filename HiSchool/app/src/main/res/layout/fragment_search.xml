@@ -13,13 +13,15 @@
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:background="#F4F4F4"
+        android:inputType="textLongMessage"
         android:drawableLeft="@drawable/search"
         android:fontFamily="@font/nixgonfontsmedium"
         android:gravity="center"
         android:paddingLeft="11dp"
-        android:text="대구 소프트웨어 고등학교"
+        android:hint="대구소프트웨어고등학교"
         android:textColor="#000000"
         android:textSize="14sp"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,18 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/search_search_edit">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_school_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@+id/search_search_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

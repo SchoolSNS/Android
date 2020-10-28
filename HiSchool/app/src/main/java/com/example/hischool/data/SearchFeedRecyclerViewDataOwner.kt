@@ -1,6 +1,6 @@
 package com.example.hischool.data
 
-data class SearchFeedRecylerViewDataOwner (
+data class SearchFeedRecyclerViewDataOwner (
     val id : Int,
     val email : String,
     val username : String,

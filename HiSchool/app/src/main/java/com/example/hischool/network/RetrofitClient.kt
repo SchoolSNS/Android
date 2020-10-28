@@ -9,7 +9,7 @@ object RetrofitClient {
     fun getInstance() : Retrofit {
         if(instance == null){
             instance = Retrofit.Builder()
-                .baseUrl("http://hischool.pythonanywhere.com")
+                .baseUrl("https://narsha2020.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

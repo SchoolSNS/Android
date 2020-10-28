@@ -14,10 +14,9 @@ interface Service {
         @Query("page") page : Int
     ) : Call<List<FeedRecyclerViewData>>
 
-    @GET("/feed/post/all")
+    @GET("/search/school")
     fun getSearchFeed(
-        @Header("Authorization") token: String,
         @Query("page") page: Int,
         @Query("query") query: String
-    ) : Call<SearchRecyclerViewData>
+    ) : Call<List<SearchRecyclerViewData>>
 }

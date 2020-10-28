@@ -14,6 +14,7 @@
         android:background="@color/colorGrayBackGround"
         android:fontFamily="@font/nixgonfontsmedium"
         android:hint="고등학교 검색"
+        android:inputType="textLongMessage"
         android:maxLines="1"
         android:gravity="center"
         android:layout_marginTop="24dp"
@@ -40,7 +41,8 @@
         app:layout_constraintEnd_toEndOf="@+id/select_search_edit"
         app:layout_constraintHeight_percent="0.72"
         app:layout_constraintStart_toStartOf="@+id/select_search_edit"
-        app:layout_constraintTop_toBottomOf="@+id/select_search_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/select_search_edit"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <Button
         android:layout_width="0dp"
