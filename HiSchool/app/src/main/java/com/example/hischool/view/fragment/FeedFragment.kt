@@ -1,13 +1,14 @@
 package com.example.hischool.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.hischool.R
 import com.example.hischool.adapter.FeedAdapter
-import com.example.hischool.data.FeedRecyclerViewData
+import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.fragment_feed.*
@@ -36,15 +37,17 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         retrofit = RetrofitClient.getInstance()
+        getFeed()
     }
 
-    fun getFeed(){
+    private fun getFeed(){
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getFeed(token = "Token", page = 0).enqueue(object : Callback<List<FeedRecyclerViewData>>{
+        myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
                 if(response.code() == 200)
                 {
                     feedList = response.body() as ArrayList<FeedRecyclerViewData>
+                    Log.d("TAG", "data $feedList")
                     val mAdapter = FeedAdapter(feedList)
                     feed_recyclerView.setHasFixedSize(true)
                     feed_recyclerView.adapter = mAdapter
@@ -52,7 +55,7 @@ class FeedFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<FeedRecyclerViewData>>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })

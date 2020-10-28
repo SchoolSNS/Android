@@ -4,12 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
-import com.example.hischool.adapter.CommentAdapter
 import com.example.hischool.adapter.SelectSchoolAdapter
-import com.example.hischool.data.CommentRecyclerViewData
 import com.example.hischool.data.SelectSchoolRecyclerViewData
-import kotlinx.android.synthetic.main.activity_comment.*
-import kotlinx.android.synthetic.main.activity_comment.comment_recyclerview
 import kotlinx.android.synthetic.main.activity_select_school.*
 
 class SelectSchoolActivity : AppCompatActivity() {

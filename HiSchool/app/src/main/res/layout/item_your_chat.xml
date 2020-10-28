@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_margin="10dp"
-                android:background="@drawable/layout_round"
+                android:background="@drawable/comment_layout_round"
                 android:gravity="center_vertical"
                 android:padding="5dp"
                 tools:text="상대가 입력한 내용"
