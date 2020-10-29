@@ -7,8 +7,8 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
-import android.text.TextUtils
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hischool.R
 import com.example.hischool.adapter.CommentAdapter
@@ -17,8 +17,10 @@ import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
-import com.example.hischool.widget.toast
 import kotlinx.android.synthetic.main.activity_comment.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -44,18 +46,27 @@ class CommentActivity : AppCompatActivity() {
     var commentList: ArrayList<CommentRecyclerViewData> = arrayListOf()
 
     private var postId: Int = 0
-    var count = 0
+    private var imageCount = 0
+    var count = 1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comment)
+
 
         postId = intent.getIntExtra("id", 0)
         retrofit = RetrofitClient.getInstance()
         getComment()
 
         comment_camera_btn.setOnClickListener {
-            pickImageFromGallery()
+            if(imageCount > 1)
+            {
+                Toast.makeText(applicationContext, "이미지는 최대 2개만 가능합니다", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                pickImageFromGallery()
+            }
         }
 
         comment_post_btn.setOnClickListener {
@@ -75,7 +86,7 @@ class CommentActivity : AppCompatActivity() {
                         commentList.clear()
                         commentList = response.body() as ArrayList<CommentRecyclerViewData>
                         Log.d("TAG", "data: $commentList")
-                        val mAdapter = CommentAdapter(commentList)
+                        val mAdapter = CommentAdapter(commentList, applicationContext)
                         comment_recyclerview.setHasFixedSize(true)
                         comment_recyclerview.adapter = mAdapter
                     } catch (e: NullPointerException) {
@@ -94,45 +105,60 @@ class CommentActivity : AppCompatActivity() {
     }
 
     private fun writeComment() {
-        if (!TextUtils.isEmpty(comment_edit.text)) {
-            val builder = MultipartBody.Builder().setType(MultipartBody.FORM)
-            builder.addFormDataPart("content", comment_edit.text.toString())
 
-            imageMultipart.forEach {
-                builder.addFormDataPart(
-                    "image$count",
-                    imageNameList[count - 1],
-                    imageMultipart[count - 1]
-                )
-                count++
-            }
-            val postBody: RequestBody = builder.build()
+        if (comment_edit.text.isNotEmpty()) {
+            CoroutineScope(Dispatchers.IO).launch {
+                Log.d("TAG", comment_edit.text.toString())
+                val builder = MultipartBody.Builder().setType(MultipartBody.FORM)
+                builder.addFormDataPart("content", comment_edit.text.toString())
 
-            myAPI = retrofit.create(Service::class.java)
-            myAPI.writeComment(
-                "Token 719e203a89eaf9bd377a5e345da7da653d15492e",
-                postBody,
-                postId
-            ).enqueue(object : Callback<WriteCommentResponse> {
-                override fun onResponse(
-                    call: Call<WriteCommentResponse>,
-                    response: Response<WriteCommentResponse>
-                ) {
-                    Log.d("TAG", response.code().toString())
-                    if (response.code() == 201) {
-                        comment_edit.setText("")
-                        getComment()
+                imageMultipart.forEach {
+                    Log.d("TAG", "count : $count")
+                    builder.addFormDataPart(
+                        "image$count",
+                        imageNameList[count - 1],
+                        it
+                    )
+                    count++
+                }
+
+                val postBody: RequestBody = builder.build()
+
+
+                myAPI = retrofit.create(Service::class.java)
+                myAPI.writeComment(
+                    "Token 719e203a89eaf9bd377a5e345da7da653d15492e",
+                    postBody,
+                    postId
+                ).enqueue(object : Callback<WriteCommentResponse> {
+                    override fun onResponse(
+                        call: Call<WriteCommentResponse>,
+                        response: Response<WriteCommentResponse>
+                    ) {
+                        Log.d("TAG", response.code().toString())
+                        if (response.code() == 201) {
+                            comment_edit.setText("")
+                            imageMultipart.clear()
+                            imageList.clear()
+                            imageNameList.clear()
+                            count = 1
+                            commentImagePreViewAdapter.notifyDataSetChanged()
+                            getComment()
+                        }
                     }
-                }
 
-                override fun onFailure(call: Call<WriteCommentResponse>, t: Throwable) {
-                    Log.d("TAG", t.message.toString())
-                }
-            })
+                    override fun onFailure(call: Call<WriteCommentResponse>, t: Throwable) {
+                        Log.d("trowale", t.message.toString())
+                        Log.d("ErrorBody", t.printStackTrace().toString())
+
+                    }
+                })
+            }
+        } else {
+            Log.d("TAG", "없어")
+            Toast.makeText(applicationContext, "내용이 없습니다.", Toast.LENGTH_SHORT).show()
         }
-        else{
-            toast("댓글은 공백일수 없습니다.")
-        }
+
     }
 
     fun pickImageFromGallery() {
@@ -149,7 +175,7 @@ class CommentActivity : AppCompatActivity() {
 
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             returnUri = data?.data!!
-
+            Log.d("TAG", "하이")
             val inputStream = contentResolver.openInputStream(returnUri)
             var bm: Bitmap = BitmapFactory.decodeStream(inputStream) //비트맵 변환
             val bos = ByteArrayOutputStream()
@@ -167,7 +193,8 @@ class CommentActivity : AppCompatActivity() {
             val nameIndex = returnCursor!!.getColumnIndex(OpenableColumns.DISPLAY_NAME)
             returnCursor.moveToFirst()
             imageNameList.add(returnCursor.getString(nameIndex))
-
+            Log.d("TAG", "data $imageNameList")
+            imageCount++
             returnCursor.close()
         }
     }

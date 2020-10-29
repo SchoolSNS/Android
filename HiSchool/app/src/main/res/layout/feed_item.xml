@@ -158,12 +158,11 @@
         android:layout_marginTop="20dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_bar2_view">
 
         <ImageView
-            android:id="@+id/feed_comment_profile_image"
+            android:id="@+id/feed_comment1_profile_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="25dp"
@@ -173,43 +172,58 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/main_round_image" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/feed_comment1_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/nixgon_bold"
+            android:text="지나가는 익명의 족발"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment1_profile_image"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment1_profile_image" />
+
+        <ImageView
+            android:id="@+id/feed_comment1_image_list"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toStartOf="@+id/feed_comment1_name"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment1_name" />
+
+        <ImageView
+            android:id="@+id/feed_comment1_image_list2"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment1_image_list"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment1_image_list" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/comment_background"
-            app:layout_constraintStart_toEndOf="@+id/feed_comment_profile_image"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="@+id/feed_comment1_image_list"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment1_image_list">
 
             <TextView
-                android:id="@+id/feed_comment_name"
+                android:id="@+id/feed_comment1_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/nixgon_bold"
-                android:text="지나가는 익명의 족발"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/feed_comment_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="4dp"
+                android:layout_margin="8dp"
                 android:fontFamily="@font/nixgonfontsmedium"
                 android:text="아주 좋은 학교에요 ㅎㅎㅎㅎ"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/feed_comment_name"
-                app:layout_constraintTop_toBottomOf="@+id/feed_comment_name" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -225,7 +239,7 @@
         app:layout_constraintTop_toBottomOf="@+id/feed_comment1">
 
         <ImageView
-            android:id="@+id/feed_comment_profile_image2"
+            android:id="@+id/feed_comment2_profile_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="25dp"
@@ -235,43 +249,58 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/main_round_image" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/feed_comment2_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/nixgon_bold"
+            android:text="지나가는 익명의 족발"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment2_profile_image"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment2_profile_image" />
+
+        <ImageView
+            android:id="@+id/feed_comment2_image_list"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toStartOf="@+id/feed_comment2_name"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment2_name" />
+
+        <ImageView
+            android:id="@+id/feed_comment2_image_list2"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment2_image_list"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment2_image_list" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/feed_comment2_constraintLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/comment_background"
-            app:layout_constraintStart_toEndOf="@+id/feed_comment_profile_image2"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="@+id/feed_comment2_image_list"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment2_image_list">
 
             <TextView
-                android:id="@+id/feed_comment2_name"
+                android:id="@+id/feed_comment2_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/nixgon_bold"
-                android:text="지나가는 익명의 족발"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/feed_comment2_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="4dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/nixgonfontsmedium"
                 android:text="아주 좋은 학교에요 ㅎㅎㅎㅎ"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/feed_comment2_name"
-                app:layout_constraintTop_toBottomOf="@+id/feed_comment2_name" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

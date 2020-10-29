@@ -1,5 +1,6 @@
 package com.example.hischool.view.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,7 +23,8 @@ class FeedFragment : Fragment() {
 
     lateinit var myAPI: Service
     lateinit var retrofit: Retrofit
-    lateinit var feedList : ArrayList<FeedRecyclerViewData>
+    var feedList : ArrayList<FeedRecyclerViewData> = arrayListOf()
+    lateinit var mContext : Context
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -40,15 +42,20 @@ class FeedFragment : Fragment() {
         getFeed()
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
+    }
     private fun getFeed(){
         myAPI = retrofit.create(Service::class.java)
         myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
                 if(response.code() == 200)
                 {
+                    feedList.clear()
                     feedList = response.body() as ArrayList<FeedRecyclerViewData>
                     Log.d("TAG", "data $feedList")
-                    val mAdapter = FeedAdapter(feedList)
+                    val mAdapter = FeedAdapter(feedList, mContext)
                     feed_recyclerView.setHasFixedSize(true)
                     feed_recyclerView.adapter = mAdapter
                 }
