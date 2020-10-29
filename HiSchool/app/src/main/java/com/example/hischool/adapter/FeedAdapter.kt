@@ -73,7 +73,9 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>) : Recy
             countMessage.text = item.like_count.toString()
 
             itemView.setOnClickListener {
-                itemView.context.startActivity(Intent(itemView.context, CommentActivity::class.java))
+                val intent = (Intent(itemView.context, CommentActivity::class.java))
+                intent.putExtra("id", item.id)
+                itemView.context.startActivity(intent)
             }
         }
 

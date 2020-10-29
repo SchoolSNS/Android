@@ -5,10 +5,7 @@ import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface Service {
     @GET("/feed/post/all")
@@ -17,14 +14,16 @@ interface Service {
         @Query("page") page : Int
     ) : Call<List<FeedRecyclerViewData>>
 
-    @GET("/feed/post/post_id/comments")
+    @GET("/feed/post/{post_id}/comments")
     fun getComment(
-        @Header("Authorization") token: String
+        @Header("Authorization") token: String,
+        @Path ("post_id")postId : Int
     ) : Call<List<CommentRecyclerViewData>>
 
-    @GET("/feed/post/post_id/comment")
+    @POST("/feed/post/{post_id}/comment")
     fun writeComment(
         @Header("Authorization") token: String,
-        @Body WriteCommentBody: RequestBody
+        @Body WriteCommentBody: RequestBody,
+        @Path ("post_id")postId : Int
     ) : Call<WriteCommentResponse>
 }
