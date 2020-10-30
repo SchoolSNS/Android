@@ -25,7 +25,6 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
     }
 
     override fun getItemCount(): Int {
-        Log.d("TAG", commentArrayList.size.toString())
         return commentArrayList.size
     }
 
@@ -51,7 +50,6 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
                 imageList2.visibility = View.VISIBLE
                 setAllImage(item)
             }
-            Log.d("TAG", item.owner.username)
             name.text = item.owner.username
             message.text = item.content
         }

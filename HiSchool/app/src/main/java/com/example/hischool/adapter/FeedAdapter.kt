@@ -6,8 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -54,7 +56,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
         val comment2ImageList : ImageView = itemView.findViewById(R.id.feed_comment2_image_list)
         val comment2ImageList2 : ImageView = itemView.findViewById(R.id.feed_comment2_image_list2)
         val mContext = context
-
+        val HeartBtn : Button = itemView.findViewById(R.id.feed_heart_btn)
         fun bind(item : FeedRecyclerViewData)
         {
             comment1.visibility = View.GONE
@@ -74,6 +76,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                     }
                     else if(item.comment_preview[0].image_urls.size == 2)
                     {
+                        comment1ImageList.visibility = View.VISIBLE
                         comment1ImageList2.visibility = View.VISIBLE
                         setAllImageCommentOne(item)
                     }
@@ -89,6 +92,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                     }
                     else if(item.comment_preview[0].image_urls.size == 2)
                     {
+                        comment1ImageList.visibility = View.VISIBLE
                         comment1ImageList2.visibility = View.VISIBLE
                         setAllImageCommentOne(item)
                     }
@@ -99,9 +103,11 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                     }
                     else if(item.comment_preview[1].image_urls.size == 2)
                     {
+                        comment2ImageList.visibility = View.VISIBLE
                         comment2ImageList2.visibility = View.VISIBLE
                         setAllImageCommentTwo(item)
                     }
+
                     comment1.visibility = View.VISIBLE
                     comment2.visibility = View.VISIBLE
                     setAllCommentData(item)
@@ -114,13 +120,17 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             title.text = item.title
             question.text = item.text
             countHeart.text = item.like_count.toString()
-            countMessage.text = item.like_count.toString()
-
+            countMessage.text = item.comment_count.toString()
+            HeartBtn.setOnClickListener {
+                Toast.makeText(mContext, "좋아요", Toast.LENGTH_SHORT).show()
+            }
             itemView.setOnClickListener {
                 val intent = (Intent(itemView.context, CommentActivity::class.java))
                 intent.putExtra("id", item.id)
                 itemView.context.startActivity(intent)
             }
+
+
         }
 
         private fun setOneCommentData(item : FeedRecyclerViewData)
