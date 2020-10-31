@@ -2,6 +2,7 @@ package com.example.hischool.network.retrofit
 
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
+import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -26,4 +27,10 @@ interface Service {
         @Body WriteCommentBody: RequestBody,
         @Path ("post_id")postId : Int
     ) : Call<WriteCommentResponse>
+
+    @DELETE("/feed/post/{post_id}")
+    fun delPost(
+        @Header("Authorization") token: String,
+        @Path ("post_id")postId : Int
+    ) : Call<DelPostResponse>
 }

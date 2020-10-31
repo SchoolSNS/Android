@@ -6,10 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -19,6 +17,7 @@ import com.example.hischool.R
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.view.activity.CommentActivity
+import com.example.hischool.widget.FeedBottomSheet
 import org.w3c.dom.Text
 
 class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, private val context: Context) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
@@ -56,7 +55,8 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
         val comment2ImageList : ImageView = itemView.findViewById(R.id.feed_comment2_image_list)
         val comment2ImageList2 : ImageView = itemView.findViewById(R.id.feed_comment2_image_list2)
         val mContext = context
-        val HeartBtn : Button = itemView.findViewById(R.id.feed_heart_btn)
+        val heartBtn : ImageButton = itemView.findViewById(R.id.feed_heart_btn)
+        val moreBtn : Button = itemView.findViewById(R.id.feed_more_btn)
         fun bind(item : FeedRecyclerViewData)
         {
             comment1.visibility = View.GONE
@@ -121,14 +121,20 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             question.text = item.text
             countHeart.text = item.like_count.toString()
             countMessage.text = item.comment_count.toString()
-            HeartBtn.setOnClickListener {
+            heartBtn.setOnClickListener {
                 Toast.makeText(mContext, "좋아요", Toast.LENGTH_SHORT).show()
+            }
+
+            moreBtn.setOnClickListener {
+                val bottomSheet = FeedBottomSheet(item.id)
+                bottomSheet.show((mContext as AppCompatActivity).supportFragmentManager, bottomSheet.tag)
             }
             itemView.setOnClickListener {
                 val intent = (Intent(itemView.context, CommentActivity::class.java))
                 intent.putExtra("id", item.id)
                 itemView.context.startActivity(intent)
             }
+
 
 
         }
