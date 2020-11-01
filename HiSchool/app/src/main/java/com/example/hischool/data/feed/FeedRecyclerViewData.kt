@@ -10,5 +10,6 @@ data class FeedRecyclerViewData (
     val like_count : Int,
     val comment_count : Int,
     val created_at : String,
-    val comment_preview : ArrayList<FeedCommentPreview>
+    val comment_preview : ArrayList<FeedCommentPreview>,
+    val is_liked : Boolean
 )
