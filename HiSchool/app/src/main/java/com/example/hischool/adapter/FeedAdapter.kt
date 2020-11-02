@@ -2,7 +2,6 @@ package com.example.hischool.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +13,18 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
-import com.example.hischool.data.comment.CommentRecyclerViewData
+import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
 import com.example.hischool.widget.FeedBottomSheet
-import org.w3c.dom.Text
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, private val context: Context) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.feed_item, parent, false)
         return ViewHolder(view, context)
@@ -35,6 +39,10 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
     }
 
     class ViewHolder (itemView: View, context: Context) : RecyclerView.ViewHolder(itemView){
+
+        lateinit var myAPI: Service
+        lateinit var retrofit: Retrofit
+
         val proFile = itemView.findViewById<ImageView>(R.id.feed_profile_image)
         val nickName = itemView.findViewById<TextView>(R.id.feed_name_text)
         val time = itemView.findViewById<TextView>(R.id.feed_time_text)
@@ -57,6 +65,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
         val mContext = context
         val heartBtn : ImageButton = itemView.findViewById(R.id.feed_heart_btn)
         val moreBtn : Button = itemView.findViewById(R.id.feed_more_btn)
+
         fun bind(item : FeedRecyclerViewData)
         {
             comment1.visibility = View.GONE
@@ -114,6 +123,22 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                 }
             }
 
+            when(item.is_liked)
+            {
+                true -> {
+                    Glide.with(mContext)
+                        .load(R.drawable.heart_true)
+                        .transform(CenterCrop(), RoundedCorners(25))
+                        .into(heartBtn)
+                }
+
+                false -> {
+                    Glide.with(mContext)
+                        .load(R.drawable.heart)
+                        .transform(CenterCrop(), RoundedCorners(25))
+                        .into(heartBtn)
+                }
+            }
 
             nickName.text = item.owner.username
             time.text = item.created_at
@@ -121,8 +146,18 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             question.text = item.text
             countHeart.text = item.like_count.toString()
             countMessage.text = item.comment_count.toString()
+
             heartBtn.setOnClickListener {
-                Toast.makeText(mContext, "좋아요", Toast.LENGTH_SHORT).show()
+                when(item.is_liked)
+                {
+                    true -> {
+                        cancelLike(item)
+                    }
+
+                    false -> {
+                        setLike(item)
+                    }
+                }
             }
 
             moreBtn.setOnClickListener {
@@ -134,9 +169,6 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                 intent.putExtra("id", item.id)
                 itemView.context.startActivity(intent)
             }
-
-
-
         }
 
         private fun setOneCommentData(item : FeedRecyclerViewData)
@@ -184,6 +216,59 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                 .load(item.comment_preview[1].image_urls[1])
                 .transform(CenterCrop(), RoundedCorners(25))
                 .into(comment2ImageList2)
+        }
+
+        private fun cancelLike(item: FeedRecyclerViewData)
+        {
+            myAPI = retrofit.create(Service::class.java)
+            myAPI.cancelLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = item.id).enqueue(
+                object : Callback<CheckLike> {
+                    override fun onResponse(
+                        call: Call<CheckLike>,
+                        response: Response<CheckLike>
+                    ) {
+                        if (response.code() == 200) {
+                            Glide.with(mContext)
+                                .load(R.drawable.heart)
+                                .transform(CenterCrop(), RoundedCorners(25))
+                                .into(heartBtn)
+
+                            item.is_liked = false
+
+                            Toast.makeText(mContext, "좋아요 취소", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(mContext, "좋아요 취소 실패", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<CheckLike>, t: Throwable) {
+                        Toast.makeText(mContext, "좋아요 취소 실패", Toast.LENGTH_SHORT).show()
+                    }
+                })
+        }
+
+        private fun setLike(item : FeedRecyclerViewData)
+        {
+            myAPI = retrofit.create(Service::class.java)
+            myAPI.setLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = item.id).enqueue(object : Callback<CheckLike>{
+                override fun onResponse(call: Call<CheckLike>, response: Response<CheckLike>) {
+                    if(response.code() == 200)
+                    {
+                        Glide.with(mContext)
+                            .load(R.drawable.heart_true)
+                            .transform(CenterCrop(), RoundedCorners(25))
+                            .into(heartBtn)
+                        item.is_liked = true
+                    }
+                    else{
+                        Toast.makeText(mContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<CheckLike>, t: Throwable) {
+                    Toast.makeText(mContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 }

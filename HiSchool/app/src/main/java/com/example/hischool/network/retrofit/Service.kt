@@ -2,6 +2,7 @@ package com.example.hischool.network.retrofit
 
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
+import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import okhttp3.RequestBody
@@ -33,4 +34,16 @@ interface Service {
         @Header("Authorization") token: String,
         @Path ("post_id")postId : Int
     ) : Call<DelPostResponse>
+
+    @DELETE("/feed/post/{post_id}/like")
+    fun cancelLike(
+        @Header("Authorization") token: String,
+        @Path ("post_id")postId : Int
+    ) : Call<CheckLike>
+
+    @POST("/feed/post/{post_id}/like")
+    fun setLike(
+        @Header("Authorization") token: String,
+        @Path ("post_id")postId : Int
+    ) : Call<CheckLike>
 }
