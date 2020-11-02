@@ -63,10 +63,11 @@ class FeedFragment : Fragment() {
                     feed_recyclerView.setHasFixedSize(true)
                     feed_recyclerView.adapter = mAdapter
                 }
+                Log.d("TAG", response.code().toString())
             }
 
             override fun onFailure(call: Call<List<FeedRecyclerViewData>>, t: Throwable) {
-
+                Log.d("TAG", t.message.toString())
             }
 
         })

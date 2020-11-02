@@ -63,7 +63,7 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
             message.text = item.content
 
             itemView.setOnLongClickListener {
-                val bottomSheet = CommentBottomSheet(item.comment_id, mPostId) {
+                val bottomSheet = CommentBottomSheet(item, mPostId) {
                     if (it) {
                         commentArrayList.remove(commentArrayList[adapterPosition])
                         notifyDataSetChanged()
