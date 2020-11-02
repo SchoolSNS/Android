@@ -1,5 +1,6 @@
 package com.example.hischool.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,15 +10,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
 import android.util.Log
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.data.comment.CommentRecyclerViewData
+import com.example.hischool.widget.CommentBottomSheet
+import com.example.hischool.widget.FeedBottomSheet
 
-class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, private val context: Context) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
+class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, private val context: Context, val postId : Int, val fragmentManager: FragmentManager) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.comment_item, parent, false)
-        return ViewHolder(view, context)
+        return ViewHolder(view, context, postId, fragmentManager)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -28,17 +35,19 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
         return commentArrayList.size
     }
 
-    class ViewHolder (itemView: View, context: Context) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder (itemView: View, context: Context, postId: Int, fragmentManager: FragmentManager) : RecyclerView.ViewHolder(itemView){
         val name  = itemView.findViewById<TextView>(R.id.comment_name)
         val message = itemView.findViewById<TextView>(R.id.comment_message)
         val mContext = context
+        val mPostId = postId
         val imageList : ImageView = itemView.findViewById(R.id.comment_image_list)
         val imageList2 : ImageView = itemView.findViewById(R.id.comment_image_list2)
-
+        val mFragmentManager = fragmentManager
         fun bind(item : CommentRecyclerViewData)
         {
             imageList.visibility = View.GONE
             imageList2.visibility = View.GONE
+
             if(item.image_urls.size == 1)
             {
                 imageList.visibility = View.VISIBLE
@@ -52,6 +61,17 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
             }
             name.text = item.owner.username
             message.text = item.content
+
+            itemView.setOnLongClickListener {
+                val bottomSheet = CommentBottomSheet(item.comment_id, mPostId) {
+                    if (it) {
+                        commentArrayList.remove(commentArrayList[adapterPosition])
+                        notifyDataSetChanged()
+                    }
+                }
+                bottomSheet.show(mFragmentManager, bottomSheet.tag)
+                return@setOnLongClickListener true
+            }
         }
 
         private fun setOneImage(item: CommentRecyclerViewData)

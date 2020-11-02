@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".widget.FeedBottomSheet"></activity>
+        <activity android:name=".view.activity.EditCommentActivity"></activity>
+        <activity android:name=".widget.CommentBottomSheet" />
+        <activity android:name=".widget.FeedBottomSheet" />
         <activity android:name=".view.activity.QuestionActivity" />
         <activity android:name=".view.activity.SelectSchoolActivity" />
         <activity

@@ -1,6 +1,7 @@
 package com.example.hischool.network.retrofit
 
 import com.example.hischool.data.comment.CommentRecyclerViewData
+import com.example.hischool.data.comment.CommentUpdateResponse
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.DelPostResponse
@@ -46,4 +47,11 @@ interface Service {
         @Header("Authorization") token: String,
         @Path ("post_id")postId : Int
     ) : Call<CheckLike>
+
+    @DELETE("/feed/post/{post_id}/comment/{comment_id}")
+    fun delComment(
+        @Header("Authorization") token: String,
+        @Path ("post_id")postId : Int,
+        @Path ("comment_id")commentId : Int
+    ) : Call<CommentUpdateResponse>
 }

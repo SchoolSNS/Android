@@ -2,6 +2,10 @@ package com.example.hischool.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +15,16 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.target.Target
+import com.bumptech.glide.request.target.ViewTarget
+import com.bumptech.glide.request.transition.Transition
 import com.example.hischool.R
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
 import com.example.hischool.widget.FeedBottomSheet
@@ -68,55 +78,30 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
 
         fun bind(item : FeedRecyclerViewData)
         {
+            Log.d("TAG", item.is_liked.toString())
+            retrofit = RetrofitClient.getInstance()
+
             comment1.visibility = View.GONE
             comment2.visibility = View.GONE
 
+            nickName.text = item.owner.username
+            time.text = item.created_at
+            title.text = item.title
+            question.text = item.text
+            countHeart.text = item.like_count.toString()
+            Log.d("TAG", item.like_count.toString())
+            countMessage.text = item.comment_count.toString()
+
             when
             {
-                item.comment_count <= 0 -> {
-                    comment1.visibility = View.GONE
-                    comment2.visibility = View.GONE
-                }
                 item.comment_count == 1 -> {
-                    if(item.comment_preview[0].image_urls.size == 1)
-                    {
-                        comment1ImageList.visibility = View.VISIBLE
-                        setOneImageCommentOne(item)
-                    }
-                    else if(item.comment_preview[0].image_urls.size == 2)
-                    {
-                        comment1ImageList.visibility = View.VISIBLE
-                        comment1ImageList2.visibility = View.VISIBLE
-                        setAllImageCommentOne(item)
-                    }
+                    setOneCommentPreviewImage(item)
                     comment1.visibility = View.VISIBLE
                     comment2.visibility = View.GONE
                     setOneCommentData(item)
                 }
                 item.comment_count > 1 -> {
-                    if(item.comment_preview[0].image_urls.size == 1)
-                    {
-                        comment1ImageList.visibility = View.VISIBLE
-                        setOneImageCommentOne(item)
-                    }
-                    else if(item.comment_preview[0].image_urls.size == 2)
-                    {
-                        comment1ImageList.visibility = View.VISIBLE
-                        comment1ImageList2.visibility = View.VISIBLE
-                        setAllImageCommentOne(item)
-                    }
-                    if(item.comment_preview[1].image_urls.size == 1)
-                    {
-                        comment2ImageList.visibility = View.VISIBLE
-                        setOneImageCommentTwo(item)
-                    }
-                    else if(item.comment_preview[1].image_urls.size == 2)
-                    {
-                        comment2ImageList.visibility = View.VISIBLE
-                        comment2ImageList2.visibility = View.VISIBLE
-                        setAllImageCommentTwo(item)
-                    }
-
+                    setAllCommentPreviewImage(item)
                     comment1.visibility = View.VISIBLE
                     comment2.visibility = View.VISIBLE
                     setAllCommentData(item)
@@ -128,24 +113,17 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                 true -> {
                     Glide.with(mContext)
                         .load(R.drawable.heart_true)
-                        .transform(CenterCrop(), RoundedCorners(25))
+                        .transform(CenterCrop(), RoundedCorners(1))
                         .into(heartBtn)
                 }
 
                 false -> {
                     Glide.with(mContext)
                         .load(R.drawable.heart)
-                        .transform(CenterCrop(), RoundedCorners(25))
+                        .transform(CenterInside(), RoundedCorners(1))
                         .into(heartBtn)
                 }
             }
-
-            nickName.text = item.owner.username
-            time.text = item.created_at
-            title.text = item.title
-            question.text = item.text
-            countHeart.text = item.like_count.toString()
-            countMessage.text = item.comment_count.toString()
 
             heartBtn.setOnClickListener {
                 when(item.is_liked)
@@ -218,6 +196,37 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                 .into(comment2ImageList2)
         }
 
+        private fun setOneCommentPreviewImage(item: FeedRecyclerViewData)
+        {
+            if(item.comment_preview[0].image_urls.size == 1)
+            {
+                comment1ImageList.visibility = View.VISIBLE
+                setOneImageCommentOne(item)
+            }
+            else if(item.comment_preview[0].image_urls.size == 2)
+            {
+                comment1ImageList.visibility = View.VISIBLE
+                comment1ImageList2.visibility = View.VISIBLE
+                setAllImageCommentOne(item)
+            }
+        }
+
+        private fun setAllCommentPreviewImage(item: FeedRecyclerViewData)
+        {
+            setOneCommentPreviewImage(item)
+            if(item.comment_preview[1].image_urls.size == 1)
+            {
+                comment2ImageList.visibility = View.VISIBLE
+                setOneImageCommentTwo(item)
+            }
+            else if(item.comment_preview[1].image_urls.size == 2)
+            {
+                comment2ImageList.visibility = View.VISIBLE
+                comment2ImageList2.visibility = View.VISIBLE
+                setAllImageCommentTwo(item)
+            }
+        }
+
         private fun cancelLike(item: FeedRecyclerViewData)
         {
             myAPI = retrofit.create(Service::class.java)
@@ -231,10 +240,11 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                             Glide.with(mContext)
                                 .load(R.drawable.heart)
                                 .transform(CenterCrop(), RoundedCorners(25))
-                                .into(heartBtn)
+                                .into(heartBtn as ImageButton)
 
                             item.is_liked = false
-
+                            item.like_count = item.like_count - 1
+                            countHeart.text = (item.like_count).toString()
                             Toast.makeText(mContext, "좋아요 취소", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(mContext, "좋아요 취소 실패", Toast.LENGTH_SHORT).show()
@@ -258,14 +268,18 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                             .load(R.drawable.heart_true)
                             .transform(CenterCrop(), RoundedCorners(25))
                             .into(heartBtn)
+                        item.like_count = item.like_count + 1
+                        countHeart.text = (item.like_count).toString()
                         item.is_liked = true
                     }
                     else{
                         Toast.makeText(mContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+                        Log.d("TAG", response.code().toString())
                     }
                 }
 
                 override fun onFailure(call: Call<CheckLike>, t: Throwable) {
+                    Log.d("TAG", t.message.toString())
                     Toast.makeText(mContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
                 }
             })
