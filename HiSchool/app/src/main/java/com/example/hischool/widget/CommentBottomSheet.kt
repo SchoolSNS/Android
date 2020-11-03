@@ -54,9 +54,12 @@ class CommentBottomSheet(val item : CommentRecyclerViewData, val postId: Int, va
         }
 
         comment_edit_btn.setOnClickListener {
+
+            dismiss()
             val intent = Intent(mContext, EditCommentActivity::class.java)
             intent.putExtra("text", item.content)
             intent.putExtra("urls", item.image_urls)
+            startActivity(intent)
         }
     }
 

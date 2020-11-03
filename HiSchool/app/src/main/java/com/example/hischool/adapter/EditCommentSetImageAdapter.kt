@@ -1,6 +1,7 @@
 package com.example.hischool.adapter
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +14,9 @@ import com.example.hischool.R
 import kotlinx.android.synthetic.main.comment_image_preview_item.view.*
 
 class EditCommentSetImageAdapter(
-    private val commentImageList: ArrayList<String>,
+    private val commentImageList: ArrayList<Bitmap>,
     private val context: Context
 ) : RecyclerView.Adapter<EditCommentSetImageAdapter.ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.comment_image_preview_item, parent, false)

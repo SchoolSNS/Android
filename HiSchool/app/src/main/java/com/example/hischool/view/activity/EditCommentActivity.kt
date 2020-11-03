@@ -1,7 +1,18 @@
 package com.example.hischool.view.activity
 
+import android.content.Intent
+import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.OpenableColumns
+import android.util.Log
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.example.hischool.R
 import com.example.hischool.adapter.CommentImagePreViewAdapter
 import com.example.hischool.adapter.EditCommentSetImageAdapter
@@ -9,7 +20,10 @@ import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_comment.*
 import kotlinx.android.synthetic.main.activity_edit_comment.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Retrofit
+import java.io.ByteArrayOutputStream
 import java.io.Serializable
 
 class EditCommentActivity : AppCompatActivity() {
@@ -18,6 +32,13 @@ class EditCommentActivity : AppCompatActivity() {
     lateinit var myAPI : Service
     lateinit var content : String
     lateinit var imageUrls : ArrayList<String>
+    val imageBitmap : ArrayList<Bitmap> = arrayListOf()
+    private val imageMultipart = ArrayList<RequestBody>()
+
+    companion object {
+        private const val IMAGE_PICK_CODE = 1000
+    }
+
     private lateinit var editCommentSetImageAdapter: EditCommentSetImageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,18 +49,73 @@ class EditCommentActivity : AppCompatActivity() {
         content = intent.getStringExtra("text").toString()
         imageUrls = intent.getSerializableExtra("urls") as ArrayList<String>
 
+        editCommentSetImageAdapter = EditCommentSetImageAdapter(imageBitmap, applicationContext)
+        comment_edit_image_recyclerview.adapter = editCommentSetImageAdapter
+
+        imageUrls.forEach {
+            Glide.with(applicationContext).asBitmap().load(it).into(object : CustomTarget<Bitmap>() {
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                    imageBitmap.add(resource)
+                    editCommentSetImageAdapter.notifyDataSetChanged()
+                    print("하이")
+                }
+
+                override fun onLoadCleared(placeholder: Drawable?) {
+                }
+            })
+        }
+
+
         comment_edit_edit.setText(content)
 
-        editCommentSetImageAdapter = EditCommentSetImageAdapter(imageUrls, applicationContext)
-        comment_edit_image_recyclerview.adapter = editCommentSetImageAdapter
+
 
         comment_edit_post_btn.setOnClickListener {
             updateComment()
+        }
+
+        comment_edit_camera_btn.setOnClickListener {
+
         }
     }
 
     fun updateComment()
     {
         myAPI = retrofit.create(Service::class.java)
+    }
+
+    fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_PICK_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val returnUri: Uri
+        val returnCursor: Cursor?
+
+        if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
+            returnUri = data?.data!!
+            Log.d("TAG", "하이")
+            val inputStream = contentResolver.openInputStream(returnUri)
+            var bm: Bitmap = BitmapFactory.decodeStream(inputStream) //비트맵 변환
+            val bos = ByteArrayOutputStream()
+            bm.compress(Bitmap.CompressFormat.JPEG, 100, bos)
+            imageMultipart.add(RequestBody.create(MultipartBody.FORM, bos.toByteArray()))
+
+            inputStream?.close()
+
+            imageBitmap.add(bm)
+            editCommentSetImageAdapter.notifyDataSetChanged()
+
+            returnCursor = contentResolver.query(returnUri, null, null, null, null)
+
+            //이미지 이름
+            val nameIndex = returnCursor!!.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+            returnCursor.moveToFirst()
+            returnCursor.close()
+        }
     }
 }
