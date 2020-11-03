@@ -8,11 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
 import com.example.hischool.adapter.SearchFeedAdapter
 import com.example.hischool.adapter.SelectSchoolAdapter
+import com.example.hischool.data.SearchFeedRecyclerViewData
 import com.example.hischool.data.SearchRecyclerViewData
 import com.example.hischool.network.RetrofitClient
 import com.example.hischool.network.Service
@@ -25,12 +30,11 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import kotlin.collections.ArrayList as ArrayList
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(){
 
     lateinit var myAPI: Service
     lateinit var retrofit: Retrofit
     lateinit var schoolList: ArrayList<SearchRecyclerViewData>
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +43,7 @@ class SearchFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
