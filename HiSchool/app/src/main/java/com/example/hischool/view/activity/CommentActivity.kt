@@ -77,6 +77,11 @@ class CommentActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        getComment()
+        super.onRestart()
+    }
+
     private fun getComment() {
         myAPI = retrofit.create(Service::class.java)
         myAPI.getComment(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId)

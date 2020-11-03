@@ -239,8 +239,8 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                         if (response.code() == 200) {
                             Glide.with(mContext)
                                 .load(R.drawable.heart)
-                                .transform(CenterCrop(), RoundedCorners(25))
-                                .into(heartBtn as ImageButton)
+                                .transform(CenterCrop(), RoundedCorners(1))
+                                .into(heartBtn)
 
                             item.is_liked = false
                             item.like_count = item.like_count - 1
@@ -266,7 +266,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
                     {
                         Glide.with(mContext)
                             .load(R.drawable.heart_true)
-                            .transform(CenterCrop(), RoundedCorners(25))
+                            .transform(CenterCrop(), RoundedCorners(1))
                             .into(heartBtn)
                         item.like_count = item.like_count + 1
                         countHeart.text = (item.like_count).toString()

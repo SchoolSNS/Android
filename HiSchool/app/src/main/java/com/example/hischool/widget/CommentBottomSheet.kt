@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,6 +60,8 @@ class CommentBottomSheet(val item : CommentRecyclerViewData, val postId: Int, va
             val intent = Intent(mContext, EditCommentActivity::class.java)
             intent.putExtra("text", item.content)
             intent.putExtra("urls", item.image_urls)
+            intent.putExtra("postId", postId)
+            intent.putExtra("commentId", item.comment_id)
             startActivity(intent)
         }
     }
@@ -78,10 +81,15 @@ class CommentBottomSheet(val item : CommentRecyclerViewData, val postId: Int, va
                     }
                     else{
                         callback(false)
+                        Log.d("TAG", response.code().toString())
+                        Log.d("TAG",response.message().toString())
+                        Toast.makeText(mContext, "삭제가 실패되었습니다..", Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<CommentUpdateResponse>, t: Throwable) {
+                    Toast.makeText(mContext, "삭제가 실패되었습니다..", Toast.LENGTH_SHORT).show()
+                    Log.d("TAG", t.message.toString())
                     callback(false)
                 }
 
