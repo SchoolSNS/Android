@@ -1,6 +1,5 @@
 package com.example.hischool.adapter
 
-import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,17 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import android.util.Log
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.data.comment.CommentRecyclerViewData
-import com.example.hischool.widget.CommentBottomSheet
-import com.example.hischool.widget.FeedBottomSheet
+import com.example.hischool.bottomSheet.CommentBottomSheet
 
 class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, private val context: Context, val postId : Int, val fragmentManager: FragmentManager) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
 

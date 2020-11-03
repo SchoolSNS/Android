@@ -19,7 +19,8 @@ class EditCommentSetImageAdapter(
 ) : RecyclerView.Adapter<EditCommentSetImageAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.comment_image_preview_item, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.comment_image_preview_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -34,7 +35,8 @@ class EditCommentSetImageAdapter(
         return commentImageList.size
     }
 
-    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imageViewList: ImageView = itemView.preview_image_view
     }
 }
+

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".widget.CommentBottomSheet">
+    tools:context=".bottomSheet.CommentBottomSheet">
 
     <TextView
         android:id="@+id/comment_bottom_sheet_textView"

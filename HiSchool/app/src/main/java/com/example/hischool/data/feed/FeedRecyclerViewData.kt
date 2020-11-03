@@ -4,7 +4,7 @@ data class FeedRecyclerViewData (
     val id : Int,
     val owner : FeedRecyclerViewDataOwner,
     val title : String,
-    val text : String,
+    val content : String,
     val image_urls : ArrayList<String>,
     val like_peoples : ArrayList<Int>,
     var like_count : Int,

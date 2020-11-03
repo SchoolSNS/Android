@@ -1,8 +1,7 @@
-package com.example.hischool.widget
+package com.example.hischool.bottomSheet
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,18 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.hischool.R
-import com.example.hischool.adapter.CommentAdapter
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.CommentUpdateResponse
-import com.example.hischool.data.feed.DelPostResponse
-import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
-import com.example.hischool.view.activity.CommentActivity
 import com.example.hischool.view.activity.EditCommentActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_comment_bottom_sheet.*
-import kotlinx.android.synthetic.main.activity_feed_bottom_sheet.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

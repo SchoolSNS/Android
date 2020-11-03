@@ -72,6 +72,7 @@ class EditCommentActivity : AppCompatActivity() {
                     imageBitmap.add(resource)
                     imageNameList.add("imageis123$count.jpg")
                     val bos = ByteArrayOutputStream()
+                    resource.compress(Bitmap.CompressFormat.JPEG, 100, bos)
                     imageMultipart.add(RequestBody.create(MultipartBody.FORM, bos.toByteArray()))
                     editCommentSetImageAdapter.notifyDataSetChanged()
                     Log.d("TAG", "data $imageNameList")
@@ -94,7 +95,7 @@ class EditCommentActivity : AppCompatActivity() {
         }
 
         comment_edit_camera_btn.setOnClickListener {
-            if(imageUrls.size < 2) {
+            if(imageBitmap.size < 2) {
                 pickImageFromGallery()
             }
             else{
@@ -146,10 +147,6 @@ class EditCommentActivity : AppCompatActivity() {
                 })
             }
         }
-
-
-
-        myAPI = retrofit.create(Service::class.java)
     }
 
     fun pickImageFromGallery() {

@@ -62,4 +62,11 @@ interface Service {
         @Path ("comment_id")commentId : Int,
         @Body UpdateCommentBody: RequestBody
     ) : Call<CommentUpdateResponse>
+
+    @PUT("/feed/post/{post_id}")
+    fun updateFeed(
+        @Header("Authorization") token: String,
+        @Path ("post_id")postId : Int,
+        @Body UpdateCommentBody: RequestBody
+    ) : Call<DelPostResponse>
 }

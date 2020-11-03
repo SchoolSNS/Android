@@ -10,7 +10,6 @@ import android.provider.OpenableColumns
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import com.example.hischool.R
 import com.example.hischool.adapter.CommentAdapter
 import com.example.hischool.adapter.CommentImagePreViewAdapter
@@ -18,8 +17,6 @@ import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
-import com.example.hischool.widget.CommentBottomSheet
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_comment.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -150,6 +147,7 @@ class CommentActivity : AppCompatActivity() {
                             imageList.clear()
                             imageNameList.clear()
                             count = 1
+                            imageCount = 0
                             commentImagePreViewAdapter.notifyDataSetChanged()
                             getComment()
                         }

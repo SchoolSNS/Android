@@ -13,8 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.EditFeedActivity"></activity>
         <activity android:name=".view.activity.EditCommentActivity" />
-        <activity android:name=".widget.CommentBottomSheet" />
-        <activity android:name=".widget.FeedBottomSheet" />
+        <activity android:name=".bottomSheet.CommentBottomSheet" />
+        <activity android:name=".bottomSheet.FeedBottomSheet" />
         <activity android:name=".view.activity.QuestionActivity" />
         <activity android:name=".view.activity.SelectSchoolActivity" />
         <activity
