@@ -6,16 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.hischool.R
 import com.example.hischool.adapter.FeedAdapter
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
-import com.example.hischool.widget.FeedBottomSheet
-import kotlinx.android.synthetic.main.feed_item.*
 import kotlinx.android.synthetic.main.fragment_feed.*
 import retrofit2.Call
 import retrofit2.Callback

@@ -2,9 +2,6 @@ package com.example.hischool.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,17 +14,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.target.Target
-import com.bumptech.glide.request.target.ViewTarget
-import com.bumptech.glide.request.transition.Transition
 import com.example.hischool.R
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
-import com.example.hischool.widget.FeedBottomSheet
+import com.example.hischool.bottomSheet.FeedBottomSheet
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -87,7 +80,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             nickName.text = item.owner.username
             time.text = item.created_at
             title.text = item.title
-            question.text = item.text
+            question.text = item.content
             countHeart.text = item.like_count.toString()
             Log.d("TAG", item.like_count.toString())
             countMessage.text = item.comment_count.toString()
@@ -139,7 +132,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             }
 
             moreBtn.setOnClickListener {
-                val bottomSheet = FeedBottomSheet(item.id)
+                val bottomSheet = FeedBottomSheet(item)
                 bottomSheet.show((mContext as AppCompatActivity).supportFragmentManager, bottomSheet.tag)
             }
             itemView.setOnClickListener {
