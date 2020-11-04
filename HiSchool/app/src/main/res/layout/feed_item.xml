@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
     android:background="#FFFFFF">
 
     <ImageView
@@ -14,6 +15,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
+        android:src="@drawable/heart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/main_round_image" />
@@ -49,14 +51,10 @@
         android:id="@+id/feed_more_btn"
         android:layout_width="23dp"
         android:layout_height="24dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/more"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/feed_name_text"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -88,58 +86,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_title_text" />
 
-    <Button
+    <ImageView
+        android:id="@+id/feed_image1"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toStartOf="@+id/feed_question_text"
+        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+
+
+    <ImageView
+        android:id="@+id/feed_image2"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toEndOf="@+id/feed_image1"
+        app:layout_constraintTop_toTopOf="@+id/feed_image1" />
+
+    <ImageButton
         android:id="@+id/feed_heart_btn"
         android:layout_width="21dp"
-        android:layout_height="18.36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="17dp"
+        android:layout_height="20dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:background="@drawable/heart"
+        android:layout_marginTop="12dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:scaleType="centerInside"
+        android:src="@drawable/heart"
         app:layout_constraintEnd_toStartOf="@+id/feed_count_heart_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintStart_toStartOf="@+id/feed_image1"
+        app:layout_constraintTop_toBottomOf="@+id/feed_image1" />
 
     <TextView
         android:id="@+id/feed_count_heart_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="10"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/feed_heart_btn"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintTop_toTopOf="@+id/feed_heart_btn" />
 
     <Button
         android:id="@+id/feed_message_btn"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
         android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="17dp"
         android:background="@drawable/messege"
         app:layout_constraintStart_toEndOf="@+id/feed_count_heart_text"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintTop_toBottomOf="@+id/feed_image1" />
 
     <TextView
         android:id="@+id/feed_count_message_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="10"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/feed_message_btn"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintTop_toTopOf="@+id/feed_message_btn" />
 
     <View
         android:id="@+id/feed_bar2_view"
@@ -152,17 +166,17 @@
         app:layout_constraintTop_toBottomOf="@+id/feed_heart_btn" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/feed_comment1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_bar2_view">
 
         <ImageView
-            android:id="@+id/feed_comment_profile_image"
+            android:id="@+id/feed_comment1_profile_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="25dp"
@@ -172,57 +186,75 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/main_round_image" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/feed_comment1_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/nixgon_bold"
+            android:text="지나가는 익명의 족발"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment1_profile_image"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment1_profile_image" />
+
+        <ImageView
+            android:id="@+id/feed_comment1_image_list"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toStartOf="@+id/feed_comment1_name"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment1_name" />
+
+        <ImageView
+            android:id="@+id/feed_comment1_image_list2"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment1_image_list"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment1_image_list" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/comment_background"
-            app:layout_constraintStart_toEndOf="@+id/feed_comment_profile_image"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="@+id/feed_comment1_image_list"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment1_image_list">
 
             <TextView
-                android:id="@+id/feed_comment_text"
+                android:id="@+id/feed_comment1_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/nixgon_bold"
-                android:text="지나가는 익명의 족발"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="4dp"
+                android:layout_margin="8dp"
                 android:fontFamily="@font/nixgonfontsmedium"
                 android:text="아주 좋은 학교에요 ㅎㅎㅎㅎ"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/feed_comment_text"
-                app:layout_constraintTop_toBottomOf="@+id/feed_comment_text" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/feed_comment2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:visibility="visible"
+        android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/feed_comment1">
 
         <ImageView
-            android:id="@+id/feed_comment_profile_image2"
+            android:id="@+id/feed_comment2_profile_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="25dp"
@@ -232,44 +264,61 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/main_round_image" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/feed_comment2_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/nixgon_bold"
+            android:text="지나가는 익명의 족발"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment2_profile_image"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment2_profile_image" />
+
+        <ImageView
+            android:id="@+id/feed_comment2_image_list"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toStartOf="@+id/feed_comment2_name"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment2_name" />
+
+        <ImageView
+            android:id="@+id/feed_comment2_image_list2"
+            android:layout_width="124dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="4:3"
+            app:layout_constraintStart_toEndOf="@+id/feed_comment2_image_list"
+            app:layout_constraintTop_toTopOf="@+id/feed_comment2_image_list" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/feed_comment2_constraintLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/comment_background"
-            app:layout_constraintStart_toEndOf="@+id/feed_comment_profile_image2"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="@+id/feed_comment2_image_list"
+            app:layout_constraintTop_toBottomOf="@+id/feed_comment2_image_list">
 
             <TextView
-                android:id="@+id/feed_comment2_text"
+                android:id="@+id/feed_comment2_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/nixgon_bold"
-                android:text="지나가는 익명의 족발"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="4dp"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/nixgonfontsmedium"
                 android:text="아주 좋은 학교에요 ㅎㅎㅎㅎ"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/feed_comment2_text"
-                app:layout_constraintTop_toBottomOf="@+id/feed_comment2_text" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

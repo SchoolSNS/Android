@@ -1,6 +1,6 @@
-package com.example.hischool.data
+package com.example.hischool.data.comment
 
-data class FeedRecyclerViewDataOwner (
+data class CommentOwner (
     val id : Int,
     val email : String,
     val username : String,
