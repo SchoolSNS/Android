@@ -64,7 +64,7 @@ class FeedFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<List<FeedRecyclerViewData>>, t: Throwable) {
-                Log.d("TAG", t.message.toString())
+                Log.d("TAG", "fail : ${t.message.toString()}")
             }
 
         })
