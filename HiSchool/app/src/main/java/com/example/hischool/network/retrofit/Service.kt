@@ -1,5 +1,7 @@
 package com.example.hischool.network.retrofit
 
+import com.example.hischool.data.SearchFeedRecyclerViewData
+import com.example.hischool.data.SearchSchoolRecyclerViewData
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.CommentUpdateResponse
 import com.example.hischool.data.comment.WriteCommentResponse
@@ -69,4 +71,17 @@ interface Service {
         @Path ("post_id")postId : Int,
         @Body UpdateCommentBody: RequestBody
     ) : Call<DelPostResponse>
+
+    @GET("/search/school")
+    fun getSearchSchool(
+        @Query("page") page: Int,
+        @Query("query") query: String
+    ) : Call<List<SearchSchoolRecyclerViewData>>
+
+    @GET("/search/post")
+    fun getSearchFeed(
+        @Header("Authorization") token: String,
+        @Query("page") page: Int,
+        @Query("query") query: String
+    ) : Call<List<SearchFeedRecyclerViewData>>
 }
