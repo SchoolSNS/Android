@@ -21,8 +21,8 @@ import com.bumptech.glide.Glide
 import com.example.hischool.R
 import com.example.hischool.data.PostResponse
 import com.example.hischool.module.RotateImage
-import com.example.hischool.network.RetrofitClient
-import com.example.hischool.network.Service
+import com.example.hischool.network.retrofit.RetrofitClient
+import com.example.hischool.network.retrofit.Service
 import com.example.hischool.widget.startActivity
 import com.example.hischool.widget.toast
 import kotlinx.android.synthetic.main.activity_question.*
@@ -83,7 +83,7 @@ class QuestionActivity : AppCompatActivity() {
                     }
                 }.build()
 
-                val myAPI =RetrofitClient.getInstance().create(Service::class.java)
+                val myAPI = RetrofitClient.getInstance().create(Service::class.java)
                 myAPI.requestPost("Token 719e203a89eaf9bd377a5e345da7da653d15492e", body).enqueue(object : Callback<PostResponse> {
                     override fun onFailure(call: Call<PostResponse>, t: Throwable) {
                         Log.d("TAG", "FAILED WITH ERROR")

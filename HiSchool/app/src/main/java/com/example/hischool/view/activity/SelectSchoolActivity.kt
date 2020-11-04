@@ -8,8 +8,8 @@ import com.example.hischool.sharedpreferences.App.Companion.prefs
 import com.example.hischool.R
 import com.example.hischool.adapter.SelectSchoolAdapter
 import com.example.hischool.data.SearchSchoolRecyclerViewData
-import com.example.hischool.network.RetrofitClient
-import com.example.hischool.network.Service
+import com.example.hischool.network.retrofit.RetrofitClient
+import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_select_school.*
 import retrofit2.Call
 import retrofit2.Callback
