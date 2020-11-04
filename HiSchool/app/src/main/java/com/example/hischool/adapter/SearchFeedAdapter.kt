@@ -41,6 +41,20 @@ class SearchFeedAdapter(val searchFeedList: ArrayList<SearchFeedRecyclerViewData
         holder.content.text = searchFeedList[position].text
         holder.count_heart.text = searchFeedList[position].like_count.toString()
         holder.count_message.text = searchFeedList[position].comment_count.toString()
+        holder.heartState = searchFeedList[position].is_liked
+        if(holder.heartState)
+        {
+            Glide.with(holder.itemView)
+                .load(R.drawable.heart)
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(holder.profile)
+        }
+        else{
+            Glide.with(holder.itemView)
+                .load(R.drawable.heart)
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(holder.profile)
+        }
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -52,6 +66,7 @@ class SearchFeedAdapter(val searchFeedList: ArrayList<SearchFeedRecyclerViewData
         val liked = itemView.findViewById<TextView>(R.id.search_heart_btn)
         val count_heart = itemView.findViewById<TextView>(R.id.search_count_heart_text)
         val count_message = itemView.findViewById<TextView>(R.id.search_count_message_text)
+        var heartState = false
     }
 }
 
