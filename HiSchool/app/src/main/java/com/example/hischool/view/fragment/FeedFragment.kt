@@ -1,47 +1,73 @@
 package com.example.hischool.view.fragment
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
 import com.example.hischool.adapter.FeedAdapter
-import com.example.hischool.data.FeedRecyclerViewData
-import com.example.hischool.view.activity.SelectSchoolActivity
-import com.example.hischool.widget.startActivity
-import kotlinx.android.synthetic.main.activity_comment.*
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.network.retrofit.RetrofitClient
+import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.fragment_feed.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class FeedFragment : Fragment() {
-    
+
+
+    lateinit var myAPI: Service
+    lateinit var retrofit: Retrofit
+    var feedList : ArrayList<FeedRecyclerViewData> = arrayListOf()
+    lateinit var mContext : Context
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-
+        Log.d("TAG", "onCreateView 호출됨")
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val feedList = arrayListOf(
-            FeedRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 세연",
-                "58분전",
-                "안녕하세연?",
-                "안녕히가세연",
-                10,
-                10)
-        )
-        feed_recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
-        feed_recyclerView.setHasFixedSize(true)
-        feed_recyclerView.adapter = FeedAdapter(feedList)
+    override fun onResume() {
+        Log.d("TAG", "onResume 호출됨")
+        retrofit = RetrofitClient.getInstance()
+        getFeed()
+        super.onResume()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
+    }
+
+    private fun getFeed(){
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{
+            override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
+                if(response.code() == 200)
+                {
+                    feedList.clear()
+                    feedList = response.body() as ArrayList<FeedRecyclerViewData>
+                    Log.d("TAG", "data $feedList")
+                    val mAdapter = FeedAdapter(feedList, mContext)
+                    feed_recyclerView.setHasFixedSize(true)
+                    feed_recyclerView.adapter = mAdapter
+                }
+                Log.d("TAG", response.code().toString())
+            }
+
+            override fun onFailure(call: Call<List<FeedRecyclerViewData>>, t: Throwable) {
+                Log.d("TAG", t.message.toString())
+            }
+
+        })
 
 
     }

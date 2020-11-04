@@ -9,4 +9,5 @@
     <color name="colorGrayBackGround">#F4F4F4</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorSchoolAddress">#BFBFBF</color>
+    <color name="HartRed">#FF0000</color>
 </resources>
