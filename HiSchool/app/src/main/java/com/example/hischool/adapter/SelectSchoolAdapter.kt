@@ -8,15 +8,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import com.example.hischool.data.SearchRecyclerViewData
+import com.example.hischool.data.SearchSchoolRecyclerViewData
 
-class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SearchRecyclerViewData>) : RecyclerView.Adapter<SelectSchoolAdapter.ViewHolder>(){
+class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SearchSchoolRecyclerViewData>) : RecyclerView.Adapter<SelectSchoolAdapter.ViewHolder>(){
     var selected = -2;
     val selectedColor = Color.rgb(225, 226, 227)
-    fun updateList(list : ArrayList<SearchRecyclerViewData>) {
+
+    fun updateList(list : ArrayList<SearchSchoolRecyclerViewData>) {
         selectSchoolArrayList.clear()
         selectSchoolArrayList.addAll(list)
-        notifyDataSetChanged();
+        notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.select_school_item, parent, false)
@@ -40,7 +41,7 @@ class SelectSchoolAdapter(val selectSchoolArrayList: ArrayList<SearchRecyclerVie
         val name: TextView = itemView.findViewById(R.id.select_school_school_name)
         val address: TextView = itemView.findViewById(R.id.select_school_school_address)
 
-        fun bind(item : SearchRecyclerViewData)
+        fun bind(item : SearchSchoolRecyclerViewData)
         {
             Log.d("TAG", item.name)
             name.text = item.name

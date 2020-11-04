@@ -4,7 +4,7 @@ data class SearchFeedRecyclerViewDataOwner (
     val id : Int,
     val email : String,
     val username : String,
-    val profile : String,
+    val image : String,
     val school : String,
     val identity : String
 )

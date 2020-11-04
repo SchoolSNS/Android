@@ -1,7 +1,8 @@
 package com.example.hischool.network
 
 import com.example.hischool.data.FeedRecyclerViewData
-import com.example.hischool.data.SearchRecyclerViewData
+import com.example.hischool.data.SearchFeedRecyclerViewData
+import com.example.hischool.data.SearchSchoolRecyclerViewData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -15,8 +16,15 @@ interface Service {
     ) : Call<List<FeedRecyclerViewData>>
 
     @GET("/search/school")
-    fun getSearchFeed(
+    fun getSearchSchool(
         @Query("page") page: Int,
         @Query("query") query: String
-    ) : Call<List<SearchRecyclerViewData>>
+    ) : Call<List<SearchSchoolRecyclerViewData>>
+
+    @GET("/search/post")
+    fun getSearchFeed(
+        @Header("Authorization") token: String,
+        @Query("page") page: Int,
+        @Query("query") query: String
+    ) : Call<List<SearchFeedRecyclerViewData>>
 }

@@ -1,27 +1,18 @@
 package com.example.hischool.view.fragment
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
 import com.example.hischool.adapter.SearchFeedAdapter
 import com.example.hischool.adapter.SelectSchoolAdapter
 import com.example.hischool.data.SearchFeedRecyclerViewData
-import com.example.hischool.data.SearchRecyclerViewData
 import com.example.hischool.network.RetrofitClient
 import com.example.hischool.network.Service
-import kotlinx.android.synthetic.main.activity_question.*
 import kotlinx.android.synthetic.main.activity_select_school.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import retrofit2.Call
@@ -34,7 +25,9 @@ class SearchFragment : Fragment(){
 
     lateinit var myAPI: Service
     lateinit var retrofit: Retrofit
-    lateinit var schoolList: ArrayList<SearchRecyclerViewData>
+    lateinit var mAdapter: SearchFeedAdapter
+    var feedList: ArrayList<SearchFeedRecyclerViewData> = arrayListOf()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,14 +41,41 @@ class SearchFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mAdapter = SearchFeedAdapter(feedList)
+        search_recyclerView.setHasFixedSize(true)
+        search_recyclerView.adapter = mAdapter
+
         retrofit = RetrofitClient.getInstance()
 
         search_search_edit.setOnEditorActionListener { v, i, keyEvent ->
             if (i == EditorInfo.IME_ACTION_DONE) {
+                getFeedList()
                 return@setOnEditorActionListener true
             }
             false
         }
+    }
+
+    fun getFeedList() {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.getSearchFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e",page = 1, query = (search_search_edit.text.toString()))
+            .enqueue(object : Callback<List<SearchFeedRecyclerViewData>> {
+                override fun onResponse(
+                    call: Call<List<SearchFeedRecyclerViewData>>,
+                    response: Response<List<SearchFeedRecyclerViewData>>
+                ) {
+                    if(response.code() == 200) {
+                        feedList = response.body() as ArrayList<SearchFeedRecyclerViewData>
+                        Log.d("TAG", "data $feedList")
+                        mAdapter.updateList(feedList)
+                    }
+                }
+
+                override fun onFailure(call: Call<List<SearchFeedRecyclerViewData>>, t: Throwable) {
+                    Log.d("TAG", t.message.toString())
+                }
+
+            })
     }
 
 }

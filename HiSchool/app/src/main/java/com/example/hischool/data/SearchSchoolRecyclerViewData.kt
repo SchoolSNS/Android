@@ -1,6 +1,6 @@
 package com.example.hischool.data
 
-data class SearchRecyclerViewData (
+data class SearchSchoolRecyclerViewData (
     val name : String,
     val region : String,
     val address : String,

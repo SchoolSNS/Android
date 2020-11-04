@@ -1,6 +1,6 @@
 package com.example.hischool.data
 
-data class SearchRecyclerViewDataList (
+data class SearchSchoolRecyclerViewDataList (
     val boolean : Boolean,
     val gender : String
 )

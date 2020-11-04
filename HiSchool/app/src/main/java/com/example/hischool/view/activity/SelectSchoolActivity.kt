@@ -7,7 +7,7 @@ import android.view.KeyEvent
 import com.example.hischool.sharedpreferences.App.Companion.prefs
 import com.example.hischool.R
 import com.example.hischool.adapter.SelectSchoolAdapter
-import com.example.hischool.data.SearchRecyclerViewData
+import com.example.hischool.data.SearchSchoolRecyclerViewData
 import com.example.hischool.network.RetrofitClient
 import com.example.hischool.network.Service
 import kotlinx.android.synthetic.main.activity_select_school.*
@@ -20,8 +20,8 @@ class SelectSchoolActivity : AppCompatActivity() {
 
     lateinit var myAPI: Service
     lateinit var retrofit: Retrofit
-    lateinit var mAdapter: SelectSchoolAdapter;
-    var schoolList: ArrayList<SearchRecyclerViewData> = arrayListOf();
+    lateinit var mAdapter: SelectSchoolAdapter
+    var schoolList: ArrayList<SearchSchoolRecyclerViewData> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,21 +57,20 @@ class SelectSchoolActivity : AppCompatActivity() {
 
     fun getSchoolList() {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getSearchFeed(page = 1, query = (select_search_edit.text.toString()).trim())
-            .enqueue(object : Callback<List<SearchRecyclerViewData>> {
+        myAPI.getSearchSchool(page = 1, query = (select_search_edit.text.toString()).trim())
+            .enqueue(object : Callback<List<SearchSchoolRecyclerViewData>> {
                 override fun onResponse(
-                    call: Call<List<SearchRecyclerViewData>>,
-                    response: Response<List<SearchRecyclerViewData>>
+                    call: Call<List<SearchSchoolRecyclerViewData>>,
+                    response: Response<List<SearchSchoolRecyclerViewData>>
                 ) {
                     if (response.code() == 200) {
-                        schoolList = response.body() as ArrayList<SearchRecyclerViewData>
+                        schoolList = response.body() as ArrayList<SearchSchoolRecyclerViewData>
                         Log.d("TAG", "data $schoolList")
                         mAdapter.updateList(schoolList)
                     }
                 }
 
-                override fun onFailure(call: Call<List<SearchRecyclerViewData>>, t: Throwable) {
-                    Log.d("TAG", "들어았다")
+                override fun onFailure(call: Call<List<SearchSchoolRecyclerViewData>>, t: Throwable) {
                     Log.d("TAG", t.message.toString())
                 }
 
