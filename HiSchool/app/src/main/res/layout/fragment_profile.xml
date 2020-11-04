@@ -1,9 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.fragment.ProfileFragment">
+
+    <TextView
+        android:id="@+id/profile_search_school_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="대구 소프트웨어 고등학교"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/profile_choice_school_btn"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:background="@drawable/check_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_search_school_name_text"
+        app:layout_constraintStart_toEndOf="@+id/profile_search_school_name_text"
+        app:layout_constraintTop_toTopOf="@+id/profile_search_school_name_text" />
+
+    <Button
+        android:id="@+id/profile_search_setting_btn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/setting"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_search_school_name_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile_search_school_name_text" />
+
+    <View
+        android:id="@+id/profile_search_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#CFCFCF"
+        app:layout_constraintTop_toBottomOf="@+id/profile_search_school_name_text"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="89dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_school_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/nixgonfontsbold"
+        android:text="야야야 중학교"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+
+    <TextView
+        android:id="@+id/profile_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/nixgonfontsbold"
+        android:text="김근훈"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_school_name_text"
+        app:layout_constraintStart_toEndOf="@+id/profile_image" />
+
+    <TextView
+        android:id="@+id/profile_introduce_myself_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nixgonfontsbold"
+        android:text="소개 멘트입니다 이건 기본 멘트 오리지널"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <Button
+        android:id="@+id/profile_edit_profile_btn"
+        android:layout_width="279dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_introduce_myself_text" />
+
+    <TextView
+        android:id="@+id/profile_question_list_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nixgonfontsbold"
+        android:text="질문"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/profile_edit_profile_btn" />
+
+    <View
+        android:id="@+id/profile_question_list"
+        android:layout_width="167dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:background="#F8F8F8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_question_list_name_text" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_search_edit"
+        tools:ignore="MissingConstraints">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
