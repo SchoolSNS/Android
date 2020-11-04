@@ -1,5 +1,6 @@
 package com.example.hischool.network.retrofit
 
+import com.example.hischool.data.PostResponse
 import com.example.hischool.data.SearchFeedRecyclerViewData
 import com.example.hischool.data.SearchSchoolRecyclerViewData
 import com.example.hischool.data.comment.CommentRecyclerViewData
@@ -84,4 +85,10 @@ interface Service {
         @Query("page") page: Int,
         @Query("query") query: String
     ) : Call<List<SearchFeedRecyclerViewData>>
+
+    @POST("/feed/post")
+    fun requestPost(
+        @Header("Authorization") token: String,
+        @Body postBody: RequestBody
+    ): Call<PostResponse>
 }
