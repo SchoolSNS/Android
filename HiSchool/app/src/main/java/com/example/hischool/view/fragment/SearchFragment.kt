@@ -11,8 +11,8 @@ import com.example.hischool.R
 import com.example.hischool.adapter.SearchFeedAdapter
 import com.example.hischool.adapter.SelectSchoolAdapter
 import com.example.hischool.data.SearchFeedRecyclerViewData
-import com.example.hischool.network.RetrofitClient
-import com.example.hischool.network.Service
+import com.example.hischool.network.retrofit.RetrofitClient
+import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_select_school.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import retrofit2.Call
