@@ -31,21 +31,22 @@ class FeedFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-
+        Log.d("TAG", "onCreateView 호출됨")
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onResume() {
+        Log.d("TAG", "onResume 호출됨")
         retrofit = RetrofitClient.getInstance()
         getFeed()
+        super.onResume()
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
     }
+
     private fun getFeed(){
         myAPI = retrofit.create(Service::class.java)
         myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{

@@ -21,6 +21,7 @@ import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
 import com.example.hischool.bottomSheet.FeedBottomSheet
+import com.example.hischool.data.comment.CommentRecyclerViewData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,7 +47,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
         lateinit var myAPI: Service
         lateinit var retrofit: Retrofit
 
-        val proFile = itemView.findViewById<ImageView>(R.id.feed_profile_image)
+        val profile = itemView.findViewById<ImageView>(R.id.feed_profile_image)
         val nickName = itemView.findViewById<TextView>(R.id.feed_name_text)
         val time = itemView.findViewById<TextView>(R.id.feed_time_text)
         val title = itemView.findViewById<TextView>(R.id.feed_title_text)
@@ -68,6 +69,8 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
         val mContext = context
         val heartBtn : ImageButton = itemView.findViewById(R.id.feed_heart_btn)
         val moreBtn : Button = itemView.findViewById(R.id.feed_more_btn)
+        val feedImage1 : ImageView = itemView.findViewById(R.id.feed_image1)
+        val feedImage2 : ImageView = itemView.findViewById(R.id.feed_image2)
 
         fun bind(item : FeedRecyclerViewData)
         {
@@ -84,6 +87,27 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             countHeart.text = item.like_count.toString()
             Log.d("TAG", item.like_count.toString())
             countMessage.text = item.comment_count.toString()
+
+            feedImage1.visibility = View.GONE
+            feedImage2.visibility = View.GONE
+
+            if(item.image_urls.size == 1)
+            {
+                feedImage1.visibility = View.VISIBLE
+                setOneFeedImage(item)
+            }
+            else if(item.image_urls.size > 1)
+            {
+                feedImage1.visibility = View.VISIBLE
+                feedImage2.visibility = View.VISIBLE
+                setAllFeedImage(item)
+                Log.d("TAG", "2개이상")
+            }
+
+            Glide.with(mContext)
+                .load(item.owner.image)
+                .transform(CenterCrop(), RoundedCorners(1))
+                .into(profile)
 
             when
             {
@@ -138,14 +162,45 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             itemView.setOnClickListener {
                 val intent = (Intent(itemView.context, CommentActivity::class.java))
                 intent.putExtra("id", item.id)
+                intent.putExtra("ownerName", item.owner.username)
+                intent.putExtra("time", item.created_at)
+                intent.putExtra("profile", item.owner.image)
+                intent.putExtra("title", item.title)
+                intent.putExtra("content", item.content)
+                intent.putExtra("heartCount", item.like_count)
+                intent.putExtra("commentCount", item.comment_count)
+                intent.putExtra("isLike", item.is_liked)
+                intent.putExtra("imageUrls", item.image_urls)
+                Log.d("TAG", "image url : ${item.image_urls}")
                 itemView.context.startActivity(intent)
             }
+        }
+
+        private fun setOneFeedImage(item: FeedRecyclerViewData)
+        {
+            Glide.with(mContext)
+                .load(item.image_urls[0])
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(feedImage1)
+        }
+
+        private fun setAllFeedImage(item: FeedRecyclerViewData)
+        {
+            setOneFeedImage(item)
+            Glide.with(mContext)
+                .load(item.image_urls[1])
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(feedImage2)
         }
 
         private fun setOneCommentData(item : FeedRecyclerViewData)
         {
             comment1Name.text = item.comment_preview[0].owner.username
             comment1Text.text = item.comment_preview[0].content
+            Glide.with(mContext)
+                .load(item.comment_preview[0].owner.image)
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(comment1Image)
         }
 
         private fun setAllCommentData(item : FeedRecyclerViewData)
@@ -153,6 +208,10 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             setOneCommentData(item)
             comment2Name.text = item.comment_preview[1].owner.username
             comment2Text.text = item.comment_preview[1].content
+            Glide.with(mContext)
+                .load(item.comment_preview[1].owner.image)
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(comment2Image)
         }
 
         private fun setOneImageCommentOne(item: FeedRecyclerViewData)

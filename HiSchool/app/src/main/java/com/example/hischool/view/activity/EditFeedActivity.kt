@@ -88,7 +88,7 @@ class EditFeedActivity : AppCompatActivity() {
         }
 
         edit_feed_image.setOnClickListener {
-            if(imageBitmap.size < 2) {
+            if(imageBitmap.size < 5) {
                 pickImageFromGallery()
             }
             else{

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
     android:background="#FFFFFF">
 
     <ImageView
@@ -85,59 +86,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_title_text" />
 
+    <ImageView
+        android:id="@+id/feed_image1"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toStartOf="@+id/feed_question_text"
+        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+
+
+    <ImageView
+        android:id="@+id/feed_image2"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toEndOf="@+id/feed_image1"
+        app:layout_constraintTop_toTopOf="@+id/feed_image1" />
+
     <ImageButton
         android:id="@+id/feed_heart_btn"
         android:layout_width="21dp"
         android:layout_height="20dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="3dp"
+        android:layout_marginTop="12dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/heart"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
+        android:src="@drawable/heart"
         app:layout_constraintEnd_toStartOf="@+id/feed_count_heart_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintStart_toStartOf="@+id/feed_image1"
+        app:layout_constraintTop_toBottomOf="@+id/feed_image1" />
 
     <TextView
         android:id="@+id/feed_count_heart_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="10"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/feed_heart_btn"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintTop_toTopOf="@+id/feed_heart_btn" />
 
     <Button
         android:id="@+id/feed_message_btn"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginTop="12dp"
         android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="17dp"
         android:background="@drawable/messege"
         app:layout_constraintStart_toEndOf="@+id/feed_count_heart_text"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintTop_toBottomOf="@+id/feed_image1" />
 
     <TextView
         android:id="@+id/feed_count_message_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/nixgonfontsmedium"
         android:text="10"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/feed_message_btn"
-        app:layout_constraintTop_toBottomOf="@+id/feed_question_text" />
+        app:layout_constraintTop_toTopOf="@+id/feed_message_btn" />
 
     <View
         android:id="@+id/feed_bar2_view"
@@ -232,6 +248,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:visibility="visible"
+        android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feed_comment1">
@@ -301,6 +318,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
