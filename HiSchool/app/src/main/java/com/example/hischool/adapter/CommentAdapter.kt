@@ -34,10 +34,12 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
         val name  = itemView.findViewById<TextView>(R.id.comment_name)
         val message = itemView.findViewById<TextView>(R.id.comment_message)
         val mContext = context
+        val profile : ImageView = itemView.findViewById(R.id.comment_profile_image)
         val mPostId = postId
         val imageList : ImageView = itemView.findViewById(R.id.comment_image_list)
         val imageList2 : ImageView = itemView.findViewById(R.id.comment_image_list2)
         val mFragmentManager = fragmentManager
+
         fun bind(item : CommentRecyclerViewData)
         {
             imageList.visibility = View.GONE
@@ -54,8 +56,14 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
                 imageList2.visibility = View.VISIBLE
                 setAllImage(item)
             }
+
             name.text = item.owner.username
             message.text = item.content
+
+            Glide.with(mContext)
+                .load(item.owner.profile)
+                .transform(CenterCrop(), RoundedCorners(25))
+                .into(profile)
 
             itemView.setOnLongClickListener {
                 val bottomSheet = CommentBottomSheet(item, mPostId) {
