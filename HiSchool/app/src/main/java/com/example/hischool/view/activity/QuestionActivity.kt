@@ -72,7 +72,6 @@ class QuestionActivity : AppCompatActivity() {
             } else if (TextUtils.isEmpty(question_contents.text)) {
                 toast("내용을 입력해주세요");
             } else {
-                startActivity(MainActivity::class.java)
                 val body = MultipartBody.Builder().setType(MultipartBody.FORM).apply {
                     addFormDataPart("title", question_title.text.toString())
                     addFormDataPart("content", question_contents.text.toString())
@@ -94,18 +93,13 @@ class QuestionActivity : AppCompatActivity() {
                     ) {
                         Log.d("TAG", "Success!");
                         Log.d("TAG", response.code().toString())
-                        response.body()?.let {
-                            postResponse ->  postResponse.message.forEach{
-                                Log.d("TAG", it)
-                            }
+                        if(response.code() == 201)
+                        {
+                            startActivity(MainActivity::class.java)
                         }
-                        response.errorBody()?.let {
-                            Log.d("TAG", it.string())
-                        }
-                        call.request().headers().names().forEach {
-                            Log.d("TAG", "NAME : $it, value : ${call.request().headers().get(it)}")
-                        }
+
                     }
+
 
                 })
             }
