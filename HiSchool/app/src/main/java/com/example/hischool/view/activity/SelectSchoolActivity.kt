@@ -44,7 +44,7 @@ class SelectSchoolActivity : AppCompatActivity() {
         }
 
         select_school_next_button.setOnClickListener {
-            if(mAdapter.selected > 0) {
+            if(mAdapter.selected > -1) {
                 Log.d("TAG", "SELECTED INDEX : ${mAdapter.selected}, list Item : ${schoolList[mAdapter.selected].name}")
                 prefs.schoolEditText = schoolList[mAdapter.selected].name;
                 Log.d("TAG", "CURRENT VALUE : ${prefs.schoolEditText}")
