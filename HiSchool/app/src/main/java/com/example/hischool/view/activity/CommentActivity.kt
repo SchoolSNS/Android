@@ -17,6 +17,8 @@ import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
 import com.example.hischool.adapter.*
+import com.example.hischool.bottomSheet.DetailFeedBottomSheet
+import com.example.hischool.bottomSheet.FeedBottomSheet
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
@@ -57,11 +59,13 @@ class CommentActivity : AppCompatActivity() {
 
     private var postId: Int = 0
     private var imageCount = 0
-    var count = 1
     var isLiked = false
     var likeCount = 0
-
+    lateinit var title : String
+    lateinit var content : String
     lateinit var imageUrls : ArrayList<String>
+
+    var count = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +78,12 @@ class CommentActivity : AppCompatActivity() {
         getFeedData()
         getComment()
 
+        comment_more_btn.setOnClickListener {
+            val bottomSheet = DetailFeedBottomSheet(content, imageUrls, postId, title){
+                finish()
+            }
+            bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+        }
 
         comment_camera_btn.setOnClickListener {
             if(imageCount > 1)
@@ -148,8 +158,10 @@ class CommentActivity : AppCompatActivity() {
             .load(intent.getStringExtra("profile"))
             .transform(CenterCrop(), RoundedCorners(25))
             .into(comment_profile_image)
-        comment_title_text.text = intent.getStringExtra("title")
-        comment_question_text.text = intent.getStringExtra("content")
+        title = intent.getStringExtra("title").toString()
+        comment_title_text.text = title
+        content = intent.getStringExtra("content").toString()
+        comment_question_text.text = content
         likeCount = intent.getIntExtra("heartCount", 0)
         comment_count_heart_text.text = likeCount.toString()
         comment_count_message_text.text = intent.getIntExtra("commentCount", 0).toString()

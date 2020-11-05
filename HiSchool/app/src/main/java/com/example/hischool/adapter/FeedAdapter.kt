@@ -42,7 +42,7 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
         holder.bind(feedList[position])
     }
 
-    class ViewHolder (itemView: View, context: Context) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder (itemView: View, context: Context) : RecyclerView.ViewHolder(itemView){
 
         lateinit var myAPI: Service
         lateinit var retrofit: Retrofit
@@ -156,7 +156,12 @@ class FeedAdapter(private val feedList : ArrayList<FeedRecyclerViewData>, privat
             }
 
             moreBtn.setOnClickListener {
-                val bottomSheet = FeedBottomSheet(item)
+                val bottomSheet = FeedBottomSheet(item){
+                    Log.d("TAG", "삭제")
+                    feedList.remove(it)
+                    notifyDataSetChanged()
+                }
+
                 bottomSheet.show((mContext as AppCompatActivity).supportFragmentManager, bottomSheet.tag)
             }
             itemView.setOnClickListener {

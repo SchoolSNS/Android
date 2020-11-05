@@ -45,9 +45,10 @@ class FeedFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
+        Log.d("TAG", "onAttach")
     }
 
-    private fun getFeed(){
+    fun getFeed(){
         myAPI = retrofit.create(Service::class.java)
         myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
