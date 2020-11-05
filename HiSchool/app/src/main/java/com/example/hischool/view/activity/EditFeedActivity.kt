@@ -20,6 +20,7 @@ import com.example.hischool.data.comment.CommentUpdateResponse
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
+import com.example.hischool.widget.startActivity
 import kotlinx.android.synthetic.main.activity_edit_comment.*
 import kotlinx.android.synthetic.main.activity_edit_feed.*
 import kotlinx.coroutines.CoroutineScope
@@ -133,6 +134,7 @@ class EditFeedActivity : AppCompatActivity() {
                     ) {
                         if(response.code() == 200)
                         {
+                            startActivity(MainActivity::class.java)
                             finish()
                         }
                         Log.d("TAG", response.code().toString())
