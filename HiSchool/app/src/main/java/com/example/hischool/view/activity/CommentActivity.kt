@@ -180,14 +180,12 @@ class CommentActivity : AppCompatActivity() {
             true -> {
                 Glide.with(applicationContext)
                     .load(R.drawable.heart_true)
-                    .transform(CenterCrop(), RoundedCorners(1))
                     .into(comment_heart_btn)
             }
 
             false -> {
                 Glide.with(applicationContext)
                     .load(R.drawable.heart)
-                    .transform(CenterInside(), RoundedCorners(1))
                     .into(comment_heart_btn)
             }
         }
@@ -301,7 +299,6 @@ class CommentActivity : AppCompatActivity() {
                     if (response.code() == 200) {
                         Glide.with(applicationContext)
                             .load(R.drawable.heart)
-                            .transform(CenterCrop(), RoundedCorners(1))
                             .into(comment_heart_btn)
 
                         isLiked = false
@@ -328,7 +325,6 @@ class CommentActivity : AppCompatActivity() {
                 {
                     Glide.with(applicationContext)
                         .load(R.drawable.heart_true)
-                        .transform(CenterCrop(), RoundedCorners(1))
                         .into(comment_heart_btn)
                     likeCount += 1
                     comment_count_heart_text.text = likeCount.toString()
