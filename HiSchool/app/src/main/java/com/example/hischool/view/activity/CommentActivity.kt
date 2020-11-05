@@ -19,11 +19,13 @@ import com.example.hischool.R
 import com.example.hischool.adapter.*
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
+import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_comment.*
 import kotlinx.android.synthetic.main.activity_edit_feed.*
+import kotlinx.android.synthetic.main.feed_item.*
 import kotlinx.android.synthetic.main.fragment_feed.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -57,6 +59,7 @@ class CommentActivity : AppCompatActivity() {
     private var imageCount = 0
     var count = 1
     var isLiked = false
+    var likeCount = 0
 
     lateinit var imageUrls : ArrayList<String>
 
@@ -79,6 +82,19 @@ class CommentActivity : AppCompatActivity() {
             }
             else {
                 pickImageFromGallery()
+            }
+        }
+
+        comment_heart_btn.setOnClickListener {
+            when(isLiked)
+            {
+                true -> {
+                    cancelLike()
+                }
+
+                false -> {
+                    setLike()
+                }
             }
         }
 
@@ -125,6 +141,7 @@ class CommentActivity : AppCompatActivity() {
     }
 
     private fun getFeedData() {
+        postId = intent.getIntExtra("id", 0)
         comment_name_text.text = intent.getStringExtra("ownerName")
         comment_time_text.text = intent.getStringExtra("time")
         Glide.with(applicationContext)
@@ -133,7 +150,8 @@ class CommentActivity : AppCompatActivity() {
             .into(comment_profile_image)
         comment_title_text.text = intent.getStringExtra("title")
         comment_question_text.text = intent.getStringExtra("content")
-        comment_count_heart_text.text = intent.getIntExtra("heartCount", 0).toString()
+        likeCount = intent.getIntExtra("heartCount", 0)
+        comment_count_heart_text.text = likeCount.toString()
         comment_count_message_text.text = intent.getIntExtra("commentCount", 0).toString()
 
         val value = intent.getSerializableExtra("imageUrls")
@@ -144,7 +162,8 @@ class CommentActivity : AppCompatActivity() {
         commentSetImageAdapter = CommentSetImageAdapter(imageUrls, applicationContext)
         comment_post_image_recyclerview.adapter = commentSetImageAdapter
 
-        when(intent.getBooleanExtra("isLike", false))
+        isLiked = intent.getBooleanExtra("isLike", false)
+        when(isLiked)
         {
             true -> {
                 Glide.with(applicationContext)
@@ -256,5 +275,65 @@ class CommentActivity : AppCompatActivity() {
             imageCount++
             returnCursor.close()
         }
+    }
+
+    private fun cancelLike()
+    {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.cancelLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(
+            object : Callback<CheckLike> {
+                override fun onResponse(
+                    call: Call<CheckLike>,
+                    response: Response<CheckLike>
+                ) {
+                    if (response.code() == 200) {
+                        Glide.with(applicationContext)
+                            .load(R.drawable.heart)
+                            .transform(CenterCrop(), RoundedCorners(1))
+                            .into(comment_heart_btn)
+
+                        isLiked = false
+                        likeCount -= 1
+                        comment_count_heart_text.text = likeCount.toString()
+                        Toast.makeText(applicationContext, "좋아요 취소", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(applicationContext, "좋아요 취소 실패", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<CheckLike>, t: Throwable) {
+                    Toast.makeText(applicationContext, "좋아요 취소 실패", Toast.LENGTH_SHORT).show()
+                }
+            })
+    }
+
+    private fun setLike()
+    {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.setLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(object : Callback<CheckLike>{
+            override fun onResponse(call: Call<CheckLike>, response: Response<CheckLike>) {
+                if(response.code() == 200)
+                {
+                    Glide.with(applicationContext)
+                        .load(R.drawable.heart_true)
+                        .transform(CenterCrop(), RoundedCorners(1))
+                        .into(comment_heart_btn)
+                    likeCount += 1
+                    comment_count_heart_text.text = likeCount.toString()
+                    isLiked = true
+                }
+                else{
+                    Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+                    Log.d("TAG", response.code().toString())
+                    Log.d("TAG", response.message())
+                    Log.d("TAG", postId.toString())
+                }
+            }
+
+            override fun onFailure(call: Call<CheckLike>, t: Throwable) {
+                Log.d("TAG", t.message.toString())
+                Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
