@@ -20,4 +20,6 @@
     <string name="phone">연락처</string>
     <string name="profile">프로필 사진 설정</string>
     <string name="background">background</string>
+    <string name="oneIntroduce">한줄 소개 입력</string>
+    <string name="signin">SignIn</string>
 </resources>

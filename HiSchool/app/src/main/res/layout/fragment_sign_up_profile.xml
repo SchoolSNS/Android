@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -47,26 +47,29 @@
 
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/profile"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="134dp"
             android:contentDescription="@string/profile" />
 
-        <TextView
+        <EditText
+            android:id="@+id/introduce"
+            android:background="@android:color/transparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:text="@string/profile"
+            android:hint="@string/oneIntroduce"
             android:fontFamily="@font/nixgon_bold"
+            android:gravity="center"
             android:textColor="@color/colorBlack"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="254dp"
             />
 
         <Button
-            android:id="@+id/nextButton"
+            android:id="@+id/signUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"

@@ -9,12 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.hischool.R
 import com.example.hischool.view.activity.SignActivity
 import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 import kotlinx.android.synthetic.main.fragment_sign_up.view.email
 import kotlinx.android.synthetic.main.fragment_sign_up.view.password
 import kotlinx.android.synthetic.main.fragment_sign_up.view.passwordConfirm
+import kotlinx.android.synthetic.main.fragment_sign_up.view.xButton
 import java.util.regex.Matcher
 
 class SignUpFragment : Fragment() {
@@ -73,7 +75,14 @@ class SignUpFragment : Fragment() {
         })
 
         view.nextButton.setOnClickListener {
-            (activity as SignActivity).replaceFragment(SignUpNameFragment())
+            (activity as SignActivity).email = view.email.text.toString()
+            (activity as SignActivity).password = view.password.text.toString()
+            val navController = view.findNavController()
+            navController.navigate(R.id.signUpNameFragment)
+        }
+
+        view.xButton.setOnClickListener {
+            view.findNavController().navigate(R.id.introFragment)
         }
 
         return view
@@ -91,7 +100,7 @@ class SignUpFragment : Fragment() {
 
     private fun checkPassword() {
         if (view?.password?.text.toString()
-                .isNotEmpty() && view?.password?.text.toString().length >= 6
+                .isNotEmpty() && view?.password?.text.toString().length >= 8
             && view?.password?.text.toString() == view?.passwordConfirm?.text.toString()
         ) {
             checkPassword = true

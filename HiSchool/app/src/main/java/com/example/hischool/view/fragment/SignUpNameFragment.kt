@@ -9,15 +9,21 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.hischool.R
 import com.example.hischool.view.activity.SignActivity
 import kotlinx.android.synthetic.main.fragment_sign_up_name.view.*
 import kotlinx.android.synthetic.main.fragment_sign_up_name.view.nextButton
+import kotlinx.android.synthetic.main.fragment_sign_up_name.view.xButton
 
 class SignUpNameFragment : Fragment() {
 
     //이름 형식이 맞는지 검사할 때 사용하는 변수들
     private var checkName: Boolean = false
+    private var checkIdentity: Boolean = false
+
+    //사용자의 역할을 저장하는 변수
+    private var identity = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,11 +48,18 @@ class SignUpNameFragment : Fragment() {
                 when(position){
 
                     0 ->{
-
+                        identity = ""
+                        checkName()
                     }
 
                     1 -> {
+                        identity = "junior"
+                        checkName()
+                    }
 
+                    2 -> {
+                        identity = "senior"
+                        checkName()
                     }
 
                 }
@@ -54,7 +67,7 @@ class SignUpNameFragment : Fragment() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
+                view.spinner.setSelection(0)
             }
         }
 
@@ -73,26 +86,36 @@ class SignUpNameFragment : Fragment() {
         })
 
         view.nextButton.setOnClickListener {
-            (activity as SignActivity).replaceFragment(SignUpPhoneFragment())
+            (activity as SignActivity).username = view.name.text.toString()
+            (activity as SignActivity).identity = identity
+            val navController = view.findNavController()
+            navController.navigate(R.id.signUpSchoolFragment)
+        }
+
+        view.xButton.setOnClickListener {
+            view.findNavController().navigate(R.id.introFragment)
         }
 
         return view
     }
 
     private fun checkName() {
-        if (view?.name?.text.toString().isNotEmpty()) {
+        if (view?.name?.text.toString().isNotEmpty() && identity.isNotEmpty()) {
             checkName = true
-            checkButton(checkName)
+            checkIdentity = true
+            checkButton(checkName, checkIdentity)
         } else {
             checkName = false
-            checkButton(checkName)
+            checkIdentity = false
+            checkButton(checkName, checkIdentity)
         }
     }
 
-    private fun checkButton(checkName: Boolean) {
+    private fun checkButton(checkName: Boolean, checkIdentity: Boolean) {
         this.checkName = checkName
+        this.checkIdentity = checkIdentity
 
-        if (checkName) {
+        if (checkName && checkIdentity) {
 
             view?.nextButton?.setBackgroundResource(R.drawable.next_button_background)
             view?.nextButton?.isEnabled = true

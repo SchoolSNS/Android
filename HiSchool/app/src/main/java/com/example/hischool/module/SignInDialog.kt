@@ -1,39 +1,59 @@
 package com.example.hischool.module
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.util.Log
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.hischool.R
-import com.example.hischool.data.SignUpResponse
+import com.example.hischool.data.SignInResponse
+import com.example.hischool.room.LoginData
+import com.example.hischool.room.LoginDataBase
+import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 import retrofit2.Response
 
-class SignUpDialog {
+class SignInDialog {
 
     internal fun connectionSuccess(
-        response: Response<SignUpResponse>,
+        response: Response<SignInResponse>,
         context: Context,
-        navController: NavController,
-        sweetAlertDialog: SweetAlertDialog
+        loginDataBase: LoginDataBase,
+        sweetAlertDialog: SweetAlertDialog,
+        intent: Intent
     ) {
         //통신 성공
         when (response.code()) {
-            201 -> {
+            200 -> {
                 sweetAlertDialog.dismiss()
 
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
 
                 dialog.setCancelable(false)
 
-                dialog.setTitleText("회원가입이 완료 되었습니다")
+                dialog.setTitleText("로그인이 완료 되었습니다")
                     .setConfirmClickListener {
-                        navController.navigate(R.id.introFragment)
+                        ContextCompat.startActivity(context, intent, null)
+                        (context as Activity).finish()
+                        ActivityCompat.finishAffinity(context)
                         dialog.dismiss()
                     }
                     .show()
 
+                Log.d("tokenData", "data: ${response.body()!!.token}")
+
+                /*loginDataBase.loginDao().insert(
+                    LoginData(
+                        0,
+                        response.body()!!.token
+                    )
+                )*/
+
             }
 
-            400 -> {
+            401 -> {
                 sweetAlertDialog.dismiss()
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
 
