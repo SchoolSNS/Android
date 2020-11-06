@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -211,7 +212,6 @@ class CommentActivity : AppCompatActivity() {
 
                 val postBody: RequestBody = builder.build()
 
-
                 myAPI = retrofit.create(Service::class.java)
                 myAPI.writeComment(
                     "Token 719e203a89eaf9bd377a5e345da7da653d15492e",
@@ -246,7 +246,9 @@ class CommentActivity : AppCompatActivity() {
             Log.d("TAG", "없어")
             Toast.makeText(applicationContext, "내용이 없습니다.", Toast.LENGTH_SHORT).show()
         }
-
+        
+        val imm = applicationContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0)
     }
 
     fun pickImageFromGallery() {
