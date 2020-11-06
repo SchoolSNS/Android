@@ -7,11 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
-import com.example.hischool.adapter.FeedAdapter
 import com.example.hischool.adapter.NotificationAdapt
-import com.example.hischool.data.FeedRecyclerViewData
 import com.example.hischool.data.NotificationRecyclerViewData
-import kotlinx.android.synthetic.main.fragment_feed.*
 import kotlinx.android.synthetic.main.fragment_notifications.*
 
 

@@ -11,4 +11,5 @@
     <color name="colorSchoolAddress">#BFBFBF</color>
     <color name="colorButtonBackground">#0066FF</color>
     <color name="colorButtonBackground_false">#800066FF</color>
+    <color name="HartRed">#FF0000</color>
 </resources>
