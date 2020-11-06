@@ -130,7 +130,6 @@
         android:text="10"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/feed_heart_btn"
         app:layout_constraintStart_toEndOf="@+id/feed_heart_btn"
         app:layout_constraintTop_toTopOf="@+id/feed_heart_btn" />
 
@@ -153,7 +152,6 @@
         android:text="10"
         android:textColor="@color/colorBlack"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/feed_message_btn"
         app:layout_constraintStart_toEndOf="@+id/feed_message_btn"
         app:layout_constraintTop_toTopOf="@+id/feed_message_btn" />
 
