@@ -1,0 +1,42 @@
+com/example/hischool/room/Dao_Impl.java
+ com.example.hischool.room.Dao_Impl
+ com.example.hischool.room.Dao_Impl$1
+com/example/hischool/generated/callback/OnClickListener.java
+ com.example.hischool.generated.callback.OnClickListener
+ com.example.hischool.generated.callback.OnClickListener$Listener
+com/example/hischool/room/DataBase_Impl.java
+ com.example.hischool.room.DataBase_Impl
+ com.example.hischool.room.DataBase_Impl$1
+com/example/hischool/room/LoginDao_Impl.java
+ com.example.hischool.room.LoginDao_Impl
+ com.example.hischool.room.LoginDao_Impl$1
+ com.example.hischool.room.LoginDao_Impl$2
+ com.example.hischool.room.LoginDao_Impl$3
+com/example/hischool/room/LoginDataBase_Impl.java
+ com.example.hischool.room.LoginDataBase_Impl
+ com.example.hischool.room.LoginDataBase_Impl$1
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/example/hischool/databinding/ActivityChattingBindingImpl.java
+ com.example.hischool.databinding.ActivityChattingBindingImpl
+ com.example.hischool.databinding.ActivityChattingBindingImpl$1
+com/example/hischool/databinding/FragmentChattingBindingImpl.java
+ com.example.hischool.databinding.FragmentChattingBindingImpl
+com/example/hischool/DataBinderMapperImpl.java
+ com.example.hischool.DataBinderMapperImpl
+ com.example.hischool.DataBinderMapperImpl$InnerBrLookup
+ com.example.hischool.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/hischool/databinding/ActivityChattingBinding.java
+ com.example.hischool.databinding.ActivityChattingBinding
+com/example/hischool/DataBindingTriggerClass.java
+ com.example.hischool.DataBindingTriggerClass
+com/example/hischool/databinding/FragmentChattingBinding.java
+ com.example.hischool.databinding.FragmentChattingBinding
+com/example/hischool/BR.java
+ com.example.hischool.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/example/hischool/BuildConfig.java
+ com.example.hischool.BuildConfig
