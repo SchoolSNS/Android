@@ -19,31 +19,346 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae1ab193-71bb-4e1e-938b-f2a227c48a15" name="Default Changelist" comment="">
+    <list default="true" id="ae1ab193-71bb-4e1e-938b-f2a227c48a15" name="Default Changelist" comment="[UPDATE] 병합">
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/HiSchool.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_ktx_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_ktx_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_3_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_2_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_ktx_1_2_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_extensions_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_process_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_service_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_common_ktx_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_fragment_ktx_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_runtime_ktx_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_navigation_navigation_ui_ktx_2_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_common_2_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_ktx_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_migration_2_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_testing_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_framework_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_f0ris_sweetalert_library_1_5_6_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_nkzawa_engine_io_client_0_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_nkzawa_socket_io_client_0_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_alpha03_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_pnikosis_materialish_progress_1_7_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_14_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp_okhttp_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp_okhttp_ws_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_17_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_4_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_4_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_json_json_20090211.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/HiSchool.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/com/example/hischool/databinding/ActivityChattingBinding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/com/example/hischool/databinding/FragmentChattingBinding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/data_binding_trigger/debug/com/example/hischool/DataBindingTriggerClass.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/example/hischool/BuildConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/androidx/databinding/DataBinderMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/androidx/databinding/DataBindingComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/androidx/databinding/library/baseAdapters/BR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/BR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/DataBinderMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/databinding/ActivityChattingBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/databinding/FragmentChattingBindingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/generated/callback/OnClickListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/room/Dao_Impl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/room/DataBase_Impl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/room/LoginDao_Impl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/example/hischool/room/LoginDataBase_Impl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/compatible_screen_manifest/debug/output-metadata.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_artifact/debug/kaptDebugKotlin/com.example.hischool-br.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_artifact/debug/kaptDebugKotlin/com.example.hischool-setter_store.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_log_artifact/debug/out/com.example.hischool-binding_classes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_base_class_logs_dependency_artifacts/debug/androidx.databinding.library.baseAdapters-binding_classes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_dependency_artifacts/debug/androidx.databinding.library.baseAdapters-br.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_dependency_artifacts/debug/androidx.databinding.library.baseAdapters-setter_store.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_chatting-layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/fragment_chatting-layout.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex_number_of_buckets_file/debug/out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/dataBindingGenBaseClassesDebug/base_builder_log.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/09AER7j1M_TgFGnDnUtII5RDofU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/105EYhaiBvf56dj1sFABSmGNulk=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/1sO8yyTCTHpjZtfPafWzSzwlWQE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/2GeVm9PZI72EKfq05ugePmQjQxs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/2KbQn_guROuXHKLufjmPVdgntM0=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/2NvitZVENTdZ5Ydxcd0hVYTf+zE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/2bz1SgUsgUV9NbK9N2LsX96qx1c=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/3Gg0ULwr0kzZckNmnzYuqqz0vT4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/3GwNPTp_2cH7tqNgqpeFGuPL11U=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/42gvczmvGmZCKRga0v4Wmx3lTig=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/5GvtIgl1xSfbyEQVQj4UME4mWCM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/69PSYog1VGCqnW5kdjxKLsES62s=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/7z7QZ7Fz2ri2tPfLNOvYZxhRJMI=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/8YW491IhFzoTKEEnF4s7LqJo+Zk=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/8kE8uoTiciP+sS3TlNtdMnyHqW0=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/9bp8WR5FeXSxZgas5CTDZrgq_bU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/9lMqBmbATsGMFTDJ_4K9umI18jo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/BQn7pYNdaRBjNH0dMUJvEKFIHPg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/BwXWYEeK8+S8_xh5yAG9f20iLM4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/D7PbmauxHCtu1DKHRi7WjX8AXrc=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/E4TgVSudyKONTkb2Q0QXlNC2iIo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/EyaAPGG6JBX1LkxGVY5P7x6GwjE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/FJ0064aAeQQsVLM3pZTDI2dfA5s=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HHwMMMProo_j+9PCp9s2vZN2jyM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HKqb5wXjfHUt1lbeCtlk8M8C9Xo=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HUtsa5DKaecSILVExP1nAtL3N5c=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HiM3uBeZbTZpv3JDv6xMjAGqFxE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/IDjU8AtVGE0NDxP6kLcI_Trpx5Y=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/IX4XhIsppxN+5sOev76a+3sevuk=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/JrWRSm481vLUtmk+RdeSpNvOfKU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/KGlmkoyJpsva4KvT329gLEPMV4E=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Lz58sOle8lmyrL1HDr5Btp1mlZA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Ma66YaYEk35pw2GWwgCq0JqhJOI=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/N05VmmGb7LBxDM46W7SjyBJy8LI=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/N2RncPqdAi6+Djyn_UeDRARfj6M=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/NEy8DwHIJPa3lGAD2z9Zo7TwVqg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/NIPnVclCtKmVSKB4luemlgnuq+w=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/NLTBxcD30jILbrxnh0bYRowXIrU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/PCNmbXVgaLJflBp3LUYLqa1McGs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/PLJQovtsYOJ4pbkBeBiFFFTSBIM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Q+N7yQTkilpHlevt2Y04IjVCUTQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Q6D_G9bbKngWNf0qGIGsDePuEN0=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/QrUPeglCWlXgWYiYsJ7UKNg0v30=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/SlRS5RfuJURgywDTCPAHbkZrJ9w=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/TFiEoPC24huJfySZTQDmv+BvLBw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Tl8X2klX_1xRqPyfwDzazCaUG8I=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/UEFuH+K6f2f74eD+8BaLZkQuBx4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/UqHqWy_rfUzTUp_ytsKO19KgpbY=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Uy5cbDd7wYZ0MBO6w4_G789VDEg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/VLJBVWJCazuln0FYk3wHgxhveDs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/XU0BL7OtcDu76O+JR9wTCjevvaE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/XYyP8zCTlNcgWFtnvwtNihpZ2Kg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/XulgvogPjCgYNfw44NcKEFJZCRE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/Z4Rf2O0i+xdvDsVSDjYCnqbe3xw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/_TsNu9tkRHJMLjt0gCk95k6JsrM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/_V66LNhJ1fpLNxcuHcnlg6AkKR4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/_WiOzVjciRm94SCcAd2KHjOi_Hw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/aG5+WViQPldW0_njwbmA9HzbBUY=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/bMZXe4wQAu7dT2N1bRY9ZJ6o0e4=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/cY5wlGGi7bqBsgjtUsDsYyJNM3U=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/dRFjLNLZGmYN5SXzv0VTU_u2BoQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/f5pfiBaXWZns+fFUvYJrmsX4k3I=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/fgHRYQJyVbzMSSn5AfJj7+spmHA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/gdOv2L2MIx2U7etlRmMif7rfp48=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/govQTg8VqIt67tZWEpxItE_ljrg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/irA4jAsrjlhqhoSZv1aim3ZkqfE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/kKZZNffadhGanAr8iuoouxavLAM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/kPPhKpuFayM+GpbJPmSpSIwTnZU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/lJ+o64L4TlEKp5pc5hKkXfr0pQ0=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/ldD2xdoH5V2xh66fAh1HUgYg6ds=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/luJMnsYaJg97srlZd26ct_QA3wo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/mBk8SybNKxuyxK_AYT3NwWE_v2M=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/n5q637zmhZZ0SPIeeW2wsKAml6w=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/nNRitHGr0apJ9BS9niLsnf2waBs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/o064TXt4BdsDiV+Yx7ffDDS9sWc=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/oQoT7EW2x9Gj0XcYgHH552t8UIc=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/p8rQOUKTeLKUrC_+juSVZoTtAgQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/pkEoRnQKHBz1RSzaS+lfe0XZqRw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/ppLYNGuQfRm5bEbR+YnNXHVvDvY=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/q2Vc+ndko8qlRosj4+wbPQ7wZlo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/qNPLl5F6rz71X0v_8f4AdIhGlis=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/qxrraWJeb1YA0XwDGjDe4DfVNFA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/rwFjX0NAPUnpjXcIBiDksgJb_YE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/uaM5uUWqiL8JGq5+2z17VrAhjmA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/uuc23SeZrt+IT0Pwu2oOdBPg+zQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/wQzGvbjulLi1Bjql_EnTIG4Jzek=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/wbphxcEk8ZYsrjwxRcK9lOa7rVE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/wpnGEzMOwkjqKv1iIH1DJjjyIMI=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/x0kZcXW5hbfeWA+uiPuZSRO7mHg=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/09AER7j1M_TgFGnDnUtII5RDofU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/105EYhaiBvf56dj1sFABSmGNulk=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/1sO8yyTCTHpjZtfPafWzSzwlWQE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/2GeVm9PZI72EKfq05ugePmQjQxs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/2KbQn_guROuXHKLufjmPVdgntM0=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/2NvitZVENTdZ5Ydxcd0hVYTf+zE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/2bz1SgUsgUV9NbK9N2LsX96qx1c=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/3Gg0ULwr0kzZckNmnzYuqqz0vT4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/3GwNPTp_2cH7tqNgqpeFGuPL11U=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/42gvczmvGmZCKRga0v4Wmx3lTig=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/5GvtIgl1xSfbyEQVQj4UME4mWCM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/69PSYog1VGCqnW5kdjxKLsES62s=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/7z7QZ7Fz2ri2tPfLNOvYZxhRJMI=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/8YW491IhFzoTKEEnF4s7LqJo+Zk=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/8kE8uoTiciP+sS3TlNtdMnyHqW0=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/9bp8WR5FeXSxZgas5CTDZrgq_bU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/9lMqBmbATsGMFTDJ_4K9umI18jo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/BQn7pYNdaRBjNH0dMUJvEKFIHPg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/BwXWYEeK8+S8_xh5yAG9f20iLM4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/D7PbmauxHCtu1DKHRi7WjX8AXrc=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/E4TgVSudyKONTkb2Q0QXlNC2iIo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/EyaAPGG6JBX1LkxGVY5P7x6GwjE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/FJ0064aAeQQsVLM3pZTDI2dfA5s=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HHwMMMProo_j+9PCp9s2vZN2jyM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HKqb5wXjfHUt1lbeCtlk8M8C9Xo=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HUtsa5DKaecSILVExP1nAtL3N5c=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HiM3uBeZbTZpv3JDv6xMjAGqFxE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/IDjU8AtVGE0NDxP6kLcI_Trpx5Y=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/IX4XhIsppxN+5sOev76a+3sevuk=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/JrWRSm481vLUtmk+RdeSpNvOfKU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/KGlmkoyJpsva4KvT329gLEPMV4E=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Lz58sOle8lmyrL1HDr5Btp1mlZA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Ma66YaYEk35pw2GWwgCq0JqhJOI=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/N05VmmGb7LBxDM46W7SjyBJy8LI=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/N2RncPqdAi6+Djyn_UeDRARfj6M=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/NEy8DwHIJPa3lGAD2z9Zo7TwVqg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/NIPnVclCtKmVSKB4luemlgnuq+w=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/NLTBxcD30jILbrxnh0bYRowXIrU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/PCNmbXVgaLJflBp3LUYLqa1McGs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/PLJQovtsYOJ4pbkBeBiFFFTSBIM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Q+N7yQTkilpHlevt2Y04IjVCUTQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Q6D_G9bbKngWNf0qGIGsDePuEN0=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/QrUPeglCWlXgWYiYsJ7UKNg0v30=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/SlRS5RfuJURgywDTCPAHbkZrJ9w=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/TFiEoPC24huJfySZTQDmv+BvLBw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Tl8X2klX_1xRqPyfwDzazCaUG8I=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/UEFuH+K6f2f74eD+8BaLZkQuBx4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/UqHqWy_rfUzTUp_ytsKO19KgpbY=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Uy5cbDd7wYZ0MBO6w4_G789VDEg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/VLJBVWJCazuln0FYk3wHgxhveDs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/XU0BL7OtcDu76O+JR9wTCjevvaE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/XYyP8zCTlNcgWFtnvwtNihpZ2Kg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/XulgvogPjCgYNfw44NcKEFJZCRE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/Z4Rf2O0i+xdvDsVSDjYCnqbe3xw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/_TsNu9tkRHJMLjt0gCk95k6JsrM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/_V66LNhJ1fpLNxcuHcnlg6AkKR4=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/_WiOzVjciRm94SCcAd2KHjOi_Hw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/aG5+WViQPldW0_njwbmA9HzbBUY=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/bMZXe4wQAu7dT2N1bRY9ZJ6o0e4=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/cY5wlGGi7bqBsgjtUsDsYyJNM3U=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/dRFjLNLZGmYN5SXzv0VTU_u2BoQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/f5pfiBaXWZns+fFUvYJrmsX4k3I=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/fgHRYQJyVbzMSSn5AfJj7+spmHA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/gdOv2L2MIx2U7etlRmMif7rfp48=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/govQTg8VqIt67tZWEpxItE_ljrg=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/irA4jAsrjlhqhoSZv1aim3ZkqfE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/kKZZNffadhGanAr8iuoouxavLAM=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/kPPhKpuFayM+GpbJPmSpSIwTnZU=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/lJ+o64L4TlEKp5pc5hKkXfr0pQ0=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/ldD2xdoH5V2xh66fAh1HUgYg6ds=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/luJMnsYaJg97srlZd26ct_QA3wo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/mBk8SybNKxuyxK_AYT3NwWE_v2M=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/n5q637zmhZZ0SPIeeW2wsKAml6w=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/nNRitHGr0apJ9BS9niLsnf2waBs=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/o064TXt4BdsDiV+Yx7ffDDS9sWc=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/oQoT7EW2x9Gj0XcYgHH552t8UIc=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/p8rQOUKTeLKUrC_+juSVZoTtAgQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/pkEoRnQKHBz1RSzaS+lfe0XZqRw=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/ppLYNGuQfRm5bEbR+YnNXHVvDvY=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/q2Vc+ndko8qlRosj4+wbPQ7wZlo=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/qNPLl5F6rz71X0v_8f4AdIhGlis=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/qxrraWJeb1YA0XwDGjDe4DfVNFA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/rwFjX0NAPUnpjXcIBiDksgJb_YE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/uaM5uUWqiL8JGq5+2z17VrAhjmA=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/uuc23SeZrt+IT0Pwu2oOdBPg+zQ=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/wQzGvbjulLi1Bjql_EnTIG4Jzek=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/wbphxcEk8ZYsrjwxRcK9lOa7rVE=" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/wpnGEzMOwkjqKv1iIH1DJjjyIMI=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/x0kZcXW5hbfeWA+uiPuZSRO7mHg=" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
@@ -169,11 +484,62 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_chatting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_comment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_comment_bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_detail_feed_bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_comment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_feed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_feed_bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_question.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_select_school.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_sign.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/chat_room_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/comment_image_preview_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/comment_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/feed_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chatting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_feed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_intro.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_notifications.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_profile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_question.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_sign_in.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_sign_up.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_sign_up_name.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_sign_up_profile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_sign_up_school.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_my_chat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_your_chat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/notification_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/search_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/select_school_item.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/androidx/databinding/DataBinderMapperImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/androidx/databinding/DataBindingComponent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/androidx/databinding/library/baseAdapters/BR.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/BR.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/BuildConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/DataBinderMapperImpl$InnerBrLookup.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/DataBinderMapperImpl$InnerLayoutIdLookup.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/DataBinderMapperImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/DataBindingTriggerClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/databinding/ActivityChattingBinding.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/databinding/ActivityChattingBindingImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/databinding/ActivityChattingBindingImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/databinding/FragmentChattingBinding.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/databinding/FragmentChattingBindingImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/generated/callback/OnClickListener$Listener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/generated/callback/OnClickListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/Dao_Impl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/Dao_Impl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/DataBase_Impl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/DataBase_Impl.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/LoginDao_Impl$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/LoginDao_Impl$2.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/hischool/room/LoginDao_Impl$3.class" afterDir="false" />
@@ -307,24 +673,96 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-zu.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/layout.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/navigation_json/debug/navigation.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/output-metadata.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/output-metadata.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/9d43d2708f1ce5c0bb14159c0f5b636a4c5a139f529e1b0751fd397f09e70fd4_0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/9d43d2708f1ce5c0bb14159c0f5b636a4c5a139f529e1b0751fd397f09e70fd4_1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/9d43d2708f1ce5c0bb14159c0f5b636a4c5a139f529e1b0751fd397f09e70fd4_2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/9d43d2708f1ce5c0bb14159c0f5b636a4c5a139f529e1b0751fd397f09e70fd4_3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/androidx/databinding/DataBinderMapperImpl.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/androidx/databinding/DataBindingComponent.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/androidx/databinding/library/baseAdapters/BR.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/BR.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/BuildConfig.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/DataBinderMapperImpl$InnerBrLookup.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/DataBinderMapperImpl$InnerLayoutIdLookup.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/DataBinderMapperImpl.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/DataBindingTriggerClass.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/ChatAdapter$Holder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/ChatAdapter$Holder2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/ChatAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentAdapter$ViewHolder$bind$1$bottomSheet$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentAdapter$ViewHolder$bind$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentAdapter$ViewHolder.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentImagePreViewAdapter$ViewHolder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentImagePreViewAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentSetImageAdapter$ViewHolder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/CommentSetImageAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/EditCommentSetImageAdapter$ViewHolder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/EditCommentSetImageAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/EditFeedSetImageAdapter$ViewHolder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/EditFeedSetImageAdapter.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$2$bottomSheet$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$3.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder$cancelLike$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder$setLike$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter$ViewHolder.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/FeedAdapter.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/NotificationAdapt$ViewHolder.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/NotificationAdapt.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/RoomListAdapter$ViewHolder$bind$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/RoomListAdapter$ViewHolder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/RoomListAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/SearchFeedAdapter$ViewHolder.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/SearchFeedAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/SelectSchoolAdapter$ViewHolder$bind$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/SelectSchoolAdapter$ViewHolder.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/adapter/SelectSchoolAdapter.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/CommentBottomSheet$delComment$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/CommentBottomSheet$onActivityCreated$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/CommentBottomSheet$onActivityCreated$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/CommentBottomSheet.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/DetailFeedBottomSheet$delPost$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/DetailFeedBottomSheet$onActivityCreated$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/DetailFeedBottomSheet$onActivityCreated$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/DetailFeedBottomSheet.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/FeedBottomSheet$delPost$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/FeedBottomSheet$onActivityCreated$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/FeedBottomSheet$onActivityCreated$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/bottomSheet/FeedBottomSheet.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/ChatModel.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/NotificationRecyclerViewData.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/PostResponse.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/SearchFeedRecyclerViewData.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/SearchFeedRecyclerViewDataOwner.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/SearchSchoolRecyclerViewData.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/SearchSchoolRecyclerViewDataList.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/SignInResponse.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/SignUpResponse.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/comment/CommentOwner.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/comment/CommentRecyclerViewData.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/comment/CommentUpdateResponse.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/comment/WriteCommentResponse.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/feed/CheckLike.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/feed/DelPostResponse.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/feed/FeedCommentOwner.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/feed/FeedCommentPreview.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/feed/FeedRecyclerViewData.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/data/feed/FeedRecyclerViewDataOwner.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/databinding/ActivityChattingBinding.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/databinding/ActivityChattingBindingImpl$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/databinding/ActivityChattingBindingImpl.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/databinding/FragmentChattingBinding.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/databinding/FragmentChattingBindingImpl.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/generated/callback/OnClickListener$Listener.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/generated/callback/OnClickListener.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/module/RotateImage.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/module/SignInDialog$connectionFail$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/module/SignInDialog$connectionSuccess$1.dex" afterDir="false" />
@@ -336,6 +774,31 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/module/SignUpDialog$connectionSuccess$2.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/module/SignUpDialog$connectionSuccess$3.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/module/SignUpDialog.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/retrofit/RetrofitClient.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/retrofit/Service.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketListeners.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$1$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$2$$special$$inlined$forEach$lambda$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$2$$special$$inlined$forEach$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$3$$special$$inlined$forEach$lambda$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$3$$special$$inlined$forEach$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$3.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$4$$special$$inlined$forEach$lambda$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$4$$special$$inlined$forEach$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$4.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager$getSocket$1$5.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/network/socket/SocketManager.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/ChatDataBase.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/Dao.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/Dao_Impl$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/Dao_Impl.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/DataBase$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/DataBase.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/DataBase_Impl$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/DataBase_Impl.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/LoginDao.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/LoginDao_Impl$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/LoginDao_Impl$2.dex" afterDir="false" />
@@ -346,13 +809,55 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/LoginDataBase.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/LoginDataBase_Impl$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/room/LoginDataBase_Impl.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/sharedpreferences/App$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/sharedpreferences/App.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/sharedpreferences/SharedPreferences.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/ChattingActivity$observerViewModel$$inlined$with$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/ChattingActivity$observerViewModel$$inlined$with$lambda$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/ChattingActivity$observerViewModel$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/ChattingActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$cancelLike$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$getComment$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$onCreate$1$bottomSheet$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$onCreate$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$onCreate$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$onCreate$3.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$onCreate$4.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$setLike$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$writeComment$1$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity$writeComment$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/CommentActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity$onCreate$$inlined$forEach$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity$onCreate$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity$onCreate$3.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity$updateComment$1$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity$updateComment$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditCommentActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity$onCreate$$inlined$forEach$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity$onCreate$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity$onCreate$3.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity$updateFeed$1$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity$updateFeed$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/EditFeedActivity.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/MainActivity$onCreate$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/MainActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/QuestionActivity$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/QuestionActivity$onCreate$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/QuestionActivity$onCreate$2$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/QuestionActivity$onCreate$2.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/QuestionActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/SelectSchoolActivity$getSchoolList$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/SelectSchoolActivity$onCreate$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/SelectSchoolActivity$onCreate$2.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/SelectSchoolActivity.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/activity/SignActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/ChattingFragment$init$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/ChattingFragment$observerViewModel$$inlined$with$lambda$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/ChattingFragment$setAdapter$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/ChattingFragment.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/FeedFragment$getFeed$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/FeedFragment.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/IntroFragment$onAttach$1.dex" afterDir="false" />
@@ -362,6 +867,8 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/NotificationsFragment.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/ProfileFragment.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/QuestionFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SearchFragment$getFeedList$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SearchFragment$onViewCreated$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SearchFragment.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SignInFragment$onCreateView$1.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SignInFragment$onCreateView$2.dex" afterDir="false" />
@@ -390,13 +897,23 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SignUpSchoolFragment$onCreateView$2.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SignUpSchoolFragment$onCreateView$3.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/view/fragment/SignUpSchoolFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/viewModel/ChattingViewModel$targetName$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/viewModel/ChattingViewModel$userName$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/viewModel/ChattingViewModel.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/ActivityExtensionKt.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/FragmentExtensionKt.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/MyApplication$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/MyApplication.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/PreferenceUtil.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/SingleLiveEvent$Companion.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/SingleLiveEvent$observe$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/hischool/widget/SingleLiveEvent.dex" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_addphoto.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_camera.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_check_blue.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_heart.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_heart_true.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_leftback.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_messege.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_post_button.png.flat" afterDir="false" />
@@ -411,6 +928,7 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_camera.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_check_blue.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_heart.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_heart_true.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_leftback.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_messege.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_next_button_background.xml.flat" afterDir="false" />
@@ -428,6 +946,7 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_camera.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_check_blue.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_heart.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_heart_true.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_leftback.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_messege.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_post_button.png.flat" afterDir="false" />
@@ -442,6 +961,7 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_camera.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_check_blue.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_heart.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_heart_true.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_leftback.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_messege.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_post_button.png.flat" afterDir="false" />
@@ -456,6 +976,7 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_camera.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_check_blue.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_heart.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_heart_true.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_leftback.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_messege.png.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_post_button.png.flat" afterDir="false" />
@@ -469,6 +990,7 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_background_input_box.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_blue_round_btn.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_comment_background.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_comment_layout_round.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_ic_dashboard_black_24dp.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_ic_home_black_24dp.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat" afterDir="false" />
@@ -483,13 +1005,22 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/font_nixgon_bold.ttf.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/font_nixgonfontsmedium.ttf.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/font_nixgonfontsregular.ttf.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_chatting.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_comment.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_comment_bottom_sheet.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_detail_feed_bottom_sheet.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_edit_comment.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_edit_feed.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_feed_bottom_sheet.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_question.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_select_school.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_sign.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_chat_room_item.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_comment_image_preview_item.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_comment_item.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_feed_item.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_chatting.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_feed.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_intro.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_notifications.xml.flat" afterDir="false" />
@@ -501,6 +1032,8 @@
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_sign_up_name.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_sign_up_profile.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_sign_up_school.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_my_chat.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_your_chat.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_notification_item.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_search_item.xml.flat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_select_school_item.xml.flat" afterDir="false" />
@@ -646,7 +1179,9 @@
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab_i.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
@@ -663,6 +1198,13 @@
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" afterDir="false" />
@@ -674,7 +1216,9 @@
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
@@ -728,7 +1272,9 @@
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab_i.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
@@ -756,7 +1302,9 @@
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i.len" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
@@ -813,29 +1361,82 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/classpath-structure.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incApCache/debug/java-cache.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/META-INF/app_debug.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/ChatAdapter$Holder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/ChatAdapter$Holder2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/ChatAdapter.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/CommentAdapter$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/CommentAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/CommentImagePreViewAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/CommentImagePreViewAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/CommentSetImageAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/CommentSetImageAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/EditCommentSetImageAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/EditCommentSetImageAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/EditFeedSetImageAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/EditFeedSetImageAdapter.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/FeedAdapter.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/NotificationAdapt$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/NotificationAdapt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/RoomListAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/RoomListAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/SearchFeedAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/SearchFeedAdapter.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/SelectSchoolAdapter$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/adapter/SelectSchoolAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/bottomSheet/CommentBottomSheet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/bottomSheet/FeedBottomSheet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/ChatModel.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/NotificationRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/PostResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/SearchFeedRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/SearchFeedRecyclerViewDataOwner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/SearchSchoolRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/SearchSchoolRecyclerViewDataList.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/SignInResponse.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/SignUpResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/comment/CommentOwner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/comment/CommentRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/comment/CommentUpdateResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/comment/WriteCommentResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/feed/CheckLike.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/feed/DelPostResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/feed/FeedCommentOwner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/feed/FeedCommentPreview.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/feed/FeedRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/data/feed/FeedRecyclerViewDataOwner.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/module/RotateImage.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/module/SignInDialog.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/module/SignUpDialog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/network/retrofit/RetrofitClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/network/retrofit/Service.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/network/socket/SocketListeners.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/network/socket/SocketManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/ChatDataBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/Dao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/DataBase$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/DataBase.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/LoginDao.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/LoginData.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/LoginDataBase$Companion.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/room/LoginDataBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/sharedpreferences/App$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/sharedpreferences/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/sharedpreferences/SharedPreferences.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/ChattingActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/CommentActivity$Companion.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/CommentActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/EditCommentActivity$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/EditCommentActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/EditFeedActivity$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/EditFeedActivity.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/MainActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/QuestionActivity$Companion.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/QuestionActivity.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/SelectSchoolActivity.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/activity/SignActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/ChattingFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/FeedFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/IntroFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/NotificationsFragment.class" afterDir="false" />
@@ -847,36 +1448,118 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/SignUpNameFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/SignUpProfileFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/view/fragment/SignUpSchoolFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/viewModel/ChattingViewModel.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/ActivityExtensionKt.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/FragmentExtensionKt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/MyApplication$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/MyApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/PreferenceUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/SingleLiveEvent$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/incrementalData/debug/com/example/hischool/widget/SingleLiveEvent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/ChatAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/ChatAdapter.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/CommentAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/CommentAdapter.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/CommentImagePreViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/CommentImagePreViewAdapter.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/CommentSetImageAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/CommentSetImageAdapter.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/EditCommentSetImageAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/EditCommentSetImageAdapter.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/EditFeedSetImageAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/EditFeedSetImageAdapter.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/FeedAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/FeedAdapter.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/NotificationAdapt.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/NotificationAdapt.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/RoomListAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/RoomListAdapter.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/SearchFeedAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/SearchFeedAdapter.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/SelectSchoolAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/adapter/SelectSchoolAdapter.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/bottomSheet/CommentBottomSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/bottomSheet/CommentBottomSheet.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/bottomSheet/FeedBottomSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/bottomSheet/FeedBottomSheet.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/ChatModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/ChatModel.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/NotificationRecyclerViewData.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/NotificationRecyclerViewData.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/PostResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/PostResponse.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchFeedRecyclerViewData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchFeedRecyclerViewData.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchFeedRecyclerViewDataOwner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchFeedRecyclerViewDataOwner.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchSchoolRecyclerViewData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchSchoolRecyclerViewData.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchSchoolRecyclerViewDataList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SearchSchoolRecyclerViewDataList.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SignInResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SignInResponse.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SignUpResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/SignUpResponse.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/CommentOwner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/CommentOwner.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/CommentRecyclerViewData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/CommentRecyclerViewData.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/CommentUpdateResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/CommentUpdateResponse.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/WriteCommentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/comment/WriteCommentResponse.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/CheckLike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/CheckLike.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/DelPostResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/DelPostResponse.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedCommentOwner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedCommentOwner.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedCommentPreview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedCommentPreview.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedRecyclerViewData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedRecyclerViewData.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedRecyclerViewDataOwner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/data/feed/FeedRecyclerViewDataOwner.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/module/RotateImage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/module/RotateImage.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/module/SignInDialog.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/module/SignInDialog.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/module/SignUpDialog.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/module/SignUpDialog.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/retrofit/RetrofitClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/retrofit/RetrofitClient.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/retrofit/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/retrofit/Service.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/socket/SocketListeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/socket/SocketListeners.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/socket/SocketManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/network/socket/SocketManager.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/ChatDataBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/ChatDataBase.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/Dao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/Dao.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/DataBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/DataBase.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/LoginDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/LoginDao.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/LoginData.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/LoginData.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/LoginDataBase.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/room/LoginDataBase.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/sharedpreferences/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/sharedpreferences/App.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/sharedpreferences/SharedPreferences.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/sharedpreferences/SharedPreferences.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/ChattingActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/ChattingActivity.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/CommentActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/CommentActivity.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/EditCommentActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/EditCommentActivity.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/EditFeedActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/EditFeedActivity.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/MainActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/MainActivity.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/QuestionActivity.java" afterDir="false" />
@@ -885,6 +1568,8 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/SelectSchoolActivity.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/SignActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/activity/SignActivity.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/ChattingFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/ChattingFragment.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/FeedFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/FeedFragment.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/IntroFragment.java" afterDir="false" />
@@ -907,24 +1592,84 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/SignUpProfileFragment.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/SignUpSchoolFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/view/fragment/SignUpSchoolFragment.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/viewModel/ChattingViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/viewModel/ChattingViewModel.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/ActivityExtensionKt.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/ActivityExtensionKt.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/FragmentExtensionKt.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/FragmentExtensionKt.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/MyApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/MyApplication.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/PreferenceUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/PreferenceUtil.kapt_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/SingleLiveEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/example/hischool/widget/SingleLiveEvent.kapt_metadata" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/error/NonExistentClass.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/META-INF/app_debug.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/ChatAdapter$Holder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/ChatAdapter$Holder2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/ChatAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentAdapter$ViewHolder$bind$1$bottomSheet$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentAdapter$ViewHolder$bind$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentAdapter$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentImagePreViewAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentImagePreViewAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentSetImageAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/CommentSetImageAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/EditCommentSetImageAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/EditCommentSetImageAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/EditFeedSetImageAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/EditFeedSetImageAdapter.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$2$bottomSheet$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder$bind$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder$cancelLike$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder$setLike$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/FeedAdapter.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/NotificationAdapt$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/NotificationAdapt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/RoomListAdapter$ViewHolder$bind$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/RoomListAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/RoomListAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/SearchFeedAdapter$ViewHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/SearchFeedAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/SelectSchoolAdapter$ViewHolder$bind$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/SelectSchoolAdapter$ViewHolder.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/adapter/SelectSchoolAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/CommentBottomSheet$delComment$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/CommentBottomSheet$onActivityCreated$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/CommentBottomSheet$onActivityCreated$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/CommentBottomSheet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet$delPost$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet$onActivityCreated$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet$onActivityCreated$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/DetailFeedBottomSheet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/FeedBottomSheet$delPost$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/FeedBottomSheet$onActivityCreated$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/FeedBottomSheet$onActivityCreated$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/bottomSheet/FeedBottomSheet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/ChatModel.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/NotificationRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/PostResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/SearchFeedRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/SearchFeedRecyclerViewDataOwner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/SearchSchoolRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/SearchSchoolRecyclerViewDataList.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/SignInResponse.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/SignUpResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/comment/CommentOwner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/comment/CommentRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/comment/CommentUpdateResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/comment/WriteCommentResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/feed/CheckLike.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/feed/DelPostResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/feed/FeedCommentOwner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/feed/FeedCommentPreview.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/feed/FeedRecyclerViewData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/data/feed/FeedRecyclerViewDataOwner.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/module/RotateImage.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/module/SignInDialog$connectionFail$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/module/SignInDialog$connectionSuccess$1.class" afterDir="false" />
@@ -936,17 +1681,80 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/module/SignUpDialog$connectionSuccess$2.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/module/SignUpDialog$connectionSuccess$3.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/module/SignUpDialog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/retrofit/RetrofitClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/retrofit/Service.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketListeners.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$1$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$2$$special$$inlined$forEach$lambda$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$2$$special$$inlined$forEach$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$3$$special$$inlined$forEach$lambda$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$3$$special$$inlined$forEach$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$4$$special$$inlined$forEach$lambda$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$4$$special$$inlined$forEach$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager$getSocket$1$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/network/socket/SocketManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/ChatDataBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/Dao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/DataBase$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/DataBase.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/LoginDao.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/LoginData.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/LoginDataBase$Companion.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/room/LoginDataBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/sharedpreferences/App$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/sharedpreferences/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/sharedpreferences/SharedPreferences.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/ChattingActivity$observerViewModel$$inlined$with$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/ChattingActivity$observerViewModel$$inlined$with$lambda$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/ChattingActivity$observerViewModel$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/ChattingActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$cancelLike$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$getComment$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$onCreate$1$bottomSheet$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$onCreate$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$onCreate$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$onCreate$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$onCreate$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$setLike$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$writeComment$1$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity$writeComment$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/CommentActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity$onCreate$$inlined$forEach$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity$onCreate$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity$onCreate$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity$updateComment$1$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity$updateComment$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditCommentActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity$onCreate$$inlined$forEach$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity$onCreate$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity$onCreate$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity$updateFeed$1$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity$updateFeed$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/EditFeedActivity.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/MainActivity$onCreate$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/MainActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/QuestionActivity$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/QuestionActivity$onCreate$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/QuestionActivity$onCreate$2$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/QuestionActivity$onCreate$2.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/QuestionActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/SelectSchoolActivity$getSchoolList$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/SelectSchoolActivity$onCreate$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/SelectSchoolActivity$onCreate$2.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/SelectSchoolActivity.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/activity/SignActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/ChattingFragment$init$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/ChattingFragment$observerViewModel$$inlined$with$lambda$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/ChattingFragment$setAdapter$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/ChattingFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/FeedFragment$getFeed$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/FeedFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/IntroFragment$onAttach$1.class" afterDir="false" />
@@ -956,6 +1764,8 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/NotificationsFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/ProfileFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/QuestionFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SearchFragment$getFeedList$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SearchFragment$onViewCreated$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SearchFragment.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SignInFragment$onCreateView$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SignInFragment$onCreateView$2.class" afterDir="false" />
@@ -984,8 +1794,17 @@
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SignUpSchoolFragment$onCreateView$2.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SignUpSchoolFragment$onCreateView$3.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/view/fragment/SignUpSchoolFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/viewModel/ChattingViewModel$targetName$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/viewModel/ChattingViewModel$userName$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/viewModel/ChattingViewModel.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/ActivityExtensionKt.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/FragmentExtensionKt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/MyApplication$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/MyApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/PreferenceUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/SingleLiveEvent$Companion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/SingleLiveEvent$observe$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/hischool/widget/SingleLiveEvent.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hischool/adapter/ChatAdapter.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hischool/adapter/CommentImagePreViewAdapter.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hischool/adapter/CommentSetImageAdapter.kt" afterDir="false" />
@@ -1203,6 +2022,10 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[UPDATE] 병합" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] 병합" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="410" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603269817063">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -1238,10 +2061,14 @@
     </state>
     <state x="772" y="260" key="AndroidCreateXmlResourceDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604560105242" />
     <state x="772" y="260" key="AndroidCreateXmlResourceDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603281093962" />
-    <state x="690" y="217" key="FileChooserDialogImpl" timestamp="1604538929428">
+    <state x="410" y="0" key="CommitChangelistDialog2" timestamp="1604625944371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="217" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604538929428" />
+    <state x="410" y="0" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604625944371" />
+    <state x="690" y="217" key="FileChooserDialogImpl" timestamp="1604625808686">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="217" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604625808686" />
     <state x="690" y="217" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604500412777" />
     <state x="690" y="217" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602922293895" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1604561636774">
