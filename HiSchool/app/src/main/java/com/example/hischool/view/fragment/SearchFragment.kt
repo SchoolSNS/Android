@@ -1,80 +1,81 @@
 package com.example.hischool.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
-import com.example.hischool.adapter.SearchAdapter
-import com.example.hischool.data.SearchRecyclerViewData
+import com.example.hischool.adapter.SearchFeedAdapter
+import com.example.hischool.adapter.SelectSchoolAdapter
+import com.example.hischool.data.SearchFeedRecyclerViewData
+import com.example.hischool.network.retrofit.RetrofitClient
+import com.example.hischool.network.retrofit.Service
+import kotlinx.android.synthetic.main.activity_select_school.*
 import kotlinx.android.synthetic.main.fragment_search.*
-import kotlinx.android.synthetic.main.search_item.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import kotlin.collections.ArrayList as ArrayList
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(){
+
+    lateinit var myAPI: Service
+    lateinit var retrofit: Retrofit
+    lateinit var mAdapter: SearchFeedAdapter
+    var feedList: ArrayList<SearchFeedRecyclerViewData> = arrayListOf()
 
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val searchList = arrayListOf(
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 족발",
-                "1분전",
-                "대구 소프트웨어 고등학교 좋나요?",
-                "좋나요?",
-                10,
-                10),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 문영",
-                "11분전",
-                "문영이는 바보인가요?",
-                "맞나요?",
-                1,
-                0),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 규락",
-                "21분전",
-                "규락이는 다이어트 중인가요?",
-                "아니던데요?",
-                2,
-                10),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 초현",
-                "30분전",
-                "태국 언제 다녀왔나요?",
-                "제발 알려주세요",
-                4,
-                20),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 준환",
-                "44분전",
-                "주나니는 나나요?",
-                "나나요?",
-                10,
-                10),
-            SearchRecyclerViewData(R.drawable.main_round_image,
-                "지나가는 익명의 세연",
-                "58분전",
-                "안녕하세연?",
-                "안녕히가세연",
-                10,
-                10)
-        )
-        search_recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
+        mAdapter = SearchFeedAdapter(feedList)
         search_recyclerView.setHasFixedSize(true)
+        search_recyclerView.adapter = mAdapter
 
-        search_recyclerView.adapter = SearchAdapter(searchList )
+        retrofit = RetrofitClient.getInstance()
+
+        search_search_edit.setOnEditorActionListener { v, i, keyEvent ->
+            if (i == EditorInfo.IME_ACTION_DONE) {
+                getFeedList()
+                return@setOnEditorActionListener true
+            }
+            false
+        }
     }
 
+    fun getFeedList() {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.getSearchFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e",page = 1, query = (search_search_edit.text.toString()))
+            .enqueue(object : Callback<List<SearchFeedRecyclerViewData>> {
+                override fun onResponse(
+                    call: Call<List<SearchFeedRecyclerViewData>>,
+                    response: Response<List<SearchFeedRecyclerViewData>>
+                ) {
+                    if(response.code() == 200) {
+                        feedList = response.body() as ArrayList<SearchFeedRecyclerViewData>
+                        Log.d("TAG", "data $feedList")
+                        mAdapter.updateList(feedList)
+                    }
+                }
+
+                override fun onFailure(call: Call<List<SearchFeedRecyclerViewData>>, t: Throwable) {
+                    Log.d("TAG", t.message.toString())
+                }
+
+            })
+    }
 
 }
