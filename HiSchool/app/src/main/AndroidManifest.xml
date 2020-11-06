@@ -2,14 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hischool">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-=======
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".sharedpreferences.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,8 +16,6 @@
         <activity android:name=".view.activity.QuestionActivity" />
         <activity android:name=".view.activity.SelectSchoolActivity" />
         <activity android:name=".view.activity.CommentActivity" />
-        <activity android:name=".view.activity.EditFeedActivity"/>
-        <activity android:name=".view.activity.EditCommentActivity"/>
         <activity
             android:name=".view.activity.SignActivity"
             android:windowSoftInputMode="adjustResize">

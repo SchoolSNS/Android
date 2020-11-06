@@ -30,8 +30,8 @@ import com.example.hischool.R
 import com.example.hischool.data.SignUpResponse
 import com.example.hischool.module.RotateImage
 import com.example.hischool.module.SignUpDialog
-import com.example.hischool.network.retrofit.RetrofitClient
-import com.example.hischool.network.retrofit.Service
+import com.example.hischool.network.RetrofitClient
+import com.example.hischool.network.Service
 import com.example.hischool.view.activity.SignActivity
 import kotlinx.android.synthetic.main.fragment_sign_up_profile.view.*
 import kotlinx.coroutines.CoroutineScope

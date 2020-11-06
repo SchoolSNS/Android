@@ -1,25 +1,22 @@
 package com.example.hischool.adapter
 
-import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import android.widget.ImageView
-import androidx.fragment.app.FragmentManager
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.example.hischool.data.comment.CommentRecyclerViewData
-import com.example.hischool.bottomSheet.CommentBottomSheet
+import com.example.hischool.data.CommentRecyclerViewData
+import com.example.hischool.view.activity.CommentActivity
+import kotlinx.android.synthetic.main.comment_item.view.*
+import org.w3c.dom.Text
 
-class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, private val context: Context, val postId : Int, val fragmentManager: FragmentManager) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
-
+class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>) : RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.comment_item, parent, false)
-        return ViewHolder(view, context, postId, fragmentManager)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -30,69 +27,13 @@ class CommentAdapter(val commentArrayList: ArrayList<CommentRecyclerViewData>, p
         return commentArrayList.size
     }
 
-    inner class ViewHolder (itemView: View, context: Context, postId: Int, fragmentManager: FragmentManager) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
         val name  = itemView.findViewById<TextView>(R.id.comment_name)
         val message = itemView.findViewById<TextView>(R.id.comment_message)
-        val mContext = context
-        val profile : ImageView = itemView.findViewById(R.id.comment_profile_image)
-        val mPostId = postId
-        val imageList : ImageView = itemView.findViewById(R.id.comment_image_list)
-        val imageList2 : ImageView = itemView.findViewById(R.id.comment_image_list2)
-        val mFragmentManager = fragmentManager
-
         fun bind(item : CommentRecyclerViewData)
         {
-            imageList.visibility = View.GONE
-            imageList2.visibility = View.GONE
-
-            if(item.image_urls.size == 1)
-            {
-                imageList.visibility = View.VISIBLE
-                setOneImage(item)
-            }
-            else if(item.image_urls.size == 2)
-            {
-                imageList.visibility = View.VISIBLE
-                imageList2.visibility = View.VISIBLE
-                setAllImage(item)
-            }
-
-            name.text = item.owner.username
-            message.text = item.content
-
-            Glide.with(mContext)
-                .load(item.owner.profile)
-                .transform(CenterCrop(), RoundedCorners(25))
-                .into(profile)
-
-            itemView.setOnLongClickListener {
-                val bottomSheet = CommentBottomSheet(item, mPostId) {
-                    if (it) {
-                        commentArrayList.remove(commentArrayList[adapterPosition])
-                        notifyDataSetChanged()
-                    }
-                }
-                bottomSheet.show(mFragmentManager, bottomSheet.tag)
-                return@setOnLongClickListener true
-            }
+            name.text = item.name
+            message.text = item.messsage
         }
-
-        private fun setOneImage(item: CommentRecyclerViewData)
-        {
-            Glide.with(mContext)
-                .load(item.image_urls[0])
-                .transform(CenterCrop(), RoundedCorners(25))
-                .into(imageList)
-        }
-
-        private fun setAllImage(item: CommentRecyclerViewData)
-        {
-            setOneImage(item)
-            Glide.with(mContext)
-                .load(item.image_urls[1])
-                .transform(CenterCrop(), RoundedCorners(25))
-                .into(imageList2)
-        }
-
     }
 }
