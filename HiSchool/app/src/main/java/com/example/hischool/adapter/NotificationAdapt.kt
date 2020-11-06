@@ -4,10 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
-import com.example.hischool.data.FeedRecyclerViewData
 import com.example.hischool.data.NotificationRecyclerViewData
 
 class NotificationAdapt (val notificationList: ArrayList<NotificationRecyclerViewData>) : RecyclerView.Adapter<NotificationAdapt.ViewHolder>(){
