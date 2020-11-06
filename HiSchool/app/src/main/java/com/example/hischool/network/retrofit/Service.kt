@@ -1,8 +1,6 @@
 package com.example.hischool.network.retrofit
 
-import com.example.hischool.data.PostResponse
-import com.example.hischool.data.SearchFeedRecyclerViewData
-import com.example.hischool.data.SearchSchoolRecyclerViewData
+import com.example.hischool.data.*
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.CommentUpdateResponse
 import com.example.hischool.data.comment.WriteCommentResponse
@@ -91,4 +89,18 @@ interface Service {
         @Header("Authorization") token: String,
         @Body postBody: RequestBody
     ): Call<PostResponse>
+
+
+
+    //업로드 부분
+    @POST("/auth/sign-up")
+    fun signUp(
+        @Body signUpBody: RequestBody
+    ): Call<SignUpResponse>
+
+    //업로드 부분
+    @POST("/auth/login")
+    fun signIn(
+        @Body signUpBody: RequestBody
+    ): Call<SignInResponse>
 }

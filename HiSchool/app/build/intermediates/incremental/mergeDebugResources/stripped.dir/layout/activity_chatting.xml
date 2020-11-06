@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+    
+                 
+                            
+                                                                      
+           
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.ChattingActivity" android:tag="layout/activity_chatting_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:tag="binding_1"                 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="할 말"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.80" />
+
+        <Button
+            android:id="@+id/send"
+            android:tag="binding_2"                                 
+            android:layout_width="93dp"
+            android:layout_height="52dp"
+            android:text="전송"
+            app:layout_constraintBottom_toBottomOf="@+id/editText2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editText2"
+            app:layout_constraintTop_toTopOf="@+id/editText2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         
