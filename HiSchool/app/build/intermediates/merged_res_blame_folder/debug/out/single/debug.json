@@ -284,6 +284,10 @@
         "source": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\src\\main\\res\\drawable-xhdpi\\heart_true.png"
     },
     {
+        "merged": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_loading.xml.flat",
+        "source": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\src\\main\\res\\layout\\activity_loading.xml"
+    },
+    {
         "merged": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\build\\intermediates\\res\\merged\\debug\\layout_comment_item.xml.flat",
         "source": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\src\\main\\res\\layout\\comment_item.xml"
     },
@@ -542,6 +546,10 @@
     {
         "merged": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_logo.png.flat",
+        "source": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\src\\main\\res\\drawable-xxxhdpi\\logo.png"
     },
     {
         "merged": "C:\\Users\\cucun\\Desktop\\project\\Android\\HiSchool\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_camera.png.flat",

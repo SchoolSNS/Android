@@ -10,7 +10,7 @@ import androidx.room.Query
 interface LoginDao {
 
     @Query("SELECT * FROM login")
-    fun getAll(): LiveData<List<LoginData>>
+    fun getAll(): List<LoginData>
 
     @Insert
     fun insert(loginData: LoginData)

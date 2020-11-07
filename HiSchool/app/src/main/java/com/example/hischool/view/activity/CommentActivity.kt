@@ -23,6 +23,7 @@ import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_comment.*
@@ -71,6 +72,8 @@ class CommentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comment)
 
+        val actionbar = supportActionBar
+        actionbar?.hide()
 
         postId = intent.getIntExtra("id", 0)
         retrofit = RetrofitClient.getInstance()
@@ -122,7 +125,7 @@ class CommentActivity : AppCompatActivity() {
         postId = intent.getIntExtra("id", 0)
         Log.d("TAG" ,"post : $postId")
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getComment(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId)
+        myAPI.getComment(token = "Token ${Token.token}", postId)
             .enqueue(object : Callback<List<CommentRecyclerViewData>> {
                 override fun onResponse(
                     call: Call<List<CommentRecyclerViewData>>,
@@ -214,7 +217,7 @@ class CommentActivity : AppCompatActivity() {
 
                 myAPI = retrofit.create(Service::class.java)
                 myAPI.writeComment(
-                    "Token 719e203a89eaf9bd377a5e345da7da653d15492e",
+                    "Token ${Token.token}",
                     postBody,
                     postId
                 ).enqueue(object : Callback<WriteCommentResponse> {

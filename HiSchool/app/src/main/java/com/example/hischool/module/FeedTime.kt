@@ -1,6 +1,8 @@
 package com.example.hischool.module
 
 import android.icu.text.SimpleDateFormat
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.util.*
 
 class FeedTime {
@@ -13,6 +15,7 @@ class FeedTime {
         const val MONTH = 12
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     fun calFeedTime(time: String): String{
 
         var serverTimeString = ""
@@ -40,25 +43,26 @@ class FeedTime {
                 msg = "방금 전"
             }
             TimeData.SEC.let { diffTime /= it; diffTime } < TimeData.MIN -> {
-                msg = "$diffTime minutes ago"
+                msg = "$diffTime 분 전"
             }
             TimeData.MIN.let { diffTime /= it; diffTime } < TimeData.HOUR -> {
-                msg = "$diffTime hours ago"
+                msg = "$diffTime 시간 전"
             }
             TimeData.HOUR.let { diffTime /= it; diffTime } < TimeData.DAY -> {
-                msg = "$diffTime days ago"
+                msg = "$diffTime 일 전"
             }
             TimeData.DAY.let { diffTime /= it; diffTime } < TimeData.MONTH -> {
-                msg = "$diffTime months ago"
+                msg = "$diffTime 달 전"
             }
             else -> {
-                msg = "$diffTime years ago"
+                msg = "$diffTime 년 전"
             }
         }
         return msg
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     fun calFeedTimeComment(time: String): String{
 
         var serverTimeString = ""

@@ -11,7 +11,6 @@ com/example/hischool/room/LoginDao_Impl.java
  com.example.hischool.room.LoginDao_Impl
  com.example.hischool.room.LoginDao_Impl$1
  com.example.hischool.room.LoginDao_Impl$2
- com.example.hischool.room.LoginDao_Impl$3
 com/example/hischool/room/LoginDataBase_Impl.java
  com.example.hischool.room.LoginDataBase_Impl
  com.example.hischool.room.LoginDataBase_Impl$1

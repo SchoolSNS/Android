@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide
 import com.example.hischool.R
 import com.example.hischool.adapter.EditFeedSetImageAdapter
 import com.example.hischool.data.PostResponse
+import com.example.hischool.data.login.Token
 import com.example.hischool.module.RotateImage
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
@@ -75,11 +76,20 @@ class QuestionActivity : AppCompatActivity() {
                 }.build()
 
                 val myAPI = RetrofitClient.getInstance().create(Service::class.java)
-                myAPI.requestPost("Token 719e203a89eaf9bd377a5e345da7da653d15492e", body)
-                    .enqueue(object : Callback<PostResponse> {
-                        override fun onFailure(call: Call<PostResponse>, t: Throwable) {
-                            Log.d("TAG", "FAILED WITH ERROR")
-                            t.printStackTrace()
+
+                myAPI.requestPost("Token ${Token.token}", body).enqueue(object : Callback<PostResponse> {
+                    override fun onFailure(call: Call<PostResponse>, t: Throwable) {
+                        Log.d("TAG", "FAILED WITH ERROR")
+                        t.printStackTrace()
+                    }
+
+                    override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>
+                    ) {
+                        Log.d("TAG", "Success!");
+                        Log.d("TAG", response.code().toString())
+                        if(response.code() == 201)
+                        {
+                            startActivity(MainActivity::class.java)
                         }
 
                         override fun onResponse(
