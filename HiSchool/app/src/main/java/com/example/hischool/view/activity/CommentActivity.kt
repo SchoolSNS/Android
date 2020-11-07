@@ -293,7 +293,7 @@ class CommentActivity : AppCompatActivity() {
     private fun cancelLike()
     {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.cancelLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(
+        myAPI.cancelLike(token = "Token ${Token.token}", postId = postId).enqueue(
             object : Callback<CheckLike> {
                 override fun onResponse(
                     call: Call<CheckLike>,
@@ -322,7 +322,7 @@ class CommentActivity : AppCompatActivity() {
     private fun setLike()
     {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.setLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(object : Callback<CheckLike>{
+        myAPI.setLike(token = "Token ${Token.token}", postId = postId).enqueue(object : Callback<CheckLike>{
             override fun onResponse(call: Call<CheckLike>, response: Response<CheckLike>) {
                 if(response.code() == 200)
                 {

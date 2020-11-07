@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.hischool.R
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.CommentUpdateResponse
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.EditCommentActivity
@@ -63,7 +64,7 @@ class CommentBottomSheet(val item : CommentRecyclerViewData, val postId: Int, va
     private fun delComment()
     {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.delComment(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId, commentId = item.comment_id).enqueue(
+        myAPI.delComment(token = "Token ${Token.token}", postId = postId, commentId = item.comment_id).enqueue(
             object : Callback<CommentUpdateResponse> {
                 override fun onResponse(
                     call: Call<CommentUpdateResponse>,

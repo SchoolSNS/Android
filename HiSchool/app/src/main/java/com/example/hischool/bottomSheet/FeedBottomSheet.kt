@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import com.example.hischool.R
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.EditCommentActivity
@@ -76,7 +77,7 @@ class FeedBottomSheet(val item : FeedRecyclerViewData, val callback : (FeedRecyc
     private fun delPost()
     {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.delPost(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = item.id).enqueue(
+        myAPI.delPost(token = "Token ${Token.token}", postId = item.id).enqueue(
             object : Callback<DelPostResponse> {
                 override fun onResponse(
                     call: Call<DelPostResponse>,

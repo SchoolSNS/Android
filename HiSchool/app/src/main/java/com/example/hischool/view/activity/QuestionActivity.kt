@@ -54,7 +54,7 @@ class QuestionActivity : AppCompatActivity() {
                 Log.d("TAG", imageBitmap.size.toString())
                 Log.d("TAG", "눌림")
                 pickImageFromGallery()
-            } else{
+            } else {
                 Toast.makeText(applicationContext, "이미지는 5개가 최대입니다.", Toast.LENGTH_SHORT).show()
             }
         }
@@ -77,19 +77,11 @@ class QuestionActivity : AppCompatActivity() {
 
                 val myAPI = RetrofitClient.getInstance().create(Service::class.java)
 
-                myAPI.requestPost("Token ${Token.token}", body).enqueue(object : Callback<PostResponse> {
-                    override fun onFailure(call: Call<PostResponse>, t: Throwable) {
-                        Log.d("TAG", "FAILED WITH ERROR")
-                        t.printStackTrace()
-                    }
-
-                    override fun onResponse(call: Call<PostResponse>, response: Response<PostResponse>
-                    ) {
-                        Log.d("TAG", "Success!");
-                        Log.d("TAG", response.code().toString())
-                        if(response.code() == 201)
-                        {
-                            startActivity(MainActivity::class.java)
+                myAPI.requestPost("Token ${Token.token}", body)
+                    .enqueue(object : Callback<PostResponse> {
+                        override fun onFailure(call: Call<PostResponse>, t: Throwable) {
+                            Log.d("TAG", "FAILED WITH ERROR")
+                            t.printStackTrace()
                         }
 
                         override fun onResponse(
@@ -100,10 +92,7 @@ class QuestionActivity : AppCompatActivity() {
                             if (response.code() == 201) {
                                 startActivity(MainActivity::class.java)
                             }
-
                         }
-
-
                     })
             }
         }
