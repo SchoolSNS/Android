@@ -3,6 +3,7 @@ package com.example.hischool.paging
 import android.util.Log
 import androidx.paging.PageKeyedDataSource
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import retrofit2.Call
@@ -20,7 +21,7 @@ class FeedDataSource : PageKeyedDataSource<Int, FeedRecyclerViewData>() {
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, FeedRecyclerViewData>) {
         retrofit = RetrofitClient.getInstance()
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = firstPage).enqueue(object :
+        myAPI.getFeed(token = "Token ${Token.token}", page = firstPage).enqueue(object :
             Callback<List<FeedRecyclerViewData>> {
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
                 if(response.code() == 200)
@@ -42,7 +43,7 @@ class FeedDataSource : PageKeyedDataSource<Int, FeedRecyclerViewData>() {
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, FeedRecyclerViewData>) {
         retrofit = RetrofitClient.getInstance()
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = params.key).enqueue(object :
+        myAPI.getFeed(token = "Token ${Token.token}", page = params.key).enqueue(object :
                 Callback<List<FeedRecyclerViewData>> {
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
                 if(response.code() == 200)
@@ -70,7 +71,7 @@ class FeedDataSource : PageKeyedDataSource<Int, FeedRecyclerViewData>() {
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, FeedRecyclerViewData>) {
         retrofit = RetrofitClient.getInstance()
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = params.key).enqueue(object :
+        myAPI.getFeed(token = "Token ${ Token.token}", page = params.key).enqueue(object :
                 Callback<List<FeedRecyclerViewData>> {
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
                 if (response.code() == 200) {
