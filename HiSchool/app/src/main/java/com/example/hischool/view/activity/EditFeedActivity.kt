@@ -18,6 +18,7 @@ import com.example.hischool.R
 import com.example.hischool.adapter.EditCommentSetImageAdapter
 import com.example.hischool.data.comment.CommentUpdateResponse
 import com.example.hischool.data.feed.DelPostResponse
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.widget.startActivity
@@ -127,7 +128,7 @@ class EditFeedActivity : AppCompatActivity() {
                 val postBody: RequestBody = builder.build()
                 myAPI = retrofit.create(Service::class.java)
 
-                myAPI.updateFeed("Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId, postBody).enqueue(object : Callback<DelPostResponse>{
+                myAPI.updateFeed("Token ${Token.token}", postId, postBody).enqueue(object : Callback<DelPostResponse>{
                     override fun onResponse(
                         call: Call<DelPostResponse>,
                         response: Response<DelPostResponse>

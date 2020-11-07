@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.hischool.R
 import com.example.hischool.adapter.FeedAdapter
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.fragment_feed.*
@@ -50,7 +51,7 @@ class FeedFragment : Fragment() {
 
     fun getFeed(){
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{
+        myAPI.getFeed(token = "Token ${Token.token}", page = 1).enqueue(object : Callback<List<FeedRecyclerViewData>>{
             override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
                 if(response.code() == 200)
                 {

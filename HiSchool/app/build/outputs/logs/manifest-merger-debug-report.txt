@@ -87,13 +87,13 @@ INJECTED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\Andro
 	xmlns:android
 		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:6:5-67
 	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:6:5-80
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:6:22-77
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:7:22-77
 application
 ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:11:5-38:19
 MERGED from [com.google.android.material:material:1.3.0-alpha03] C:\Users\cucun\.gradle\caches\transforms-2\files-2.1\824845372609c3f664cb5282d7fc7c41\material-1.3.0-alpha03\AndroidManifest.xml:22:5-20
@@ -134,44 +134,48 @@ MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\cucun\.gradle\cache
 		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:18:9-40
 	android:name
 		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:12:9-46
-activity#com.example.hischool.view.activity.QuestionActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:19:9-68
+activity#com.example.hischool.view.activity.LoadingActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:19:9-25:20
 	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:19:19-65
-activity#com.example.hischool.view.activity.SelectSchoolActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:20:9-72
-	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:20:19-69
-activity#com.example.hischool.view.activity.CommentActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:21:9-67
-	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:21:19-64
-activity#com.example.hischool.view.activity.EditFeedActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:22:9-67
-	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:22:19-65
-activity#com.example.hischool.view.activity.EditCommentActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:23:9-70
-	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:23:19-68
-activity#com.example.hischool.view.activity.SignActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:24:9-34:20
-	android:windowSoftInputMode
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:26:13-55
-	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:25:13-55
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:19:19-64
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:28:13-32:29
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:29:17-69
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:29:25-66
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:23:27-74
+activity#com.example.hischool.view.activity.QuestionActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:26:9-68
+	android:name
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:26:19-65
+activity#com.example.hischool.view.activity.SelectSchoolActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:27:9-72
+	android:name
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:27:19-69
+activity#com.example.hischool.view.activity.CommentActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:28:9-67
+	android:name
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:28:19-64
+activity#com.example.hischool.view.activity.EditFeedActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:29:9-68
+	android:name
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:29:19-65
+activity#com.example.hischool.view.activity.EditCommentActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:30:9-71
+	android:name
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:30:19-68
+activity#com.example.hischool.view.activity.SignActivity
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:31:9-34:20
+	android:windowSoftInputMode
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:33:13-55
+	android:name
+		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:32:13-55
 activity#com.example.hischool.view.activity.MainActivity
-ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:35:9-37:57
+ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:35:9-37:48
 	android:label
 		ADDED from C:\Users\cucun\Desktop\project\Android\HiSchool\app\src\main\AndroidManifest.xml:37:13-45
 	android:name

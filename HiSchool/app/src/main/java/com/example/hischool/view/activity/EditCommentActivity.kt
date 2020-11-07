@@ -18,6 +18,7 @@ import com.example.hischool.R
 import com.example.hischool.adapter.CommentImagePreViewAdapter
 import com.example.hischool.adapter.EditCommentSetImageAdapter
 import com.example.hischool.data.comment.CommentUpdateResponse
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_comment.*
@@ -127,7 +128,7 @@ class EditCommentActivity : AppCompatActivity() {
                 val postBody: RequestBody = builder.build()
                 myAPI = retrofit.create(Service::class.java)
 
-                myAPI.updateComment("Token 719e203a89eaf9bd377a5e345da7da653d15492e",postId, commentId, postBody).enqueue(object : Callback<CommentUpdateResponse>{
+                myAPI.updateComment("Token ${Token.token}",postId, commentId, postBody).enqueue(object : Callback<CommentUpdateResponse>{
                     override fun onResponse(
                         call: Call<CommentUpdateResponse>,
                         response: Response<CommentUpdateResponse>

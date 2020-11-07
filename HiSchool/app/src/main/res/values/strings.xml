@@ -22,4 +22,5 @@
     <string name="background">background</string>
     <string name="oneIntroduce">한줄 소개 입력</string>
     <string name="signin">SignIn</string>
+    <string name="hi_school">고등학교 입시 정보는 HI! School</string>
 </resources>

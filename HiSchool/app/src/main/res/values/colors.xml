@@ -12,4 +12,5 @@
     <color name="colorButtonBackground">#0066FF</color>
     <color name="colorButtonBackground_false">#800066FF</color>
     <color name="HartRed">#FF0000</color>
+    <color name="backgroundMain">#315EA3</color>
 </resources>

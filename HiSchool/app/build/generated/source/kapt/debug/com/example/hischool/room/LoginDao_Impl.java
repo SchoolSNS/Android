@@ -1,7 +1,6 @@
 package com.example.hischool.room;
 
 import android.database.Cursor;
-import androidx.lifecycle.LiveData;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -9,14 +8,12 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
-import java.lang.Exception;
 import java.lang.Integer;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class LoginDao_Impl implements LoginDao {
@@ -90,40 +87,32 @@ public final class LoginDao_Impl implements LoginDao {
   }
 
   @Override
-  public LiveData<List<LoginData>> getAll() {
+  public List<LoginData> getAll() {
     final String _sql = "SELECT * FROM login";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[]{"login"}, false, new Callable<List<LoginData>>() {
-      @Override
-      public List<LoginData> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfToken = CursorUtil.getColumnIndexOrThrow(_cursor, "token");
-          final List<LoginData> _result = new ArrayList<LoginData>(_cursor.getCount());
-          while(_cursor.moveToNext()) {
-            final LoginData _item;
-            final Integer _tmpId;
-            if (_cursor.isNull(_cursorIndexOfId)) {
-              _tmpId = null;
-            } else {
-              _tmpId = _cursor.getInt(_cursorIndexOfId);
-            }
-            final String _tmpToken;
-            _tmpToken = _cursor.getString(_cursorIndexOfToken);
-            _item = new LoginData(_tmpId,_tmpToken);
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfToken = CursorUtil.getColumnIndexOrThrow(_cursor, "token");
+      final List<LoginData> _result = new ArrayList<LoginData>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final LoginData _item;
+        final Integer _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getInt(_cursorIndexOfId);
         }
+        final String _tmpToken;
+        _tmpToken = _cursor.getString(_cursorIndexOfToken);
+        _item = new LoginData(_tmpId,_tmpToken);
+        _result.add(_item);
       }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
   }
 }
