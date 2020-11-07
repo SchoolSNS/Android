@@ -1,8 +1,6 @@
 package com.example.hischool.view.activity
 
 import android.Manifest
-import android.app.Activity
-import android.content.ContentResolver
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
@@ -19,6 +17,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.hischool.R
+import com.example.hischool.adapter.EditFeedSetImageAdapter
 import com.example.hischool.data.PostResponse
 import com.example.hischool.data.login.Token
 import com.example.hischool.module.RotateImage
@@ -27,15 +26,8 @@ import com.example.hischool.network.retrofit.Service
 import com.example.hischool.widget.startActivity
 import com.example.hischool.widget.toast
 import kotlinx.android.synthetic.main.activity_question.*
-import kotlinx.android.synthetic.main.activity_select_school.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
-import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import okio.BufferedSink
-import okio.Okio
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,28 +37,28 @@ class QuestionActivity : AppCompatActivity() {
     var imageList = ArrayList<RequestBody>()
     private val rotateImageClass = RotateImage()
     private val imageNameList = ArrayList<String>()
+    private var imageBitmap = ArrayList<Bitmap>()
+
+    lateinit var questionImageAdapter: EditFeedSetImageAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
 
+        questionImageAdapter = EditFeedSetImageAdapter(imageBitmap, applicationContext)
+        question_image_recyclerview.adapter = questionImageAdapter
+
+
         question_image.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
-                    PackageManager.PERMISSION_DENIED
-                ) {
-                    //permission denied
-                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
-                    //show popup to request runtime permission
-                    requestPermissions(permissions, PERMISSION_CODE);
-                } else {
-                    //permission already granted
-                    pickImageFromGallery();
-                }
-            } else {
-                //system OS is < Marshmallow
-                pickImageFromGallery();
+            if (imageBitmap.size < 5) {
+                Log.d("TAG", imageBitmap.size.toString())
+                Log.d("TAG", "눌림")
+                pickImageFromGallery()
+            } else{
+                Toast.makeText(applicationContext, "이미지는 5개가 최대입니다.", Toast.LENGTH_SHORT).show()
             }
         }
+
         question_submit.setOnClickListener {
             if (TextUtils.isEmpty(question_title.text)) {
                 toast("제목을 설정해주세요")
@@ -78,12 +70,13 @@ class QuestionActivity : AppCompatActivity() {
                     addFormDataPart("content", question_contents.text.toString())
                     var index = 0
                     imageList.forEach {
-                        addFormDataPart("image${index+1}", imageNameList[index] , it)
+                        addFormDataPart("image${index + 1}", imageNameList[index], it)
                         index++
                     }
                 }.build()
 
                 val myAPI = RetrofitClient.getInstance().create(Service::class.java)
+
                 myAPI.requestPost("Token ${Token.token}", body).enqueue(object : Callback<PostResponse> {
                     override fun onFailure(call: Call<PostResponse>, t: Throwable) {
                         Log.d("TAG", "FAILED WITH ERROR")
@@ -99,10 +92,19 @@ class QuestionActivity : AppCompatActivity() {
                             startActivity(MainActivity::class.java)
                         }
 
-                    }
+                        override fun onResponse(
+                            call: Call<PostResponse>, response: Response<PostResponse>
+                        ) {
+                            Log.d("TAG", "Success!");
+                            Log.d("TAG", response.code().toString())
+                            if (response.code() == 201) {
+                                startActivity(MainActivity::class.java)
+                            }
+
+                        }
 
 
-                })
+                    })
             }
         }
     }
@@ -122,30 +124,6 @@ class QuestionActivity : AppCompatActivity() {
     companion object {
         //image pick code
         private const val IMAGE_PICK_CODE = 1000;
-
-        //Permission code
-        private const val PERMISSION_CODE = 1001;
-    }
-
-    //handle requested permission result
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        when (requestCode) {
-            PERMISSION_CODE -> {
-                if (grantResults.isNotEmpty() && grantResults[0] ==
-                    PackageManager.PERMISSION_GRANTED
-                ) {
-                    //permission from popup granted
-                    pickImageFromGallery()
-                } else {
-                    //permission from popup denied
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
     }
 
     //handle result of picked image
@@ -156,7 +134,7 @@ class QuestionActivity : AppCompatActivity() {
         val returnUri: Uri
         val returnCursor: Cursor?
 
-        if(resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             when (requestCode) {
                 IMAGE_PICK_CODE -> {
 
@@ -170,6 +148,9 @@ class QuestionActivity : AppCompatActivity() {
                     val bos = ByteArrayOutputStream()
                     bm.compress(Bitmap.CompressFormat.JPEG, 100, bos)
                     imageList.add(RequestBody.create(MultipartBody.FORM, bos.toByteArray()))
+
+                    imageBitmap.add(bm)
+                    questionImageAdapter.notifyDataSetChanged()
 
                     inputStream?.close()
 
@@ -185,7 +166,6 @@ class QuestionActivity : AppCompatActivity() {
 
                     Glide.with(this)
                         .load(returnUri)
-                        .into(image)
 
                 }
 
