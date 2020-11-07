@@ -2,11 +2,13 @@ package com.example.hischool.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +19,7 @@ import com.example.hischool.R
 import com.example.hischool.bottomSheet.FeedBottomSheet
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.module.FeedTime
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
@@ -39,6 +42,7 @@ class FeedAdapter(
         return feedList.size
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: FeedAdapter.ViewHolder, position: Int) {
         holder.bind(feedList[position])
     }
@@ -47,6 +51,7 @@ class FeedAdapter(
 
         lateinit var myAPI: Service
         lateinit var retrofit: Retrofit
+        val feedTime = FeedTime()
 
         val profile = itemView.findViewById<ImageView>(R.id.feed_profile_image)
         val nickName = itemView.findViewById<TextView>(R.id.feed_name_text)
@@ -73,6 +78,7 @@ class FeedAdapter(
         val feedImage1: ImageView = itemView.findViewById(R.id.feed_image1)
         val feedImage2: ImageView = itemView.findViewById(R.id.feed_image2)
 
+        @RequiresApi(Build.VERSION_CODES.N)
         fun bind(item: FeedRecyclerViewData) {
             Log.d("TAG", item.is_liked.toString())
             retrofit = RetrofitClient.getInstance()
@@ -81,7 +87,7 @@ class FeedAdapter(
             comment2.visibility = View.GONE
 
             nickName.text = item.owner.username
-            time.text = item.created_at
+            time.text = feedTime.calFeedTime(item.created_at)
             title.text = item.title
             question.text = item.content
             countHeart.text = item.like_count.toString()
@@ -103,6 +109,7 @@ class FeedAdapter(
 
             Glide.with(mContext)
                 .load(item.owner.image)
+                .transform(CenterCrop(), RoundedCorners(10000))
                 .into(profile)
 
             when {
@@ -162,7 +169,7 @@ class FeedAdapter(
                 val intent = (Intent(itemView.context, CommentActivity::class.java))
                 intent.putExtra("id", item.id)
                 intent.putExtra("ownerName", item.owner.username)
-                intent.putExtra("time", item.created_at)
+                intent.putExtra("time", feedTime.calFeedTime(item.created_at))
                 intent.putExtra("profile", item.owner.image)
                 intent.putExtra("title", item.title)
                 intent.putExtra("content", item.content)

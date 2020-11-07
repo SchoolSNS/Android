@@ -7,6 +7,7 @@ import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.LoginInformation
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -101,4 +102,9 @@ interface Service {
     fun signIn(
         @Body signUpBody: RequestBody
     ): Call<SignInResponse>
+
+    @GET("/user")
+    fun getUser(
+        @Header("Authorization") token: String
+    ): Call<LoginInformation>
 }

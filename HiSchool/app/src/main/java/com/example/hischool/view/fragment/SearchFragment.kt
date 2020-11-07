@@ -11,6 +11,7 @@ import com.example.hischool.R
 import com.example.hischool.adapter.SearchFeedAdapter
 import com.example.hischool.adapter.SelectSchoolAdapter
 import com.example.hischool.data.SearchFeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_select_school.*
@@ -58,7 +59,7 @@ class SearchFragment : Fragment(){
 
     fun getFeedList() {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getSearchFeed(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e",page = 1, query = (search_search_edit.text.toString()))
+        myAPI.getSearchFeed(token = "Token ${Token.token}",page = 1, query = (search_search_edit.text.toString()))
             .enqueue(object : Callback<List<SearchFeedRecyclerViewData>> {
                 override fun onResponse(
                     call: Call<List<SearchFeedRecyclerViewData>>,
