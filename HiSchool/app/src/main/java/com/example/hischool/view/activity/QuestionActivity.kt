@@ -94,7 +94,7 @@ class QuestionActivity : AppCompatActivity() {
                     .enqueue(object : Callback<PostResponse> {
                         override fun onFailure(call: Call<PostResponse>, t: Throwable) {
                             Log.d("TAG", "FAILED WITH ERROR")
-                            t.printStackTrace()
+                            questionDialog.connectionFail(this@QuestionActivity, sweetAlertDialog)
                         }
 
                         override fun onResponse(
@@ -166,7 +166,6 @@ class QuestionActivity : AppCompatActivity() {
                     imageNameList.add(returnCursor.getString(nameIndex))
 
                     returnCursor.close()
-
 
                     Glide.with(this)
                         .load(returnUri)
