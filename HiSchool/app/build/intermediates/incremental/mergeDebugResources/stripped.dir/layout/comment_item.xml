@@ -13,7 +13,7 @@
     app:layout_constraintTop_toBottomOf="@+id/bar2_view">
 
     <ImageView
-        android:id="@+id/comment_profile_image"
+        android:id="@+id/comment_owner_profile_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="25dp"
@@ -31,8 +31,8 @@
         android:fontFamily="@font/nixgon_bold"
         android:text="지나가는 익명의 족발"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/comment_profile_image"
-        app:layout_constraintTop_toTopOf="@+id/comment_profile_image" />
+        app:layout_constraintStart_toEndOf="@+id/comment_owner_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/comment_owner_profile_image" />
 
     <ImageView
         android:id="@+id/comment_image_list"
