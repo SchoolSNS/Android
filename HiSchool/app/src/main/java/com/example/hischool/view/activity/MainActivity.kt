@@ -1,5 +1,6 @@
 package com.example.hischool.view.activity
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Window
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         school_name_text.setOnClickListener {
             noFinishStartActivity(SelectSchoolActivity::class.java)
+        }
+
+        floatingButton.setOnClickListener {
+            startActivity(Intent(this, ChattingActivity::class.java))
         }
     }
 
