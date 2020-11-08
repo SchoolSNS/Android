@@ -7,10 +7,12 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bumptech.glide.Glide
@@ -25,6 +27,7 @@ import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.login.Token
+import com.example.hischool.module.RotateImage
 import com.example.hischool.module.WriteCommentDialog
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
@@ -48,6 +51,8 @@ class CommentActivity : AppCompatActivity() {
 
     private lateinit var commentImagePreViewAdapter: CommentImagePreViewAdapter
     private lateinit var commentSetImageAdapter: CommentSetImageAdapter
+
+    private val rotateImageClass = RotateImage()
 
     private val imageList = ArrayList<Bitmap>()
     private val imageMultipart = ArrayList<RequestBody>()
@@ -271,6 +276,7 @@ class CommentActivity : AppCompatActivity() {
         startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -282,6 +288,7 @@ class CommentActivity : AppCompatActivity() {
             Log.d("TAG", "하이")
             val inputStream = contentResolver.openInputStream(returnUri)
             var bm: Bitmap = BitmapFactory.decodeStream(inputStream) //비트맵 변환
+            bm = rotateImageClass.rotateImage(data.data!!, bm, contentResolver)
             val bos = ByteArrayOutputStream()
             bm.compress(Bitmap.CompressFormat.JPEG, 100, bos)
             imageMultipart.add(RequestBody.create(MultipartBody.FORM, bos.toByteArray()))

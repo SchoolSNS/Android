@@ -167,6 +167,7 @@ class QuestionActivity : AppCompatActivity() {
 
                     returnCursor.close()
 
+
                     Glide.with(this)
                         .load(returnUri)
 

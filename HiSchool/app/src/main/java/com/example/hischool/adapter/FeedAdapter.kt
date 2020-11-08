@@ -19,6 +19,7 @@ import com.example.hischool.R
 import com.example.hischool.bottomSheet.FeedBottomSheet
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.LoginInformation
 import com.example.hischool.data.login.Token
 import com.example.hischool.module.FeedTime
 import com.example.hischool.network.retrofit.RetrofitClient
@@ -155,16 +156,18 @@ class FeedAdapter(
             }
 
             moreBtn.setOnClickListener {
-                val bottomSheet = FeedBottomSheet(item) {
-                    Log.d("TAG", "삭제")
-                    feedList.remove(it)
-                    notifyDataSetChanged()
-                }
+                if(LoginInformation.loginInfoData.email == item.owner.email) {
+                    val bottomSheet = FeedBottomSheet(item) {
+                        Log.d("TAG", "삭제")
+                        feedList.remove(it)
+                        notifyDataSetChanged()
+                    }
 
-                bottomSheet.show(
-                    (mContext as AppCompatActivity).supportFragmentManager,
-                    bottomSheet.tag
-                )
+                    bottomSheet.show(
+                        (mContext as AppCompatActivity).supportFragmentManager,
+                        bottomSheet.tag
+                    )
+                }
             }
             itemView.setOnClickListener {
                 val intent = (Intent(itemView.context, CommentActivity::class.java))
