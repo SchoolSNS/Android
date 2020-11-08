@@ -19,6 +19,7 @@ import com.example.hischool.adapter.CommentImagePreViewAdapter
 import com.example.hischool.adapter.EditCommentSetImageAdapter
 import com.example.hischool.data.comment.CommentUpdateResponse
 import com.example.hischool.data.login.Token
+import com.example.hischool.module.RotateImage
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_comment.*
@@ -41,6 +42,7 @@ class EditCommentActivity : AppCompatActivity() {
     lateinit var myAPI : Service
     lateinit var content : String
     lateinit var imageUrls : ArrayList<String>
+    private val rotateImageClass = RotateImage()
     var postId : Int = 0
     var commentId : Int = 0
     val imageBitmap : ArrayList<Bitmap> = arrayListOf()
@@ -167,6 +169,7 @@ class EditCommentActivity : AppCompatActivity() {
             Log.d("TAG", "하이")
             val inputStream = contentResolver.openInputStream(returnUri)
             var bm: Bitmap = BitmapFactory.decodeStream(inputStream) //비트맵 변환
+            bm = rotateImageClass.rotateImage(data.data!!, bm, contentResolver)
             val bos = ByteArrayOutputStream()
             bm.compress(Bitmap.CompressFormat.JPEG, 100, bos)
             imageMultipart.add(RequestBody.create(MultipartBody.FORM, bos.toByteArray()))
