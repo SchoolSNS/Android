@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -15,11 +16,13 @@ import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bumptech.glide.Glide
 import com.example.hischool.R
 import com.example.hischool.adapter.EditFeedSetImageAdapter
 import com.example.hischool.data.PostResponse
 import com.example.hischool.data.login.Token
+import com.example.hischool.module.QuestionDialog
 import com.example.hischool.module.RotateImage
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
@@ -65,6 +68,16 @@ class QuestionActivity : AppCompatActivity() {
             } else if (TextUtils.isEmpty(question_contents.text)) {
                 toast("내용을 입력해주세요");
             } else {
+                val sweetAlertDialog =
+                    SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
+                sweetAlertDialog.progressHelper.barColor = Color.parseColor("#0DE930")
+                sweetAlertDialog
+                    .setTitleText("게시물 작성중")
+                    .setCancelable(false)
+                sweetAlertDialog.show()
+
+                val questionDialog = QuestionDialog()
+
                 val body = MultipartBody.Builder().setType(MultipartBody.FORM).apply {
                     addFormDataPart("title", question_title.text.toString())
                     addFormDataPart("content", question_contents.text.toString())
@@ -89,9 +102,11 @@ class QuestionActivity : AppCompatActivity() {
                         ) {
                             Log.d("TAG", "Success!");
                             Log.d("TAG", response.code().toString())
-                            if (response.code() == 201) {
-                                startActivity(MainActivity::class.java)
-                            }
+                            questionDialog.connectionSuccess(
+                                response,
+                                this@QuestionActivity,
+                                sweetAlertDialog,
+                                Intent(applicationContext, MainActivity::class.java))
                         }
                     })
             }
