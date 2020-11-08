@@ -1,35 +1,34 @@
 package com.example.hischool.view.activity
 
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
-import com.example.hischool.adapter.*
+import com.example.hischool.adapter.CommentAdapter
+import com.example.hischool.adapter.CommentImagePreViewAdapter
+import com.example.hischool.adapter.CommentSetImageAdapter
 import com.example.hischool.bottomSheet.DetailFeedBottomSheet
-import com.example.hischool.bottomSheet.FeedBottomSheet
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
-import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.data.login.Token
+import com.example.hischool.module.WriteCommentDialog
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_comment.*
-import kotlinx.android.synthetic.main.activity_edit_feed.*
-import kotlinx.android.synthetic.main.feed_item.*
-import kotlinx.android.synthetic.main.fragment_feed.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -62,9 +61,9 @@ class CommentActivity : AppCompatActivity() {
     private var imageCount = 0
     var isLiked = false
     var likeCount = 0
-    lateinit var title : String
-    lateinit var content : String
-    lateinit var imageUrls : ArrayList<String>
+    lateinit var title: String
+    lateinit var content: String
+    lateinit var imageUrls: ArrayList<String>
 
     var count = 1
 
@@ -82,25 +81,22 @@ class CommentActivity : AppCompatActivity() {
         getComment()
 
         comment_more_btn.setOnClickListener {
-            val bottomSheet = DetailFeedBottomSheet(content, imageUrls, postId, title){
+            val bottomSheet = DetailFeedBottomSheet(content, imageUrls, postId, title) {
                 finish()
             }
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
         }
 
         comment_camera_btn.setOnClickListener {
-            if(imageCount > 1)
-            {
+            if (imageCount > 1) {
                 Toast.makeText(applicationContext, "이미지는 최대 2개만 가능합니다", Toast.LENGTH_SHORT).show()
-            }
-            else {
+            } else {
                 pickImageFromGallery()
             }
         }
 
         comment_heart_btn.setOnClickListener {
-            when(isLiked)
-            {
+            when (isLiked) {
                 true -> {
                     cancelLike()
                 }
@@ -123,7 +119,7 @@ class CommentActivity : AppCompatActivity() {
 
     private fun getComment() {
         postId = intent.getIntExtra("id", 0)
-        Log.d("TAG" ,"post : $postId")
+        Log.d("TAG", "post : $postId")
         myAPI = retrofit.create(Service::class.java)
         myAPI.getComment(token = "Token ${Token.token}", postId)
             .enqueue(object : Callback<List<CommentRecyclerViewData>> {
@@ -135,7 +131,12 @@ class CommentActivity : AppCompatActivity() {
                         commentList.clear()
                         commentList = response.body() as ArrayList<CommentRecyclerViewData>
                         Log.d("TAG", "data: $commentList")
-                        val mAdapter = CommentAdapter(commentList, applicationContext, postId, supportFragmentManager)
+                        val mAdapter = CommentAdapter(
+                            commentList,
+                            applicationContext,
+                            postId,
+                            supportFragmentManager
+                        )
                         comment_recyclerview.setHasFixedSize(true)
                         comment_recyclerview.adapter = mAdapter
                     } catch (e: NullPointerException) {
@@ -170,7 +171,7 @@ class CommentActivity : AppCompatActivity() {
         comment_count_message_text.text = intent.getIntExtra("commentCount", 0).toString()
 
         val value = intent.getSerializableExtra("imageUrls")
-        imageUrls = if(value != null) value as ArrayList<String>
+        imageUrls = if (value != null) value as ArrayList<String>
         else arrayListOf()
 
 
@@ -178,8 +179,7 @@ class CommentActivity : AppCompatActivity() {
         comment_post_image_recyclerview.adapter = commentSetImageAdapter
 
         isLiked = intent.getBooleanExtra("isLike", false)
-        when(isLiked)
-        {
+        when (isLiked) {
             true -> {
                 Glide.with(applicationContext)
                     .load(R.drawable.heart_true)
@@ -197,25 +197,35 @@ class CommentActivity : AppCompatActivity() {
     private fun writeComment() {
 
         if (comment_edit.text.isNotEmpty()) {
+            Log.d("TAG", comment_edit.text.toString())
+
+            val sweetAlertDialog =
+                SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
+            sweetAlertDialog.progressHelper.barColor = Color.parseColor("#0DE930")
+            sweetAlertDialog
+                .setTitleText("댓글 작성중")
+                .setCancelable(false)
+            sweetAlertDialog.show()
+
+            val writeCommentDialog = WriteCommentDialog()
+
+            val builder = MultipartBody.Builder().setType(MultipartBody.FORM)
+            builder.addFormDataPart("content", comment_edit.text.toString())
+
+            imageMultipart.forEach {
+                Log.d("TAG", "count : $count")
+                builder.addFormDataPart(
+                    "image$count",
+                    imageNameList[count - 1],
+                    it
+                )
+                count++
+            }
+
+            val postBody: RequestBody = builder.build()
+
+            myAPI = retrofit.create(Service::class.java)
             CoroutineScope(Dispatchers.IO).launch {
-                Log.d("TAG", comment_edit.text.toString())
-                val builder = MultipartBody.Builder().setType(MultipartBody.FORM)
-                builder.addFormDataPart("content", comment_edit.text.toString())
-
-                imageMultipart.forEach {
-                    Log.d("TAG", "count : $count")
-                    builder.addFormDataPart(
-                        "image$count",
-                        imageNameList[count - 1],
-                        it
-                    )
-                    count++
-                }
-
-                val postBody: RequestBody = builder.build()
-
-
-                myAPI = retrofit.create(Service::class.java)
                 myAPI.writeComment(
                     "Token ${Token.token}",
                     postBody,
@@ -226,25 +236,28 @@ class CommentActivity : AppCompatActivity() {
                         response: Response<WriteCommentResponse>
                     ) {
                         Log.d("TAG", response.code().toString())
-                        if (response.code() == 201) {
-                            comment_edit.setText("")
-                            imageMultipart.clear()
-                            imageList.clear()
-                            imageNameList.clear()
-                            count = 1
-                            imageCount = 0
-                            commentImagePreViewAdapter.notifyDataSetChanged()
-                            getComment()
-                        }
+                        writeCommentDialog.connectionSuccess(
+                            response,
+                            this@CommentActivity,
+                            sweetAlertDialog,
+                            commentImagePreViewAdapter
+                        )
+                        comment_edit.setText("")
+                        imageMultipart.clear()
+                        imageList.clear()
+                        imageNameList.clear()
+                        count = 1
+                        imageCount = 0
+                        getComment()
                     }
 
                     override fun onFailure(call: Call<WriteCommentResponse>, t: Throwable) {
-                        Log.d("trowale", t.message.toString())
-                        Log.d("ErrorBody", t.printStackTrace().toString())
+                        writeCommentDialog.connectionFail(applicationContext, sweetAlertDialog)
 
                     }
                 })
             }
+
         } else {
             Log.d("TAG", "없어")
             Toast.makeText(applicationContext, "내용이 없습니다.", Toast.LENGTH_SHORT).show()
@@ -290,10 +303,9 @@ class CommentActivity : AppCompatActivity() {
         }
     }
 
-    private fun cancelLike()
-    {
+    private fun cancelLike() {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.cancelLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(
+        myAPI.cancelLike(token = "Token ${Token.token}", postId = postId).enqueue(
             object : Callback<CheckLike> {
                 override fun onResponse(
                     call: Call<CheckLike>,
@@ -319,32 +331,30 @@ class CommentActivity : AppCompatActivity() {
             })
     }
 
-    private fun setLike()
-    {
+    private fun setLike() {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.setLike(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(object : Callback<CheckLike>{
-            override fun onResponse(call: Call<CheckLike>, response: Response<CheckLike>) {
-                if(response.code() == 200)
-                {
-                    Glide.with(applicationContext)
-                        .load(R.drawable.heart_true)
-                        .into(comment_heart_btn)
-                    likeCount += 1
-                    comment_count_heart_text.text = likeCount.toString()
-                    isLiked = true
+        myAPI.setLike(token = "Token ${Token.token}", postId = postId)
+            .enqueue(object : Callback<CheckLike> {
+                override fun onResponse(call: Call<CheckLike>, response: Response<CheckLike>) {
+                    if (response.code() == 200) {
+                        Glide.with(applicationContext)
+                            .load(R.drawable.heart_true)
+                            .into(comment_heart_btn)
+                        likeCount += 1
+                        comment_count_heart_text.text = likeCount.toString()
+                        isLiked = true
+                    } else {
+                        Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+                        Log.d("TAG", response.code().toString())
+                        Log.d("TAG", response.message())
+                        Log.d("TAG", postId.toString())
+                    }
                 }
-                else{
-                    Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
-                    Log.d("TAG", response.code().toString())
-                    Log.d("TAG", response.message())
-                    Log.d("TAG", postId.toString())
-                }
-            }
 
-            override fun onFailure(call: Call<CheckLike>, t: Throwable) {
-                Log.d("TAG", t.message.toString())
-                Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onFailure(call: Call<CheckLike>, t: Throwable) {
+                    Log.d("TAG", t.message.toString())
+                    Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
 }

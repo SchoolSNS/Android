@@ -19,6 +19,7 @@ import com.example.hischool.R
 import com.example.hischool.bottomSheet.FeedBottomSheet
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.module.FeedTime
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
@@ -272,7 +273,7 @@ class FeedAdapter(
         private fun cancelLike(item: FeedRecyclerViewData) {
             myAPI = retrofit.create(Service::class.java)
             myAPI.cancelLike(
-                token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e",
+                token = "Token ${Token.token}",
                 postId = item.id
             ).enqueue(
                 object : Callback<CheckLike> {
@@ -303,7 +304,7 @@ class FeedAdapter(
         private fun setLike(item: FeedRecyclerViewData) {
             myAPI = retrofit.create(Service::class.java)
             myAPI.setLike(
-                token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e",
+                token = "Token ${Token.token}",
                 postId = item.id
             ).enqueue(object : Callback<CheckLike> {
                 override fun onResponse(call: Call<CheckLike>, response: Response<CheckLike>) {

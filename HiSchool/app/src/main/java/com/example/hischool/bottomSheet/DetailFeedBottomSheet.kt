@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.example.hischool.R
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.EditFeedActivity
@@ -70,7 +71,7 @@ class DetailFeedBottomSheet (val content : String, val imageUrls : ArrayList<Str
     private fun delPost()
     {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.delPost(token = "Token 719e203a89eaf9bd377a5e345da7da653d15492e", postId = postId).enqueue(
+        myAPI.delPost(token = "Token ${Token.token}", postId = postId).enqueue(
             object : Callback<DelPostResponse> {
                 override fun onResponse(
                     call: Call<DelPostResponse>,
