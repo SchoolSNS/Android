@@ -103,10 +103,11 @@ class SearchFeedAdapter(private val searchFeedList: ArrayList<SearchFeedRecycler
 
             if (mContext != null) {
                 Glide.with(mContext)
-                    .load(item.owner.image)
+                    .load(item.owner.profile)
                     .transform(CenterCrop(), RoundedCorners(10000))
                     .into(profile)
             }
+
 
             when (item.is_liked) {
                 true -> {
@@ -143,7 +144,7 @@ class SearchFeedAdapter(private val searchFeedList: ArrayList<SearchFeedRecycler
                 intent.putExtra("id", item.id)
                 intent.putExtra("ownerName", item.owner.username)
                 intent.putExtra("time", feedTime.calFeedTime(item.created_at))
-                intent.putExtra("profile", item.owner.image)
+                intent.putExtra("profile", item.owner.profile)
                 intent.putExtra("title", item.title)
                 intent.putExtra("content", item.text)
                 intent.putExtra("heartCount", item.like_count)
