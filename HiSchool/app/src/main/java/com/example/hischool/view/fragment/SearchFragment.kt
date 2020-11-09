@@ -2,6 +2,7 @@ package com.example.hischool.view.fragment
 
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,12 +47,8 @@ class SearchFragment : Fragment(){
 
         retrofit = RetrofitClient.getInstance()
 
-        search_search_edit.setOnEditorActionListener { v, i, keyEvent ->
-            if (i == EditorInfo.IME_ACTION_DONE) {
-                getFeedList()
-                return@setOnEditorActionListener true
-            }
-            false
+        search_button.setOnClickListener {
+            getFeedList()
         }
     }
 
