@@ -1,34 +1,38 @@
 package com.example.hischool.view.activity
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
-import com.example.hischool.databinding.ActivityChattingBinding
+import com.example.hischool.adapter.RoomListAdapter
+import com.example.hischool.data.login.LoginInformation
+import com.example.hischool.databinding.ActivityChattingRoomBinding
 import com.example.hischool.room.ChatDataBase
 import com.example.hischool.room.DataBase
+import com.example.hischool.sharedpreferences.App
 import com.example.hischool.viewModel.ChattingViewModel
+import com.example.hischool.widget.noFinishStartActivity
 import com.example.hischool.widget.toast
-import com.example.hischool.adapter.ChatAdapter
-import kotlinx.android.synthetic.main.activity_chatting.*
+import kotlinx.android.synthetic.main.activity_chatting_room.*
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
 class ChattingRoomActivity : AppCompatActivity() {
 
-    lateinit var mBinding: ActivityChattingBinding
+    lateinit var roomAdapter: RoomListAdapter
+
+    lateinit var binding: ActivityChattingRoomBinding
     lateinit var viewModel: ChattingViewModel
 
-    private lateinit var chatAdapter: ChatAdapter
-
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,105 +41,75 @@ class ChattingRoomActivity : AppCompatActivity() {
         observerViewModel()
 
     }
+    private fun init() {
+
+        Glide.with(applicationContext)
+            .load(LoginInformation.loginInfoData.image)
+            .transform(CenterCrop(), RoundedCorners(1000000000))
+            .into(chatting_room_profile)
+
+        Log.d("TAG" ,"image ${LoginInformation.loginInfoData.image}")
+
+        viewModel.chatDb = DataBase.getInstance(applicationContext)
+
+        setRecyclerView()
+
+        chatting_room_search.setOnClickListener {
+            startActivity(Intent(this, SearchChatUser::class.java))
+        }
+
+    }
 
     private fun viewModelProvider()
     {
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_chatting)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_chatting_room)
         viewModel = ViewModelProvider(this)[ChattingViewModel::class.java]
-        mBinding.viewModel = viewModel
-        mBinding.lifecycleOwner = this
-        mBinding.executePendingBindings()
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        binding.executePendingBindings()
     }
 
 
-    private fun init() {
-
-        //Log.d("TAG", "name:"+viewModel.targetName)
-        viewModel.connect()
-        viewModel.chatDb = DataBase.getInstance(this)
-
-        setRecyclerView()
-        addData()
-        Log.d("TAG", "name:" + viewModel.targetName)
+    override fun onResume() {
+        super.onResume()
+        viewModel.socketReset()
+        viewModel.setFragmentRecyclerViewData()
+        setAdapter()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun observerViewModel() {
+    private fun observerViewModel() {
         with(viewModel) {
-            sendMessageBtn.observe(this@ChattingRoomActivity, Observer {
-                if (!TextUtils.isEmpty(messageEdit.value)) {
-                    sendMessage()
-                }
-            })
-
-            finishReceiveMessage.observe(this@ChattingRoomActivity, Observer {
-
-                chatAdapter.addItem(
-                    ChatDataBase(
-                        id = 0,
-                        message = receiveMessage,
-                        receiver = userName,
-                        sender = sender,
-                        time = receiveDate
-                    )
-                )
-
-                insertReceiveData()
-
-                chatAdapter.notifyDataSetChanged()
-            })
-
-            finishSend.observe(this@ChattingRoomActivity, Observer {
+            finishUserConnect.observe(this@ChattingRoomActivity, {
+                Log.d("TAG", it.toString())
                 if (it) {
-                    toast("전송성공")
-                    chatAdapter.addItem(
-                        ChatDataBase(
-                            id = 0,
-                            message = messageEdit.value.toString(),
-                            receiver = viewModel.targetName,
-                            sender = userName,
-                            time = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC)
-                        )
-                    )
-
-                    chatAdapter.notifyDataSetChanged()
-
-                    insertSendData()
-
-                    messageEdit.value = ""
+                    toast("입장")
+                    noFinishStartActivity(ChattingActivity::class.java)
                 } else {
-                    toast("전송 실패")
+                    toast("실패")
                 }
             })
         }
     }
 
     private fun setRecyclerView() {
-        chatAdapter = ChatAdapter(viewModel.arrayList)
-
-        chat_recyclerview.adapter = chatAdapter
-
-        chat_recyclerview.layoutManager = LinearLayoutManager(this)
-        chat_recyclerview.setHasFixedSize(true)
+        chat_room_recyclerview.layoutManager = LinearLayoutManager(applicationContext)
+        chat_room_recyclerview.setHasFixedSize(true)
     }
 
-    private fun addData() {
-        with(viewModel)
-        {
-            arrayList.clear()
 
-            arrayList.addAll(
-                chatDb?.dao()?.getMessage(
-                    sender = targetName,
-                    receiver = userName
-                ) as ArrayList<ChatDataBase>
+    private fun setAdapter() {
+        roomAdapter = RoomListAdapter(viewModel.arrayList) { item: ChatDataBase ->
+            viewModel.tryRoomConnect(
+                item
             )
         }
 
-        chatAdapter.notifyDataSetChanged()
+        chat_room_recyclerview.adapter = roomAdapter
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onDestroy() {
+        App.prefs.setLastTime(LocalDateTime.now().toEpochSecond(ZoneOffset.UTC))
+        super.onDestroy()
     }
 }
-
-
-
-
