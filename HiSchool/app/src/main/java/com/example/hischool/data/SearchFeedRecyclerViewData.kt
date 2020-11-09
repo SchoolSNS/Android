@@ -7,10 +7,10 @@ data class SearchFeedRecyclerViewData (
     val text : String,
     val image_urls : ArrayList<String>,
     val liked_peoples : ArrayList<Int>,
-    val like_count : Int,
+    var like_count : Int,
     val comment_count : Int,
     val created_at : String,
-    val is_liked : Boolean
+    var is_liked : Boolean
 )
 
 

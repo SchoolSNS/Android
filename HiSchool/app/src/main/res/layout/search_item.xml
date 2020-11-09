@@ -44,19 +44,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/search_profile_image"
         app:layout_constraintStart_toEndOf="@+id/search_profile_image" />
 
-    <Button
-        android:id="@+id/search_more_btn"
-        android:layout_width="23dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:background="@drawable/more"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/search_name_text"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/search_title_text"
@@ -87,7 +74,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_title_text" />
 
-    <Button
+    <ImageView
+        android:id="@+id/feed_image1"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toStartOf="@+id/search_question_text"
+        app:layout_constraintTop_toBottomOf="@+id/search_question_text" />
+
+
+    <ImageView
+        android:id="@+id/feed_image2"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="4:3"
+        app:layout_constraintStart_toEndOf="@+id/feed_image1"
+        app:layout_constraintTop_toTopOf="@+id/feed_image1" />
+
+    <ImageButton
         android:id="@+id/search_heart_btn"
         android:layout_width="21dp"
         android:layout_height="18.36dp"
