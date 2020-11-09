@@ -6,11 +6,12 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hischool.data.ChatModel
+import com.example.hischool.data.login.LoginInformation
 import com.example.hischool.network.socket.SocketListeners
 import com.example.hischool.network.socket.SocketManager
 import com.example.hischool.room.ChatDataBase
 import com.example.hischool.room.DataBase
-import com.example.hischool.widget.MyApplication
+import com.example.hischool.sharedpreferences.App
 import com.example.hischool.widget.SingleLiveEvent
 import com.github.nkzawa.socketio.client.Socket
 import org.json.JSONException
@@ -27,8 +28,8 @@ class ChattingViewModel : ViewModel(), SocketListeners {
     var receiveMessage: String = ""
     var receiveDate: Long = 0
 
-    val userName: String by lazy { MyApplication.prefs.getUsername( "") }
-    val targetName: String by lazy { MyApplication.prefs.getUsername("") }
+    val targetName : String by lazy { App.prefs.getEmail("") }
+    val userName: String by lazy { LoginInformation.loginInfoData.email }
 
     var finishSend = MutableLiveData<Boolean>()
     var finishUserConnect = MutableLiveData<Boolean>()
@@ -68,7 +69,6 @@ class ChattingViewModel : ViewModel(), SocketListeners {
         val jsonObject = JSONObject()
         try {
             jsonObject.put("id", userName)
-            MyApplication.prefs.setUsername(item.receiver)
         } catch (e: JSONException) {
             e.printStackTrace()
         }

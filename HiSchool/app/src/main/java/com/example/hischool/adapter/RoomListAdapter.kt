@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hischool.R
 import com.example.hischool.room.ChatDataBase
+import com.example.hischool.sharedpreferences.App
 
 class RoomListAdapter(
     var chatUserList: ArrayList<ChatDataBase>,
@@ -44,6 +45,7 @@ class RoomListAdapter(
 
             itemView.setOnClickListener {
                 Toast.makeText(itemView.context, "눌림", Toast.LENGTH_SHORT).show()
+                App.prefs.setEmail(item.receiver)
                 handler(item)
             }
         }
