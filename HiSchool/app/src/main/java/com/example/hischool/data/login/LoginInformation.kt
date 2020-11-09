@@ -3,11 +3,10 @@ package com.example.hischool.data.login
 data class LoginInformation(
     val id: String,
     val email: String,
-    val userName: String,
-    val profile: String,
-    val description: String,
-    val followers: String,
-    val followings: String
+    val username: String,
+    val image: String,
+    val identity: String,
+    val school: String
 ) {
     companion object {
         lateinit var loginInfoData: LoginInformation

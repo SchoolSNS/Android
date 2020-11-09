@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         floatingButton.setOnClickListener {
-            startActivity(Intent(this, ChattingActivity::class.java))
+            startActivity(Intent(this, ChattingRoomActivity::class.java))
         }
     }
 
