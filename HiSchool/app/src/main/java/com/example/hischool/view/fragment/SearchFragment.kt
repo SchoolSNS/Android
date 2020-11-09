@@ -9,12 +9,10 @@ import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import com.example.hischool.R
 import com.example.hischool.adapter.SearchFeedAdapter
-import com.example.hischool.adapter.SelectSchoolAdapter
 import com.example.hischool.data.SearchFeedRecyclerViewData
 import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
-import kotlinx.android.synthetic.main.activity_select_school.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,7 +40,7 @@ class SearchFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mAdapter = SearchFeedAdapter(feedList)
+        mAdapter = SearchFeedAdapter(feedList, context)
         search_recyclerView.setHasFixedSize(true)
         search_recyclerView.adapter = mAdapter
 
