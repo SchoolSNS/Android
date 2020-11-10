@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.hischool.R
+import com.example.hischool.data.DeviceTokenBody
+import com.example.hischool.data.SuccessResponse
 import com.example.hischool.data.login.LoginInformation
 import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
@@ -89,9 +91,19 @@ class LoadingActivity : AppCompatActivity() {
                 if (!it.isSuccessful) {
                     Log.d("TAG", "getInstanceId failed${it.exception}")
                 } else {
-                    var token = it.result?.token
+                    val token = it.result?.token
                     myAPI = retrofit.create(Service::class.java)
-                    myAPI.refreshToken()
+                    myAPI.refreshToken("Token ${Token.token}", DeviceTokenBody(token!!)).enqueue(object : Callback<SuccessResponse>{
+                        override fun onResponse(
+                            call: Call<SuccessResponse>,
+                            response: Response<SuccessResponse>
+                        ) {
+                        }
+
+                        override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
+                        }
+
+                    })
                     Log.d("TAG", "내토큰 : $token")
                 }
             }

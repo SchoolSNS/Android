@@ -127,13 +127,15 @@ interface Service {
         @Query("email") email: String
     ) : Call<UserListData>
 
-    @POST("/post/token")
+    @POST("/push-alarm/device-token")
     fun postToken(
+        @Header("Authorization") token: String,
+        @Body deviceTokenBody: DeviceTokenBody
+    ) : Call<SuccessResponse>
 
-    )
-
-    @PUT("/post/token")
+    @PUT("/post-alarm/device-token")
     fun refreshToken(
-
-    )
+        @Header("Authorization") token: String,
+        @Body deviceTokenBody: DeviceTokenBody
+    ) : Call<SuccessResponse>
 }
