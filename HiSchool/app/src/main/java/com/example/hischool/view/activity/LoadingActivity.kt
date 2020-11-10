@@ -11,6 +11,7 @@ import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.room.LoginDataBase
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -36,6 +37,8 @@ class LoadingActivity : AppCompatActivity() {
         actionbar?.hide()
 
         retrofit = RetrofitClient.getInstance()
+
+        postDeviceToken()
 
         loginDataBase = LoginDataBase.getInstance(applicationContext)!!
 
@@ -78,4 +81,20 @@ class LoadingActivity : AppCompatActivity() {
             finish()
         }
     }
+
+    private fun postDeviceToken()
+    {
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener {
+                if (!it.isSuccessful) {
+                    Log.d("TAG", "getInstanceId failed${it.exception}")
+                } else {
+                    var token = it.result?.token
+                    myAPI = retrofit.create(Service::class.java)
+                    myAPI.refreshToken()
+                    Log.d("TAG", "내토큰 : $token")
+                }
+            }
+    }
+
 }
