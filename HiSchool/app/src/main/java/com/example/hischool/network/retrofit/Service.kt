@@ -127,4 +127,13 @@ interface Service {
         @Query("email") email: String
     ) : Call<UserListData>
 
+    @POST("/post/token")
+    fun postToken(
+
+    )
+
+    @PUT("/post/token")
+    fun refreshToken(
+
+    )
 }

@@ -5,6 +5,8 @@ import androidx.navigation.NavController
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.hischool.R
 import com.example.hischool.data.SignUpResponse
+import com.example.hischool.view.fragment.SignUpFragment
+import com.example.hischool.view.fragment.SignUpProfileFragment
 import retrofit2.Response
 
 class SignUpDialog {
@@ -21,6 +23,7 @@ class SignUpDialog {
                 sweetAlertDialog.dismiss()
 
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
+                val signUpProfileFragment = SignUpProfileFragment()
 
                 dialog.setCancelable(false)
 
@@ -31,6 +34,7 @@ class SignUpDialog {
                     }
                     .show()
 
+                signUpProfileFragment.postToken()
             }
 
             400 -> {

@@ -242,4 +242,9 @@ class SignUpProfileFragment : Fragment() {
         }
     }
 
+    fun postToken()
+    {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.postToken()
+    }
 }
