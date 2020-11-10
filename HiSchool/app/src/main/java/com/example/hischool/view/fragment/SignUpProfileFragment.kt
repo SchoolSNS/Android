@@ -27,12 +27,16 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
+import com.example.hischool.data.DeviceTokenBody
 import com.example.hischool.data.SignUpResponse
+import com.example.hischool.data.SuccessResponse
+import com.example.hischool.data.login.Token
 import com.example.hischool.module.RotateImage
 import com.example.hischool.module.SignUpDialog
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.SignActivity
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.fragment_sign_up_profile.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -244,7 +248,27 @@ class SignUpProfileFragment : Fragment() {
 
     fun postToken()
     {
-        myAPI = retrofit.create(Service::class.java)
-        myAPI.postToken()
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener {
+                if (!it.isSuccessful) {
+                    Log.d("TAG", "getInstanceId failed${it.exception}")
+                } else {
+                    val token = it.result?.token
+                    myAPI = retrofit.create(Service::class.java)
+                    myAPI.postToken("Token ${Token.token}", DeviceTokenBody(token!!)).enqueue(object : Callback<SuccessResponse>{
+                        override fun onResponse(
+                            call: Call<SuccessResponse>,
+                            response: Response<SuccessResponse>
+                        ) {
+
+                        }
+
+                        override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
+                        }
+
+                    })
+                }
+            }
+
     }
 }
