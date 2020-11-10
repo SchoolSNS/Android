@@ -10,7 +10,7 @@ class SharedPreferences(context: Context) {
     val prefs: SharedPreferences? = context.getSharedPreferences(PREFS_FILENAME, 0)
 
     var schoolEditText: String
-        get() = prefs?.getString(PREF_KEY_SCHOOL_EDITTEXT,"학교 이름").toString()
+        get() = prefs?.getString(PREF_KEY_SCHOOL_EDITTEXT,"관심있는 학교를 선택해 주세요").toString()
         set(value) = prefs?.edit()?.putString(PREF_KEY_SCHOOL_EDITTEXT,value)!!.apply()
 
     fun getLastTime(defValue: Long): Long {
