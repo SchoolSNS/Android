@@ -75,7 +75,7 @@ interface Service {
     @GET("/search/school")
     fun getSearchSchool(
         @Query("page") page: Int,
-        @Query("query") query: String
+        @Query("search") search: String
     ) : Call<List<SearchSchoolRecyclerViewData>>
 
     @GET("/search/post")
