@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         if(LoginInformation.loginInfoData.identity == "junior") {
             school_name_text.text = prefs.schoolEditText
+            Log.d("TAG", "prefs : ${prefs.schoolEditText}")
         }
         if(LoginInformation.loginInfoData.identity == "senior")
         {
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         school_name_text.setOnClickListener {
             Log.d("TAG", "identity : ${LoginInformation.loginInfoData.identity}")
             if(LoginInformation.loginInfoData.identity == "junior") {
-                startActivity(Intent(this, ChattingRoomActivity::class.java))
+                startActivity(Intent(this, SelectSchoolActivity::class.java))
             }
             if(LoginInformation.loginInfoData.identity == "senior")
             {

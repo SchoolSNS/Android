@@ -13,6 +13,7 @@ import com.example.hischool.data.feed.FeedRecyclerViewData
 import com.example.hischool.data.login.Token
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
+import com.example.hischool.sharedpreferences.App
 import kotlinx.android.synthetic.main.fragment_feed.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,7 +40,12 @@ class FeedFragment : Fragment() {
     override fun onResume() {
         Log.d("TAG", "onResume 호출됨")
         retrofit = RetrofitClient.getInstance()
-        getFeed()
+        if(App.prefs.schoolEditText == "관심있는 학교를 선택해 주세요") {
+            getFeed()
+        }
+        else{
+            getSchoolFeed()
+        }
         super.onResume()
     }
 
@@ -58,6 +64,37 @@ class FeedFragment : Fragment() {
                     feedList.clear()
                     feedList = response.body() as ArrayList<FeedRecyclerViewData>
                     Log.d("TAG", "data $feedList")
+                    val mAdapter = FeedAdapter(feedList, mContext)
+                    feed_recyclerView.setHasFixedSize(true)
+                    feed_recyclerView.adapter = mAdapter
+                }
+                Log.d("TAG", response.code().toString())
+            }
+
+            override fun onFailure(call: Call<List<FeedRecyclerViewData>>, t: Throwable) {
+                Log.d("TAG", "fail : ${t.message.toString()}")
+            }
+
+        })
+    }
+
+    fun getSchoolFeed(){
+        myAPI = retrofit.create(Service::class.java)
+        Log.d("TAG", "getSchool :  ${App.prefs.schoolEditText}")
+        myAPI.getSchoolFeed(token = "Token ${Token.token}", page = 1,school = App.prefs.schoolEditText ).enqueue(object : Callback<List<FeedRecyclerViewData>>{
+            override fun onResponse(call: Call<List<FeedRecyclerViewData>>, response: Response<List<FeedRecyclerViewData>>) {
+                if(response.code() == 200)
+                {
+                    feedList.clear()
+                    feedList = response.body() as ArrayList<FeedRecyclerViewData>
+                    Log.d("TAG", "data $feedList")
+                    if(feedList.isEmpty())
+                    {
+                        not_have_feed.text = "게시물이 존재하지 않습니다."
+                    }
+                    else{
+                        not_have_feed.text = "."
+                    }
                     val mAdapter = FeedAdapter(feedList, mContext)
                     feed_recyclerView.setHasFixedSize(true)
                     feed_recyclerView.adapter = mAdapter
