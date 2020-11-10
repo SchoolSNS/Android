@@ -1,6 +1,6 @@
-package com.example.hischool.data.feed
+package com.example.hischool.data
 
-data class FeedCommentOwner(
+data class UserListData (
     val id : Int,
     val email : String,
     val username : String,

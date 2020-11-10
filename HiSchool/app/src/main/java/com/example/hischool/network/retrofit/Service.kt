@@ -7,6 +7,7 @@ import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
+import com.example.hischool.data.feed.FeedRecyclerViewDataOwner
 import com.example.hischool.data.login.LoginInformation
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -17,6 +18,13 @@ interface Service {
     fun getFeed(
         @Header("Authorization") token: String,
         @Query("page") page : Int
+    ) : Call<List<FeedRecyclerViewData>>
+
+    @GET("/feed/post/school")
+    fun getSchoolFeed(
+        @Header("Authorization") token: String,
+        @Query("page") page : Int,
+        @Query("school") school: String
     ) : Call<List<FeedRecyclerViewData>>
 
     @GET("/feed/post/{post_id}/comments")
@@ -107,4 +115,16 @@ interface Service {
     fun getUser(
         @Header("Authorization") token: String
     ): Call<LoginInformation>
+
+    @GET("/search/search-user")
+    fun getUserList(
+        @Query("page") page: Int,
+        @Query("search") query: String
+    ) : Call<List<UserListData>>
+
+    @GET("/user/email")
+    fun getUserProfile(
+        @Query("email") email: String
+    ) : Call<UserListData>
+
 }

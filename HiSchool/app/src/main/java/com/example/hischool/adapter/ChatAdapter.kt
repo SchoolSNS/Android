@@ -1,15 +1,26 @@
 package com.example.hischool.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
+import com.example.hischool.data.UserListData
 import com.example.hischool.data.login.LoginInformation
+import com.example.hischool.network.retrofit.Service
 import com.example.hischool.room.ChatDataBase
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
-class ChatAdapter(var arrayList: ArrayList<ChatDataBase>) :
+class ChatAdapter(var arrayList: ArrayList<ChatDataBase>, var context: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun addItem(item: ChatDataBase) {//아이템 추가
@@ -38,6 +49,7 @@ class ChatAdapter(var arrayList: ArrayList<ChatDataBase>) :
         else if (holder is Holder2) {
             holder.chat_Text.text = arrayList[position].message
             holder.chat_name.text = arrayList[position].sender
+            holder.getProfile(arrayList[position].sender)
         }
     }
 
@@ -52,8 +64,32 @@ class ChatAdapter(var arrayList: ArrayList<ChatDataBase>) :
 
     //상대가친 채팅 뷰홀더
     inner class Holder2(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        lateinit var myAPI: Service
+        lateinit var retrofit: Retrofit
         val chat_Text = itemView.findViewById<TextView>(R.id.chat_Text)
         val chat_name = itemView.findViewById<TextView>(R.id.chat_You_Name)
+        val chatImage:ImageView = itemView.findViewById(R.id.chat_You_Image)
+
+        fun getProfile(receiver : String)
+        {
+            myAPI = retrofit.create(Service::class.java)
+            myAPI.getUserProfile(receiver).enqueue(object : Callback<UserListData> {
+                override fun onResponse(
+                    call: Call<UserListData>,
+                    response: Response<UserListData>
+                ) {
+                    Glide.with(context)
+                        .load(response.body()?.profile)
+                        .transform(CenterCrop(), RoundedCorners(10000))
+                        .into(chatImage)
+                }
+
+                override fun onFailure(call: Call<UserListData>, t: Throwable) {
+
+                }
+
+            })
+        }
     }
 
     override fun getItemViewType(position: Int): Int {//여기서 뷰타입을 1, 2로 바꿔서 지정해줘야 내채팅 너채팅을 바꾸면서 쌓을 수 있음

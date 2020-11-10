@@ -27,6 +27,7 @@ class ChattingViewModel : ViewModel(), SocketListeners {
     var sender: String = ""
     var receiveMessage: String = ""
     var receiveDate: Long = 0
+    var targetProfile : String = ""
 
     val targetName : String by lazy { App.prefs.getEmail("") }
     val userName: String by lazy { LoginInformation.loginInfoData.email }
@@ -65,7 +66,8 @@ class ChattingViewModel : ViewModel(), SocketListeners {
         mSocket?.emit("message", jsonObject)
     }
 
-    fun tryRoomConnect(item: ChatDataBase) {
+    fun tryRoomConnect() {
+        Log.d("TAG", "tryRoomConnect")
         val jsonObject = JSONObject()
         try {
             jsonObject.put("id", userName)
@@ -82,16 +84,6 @@ class ChattingViewModel : ViewModel(), SocketListeners {
         receiveMessage = model.message
         receiveDate = model.date
         finishReceiveMessage.value = true
-
-        chatDb?.dao()?.insert(
-            ChatDataBase(
-                id = 0,
-                message = receiveMessage,
-                receiver = userName,
-                sender = sender,
-                time = receiveDate
-            )
-        )
     }
 
     override fun onConnect() {

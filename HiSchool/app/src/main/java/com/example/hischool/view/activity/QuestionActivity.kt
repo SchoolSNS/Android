@@ -26,6 +26,7 @@ import com.example.hischool.module.QuestionDialog
 import com.example.hischool.module.RotateImage
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
+import com.example.hischool.sharedpreferences.App
 import com.example.hischool.widget.startActivity
 import com.example.hischool.widget.toast
 import kotlinx.android.synthetic.main.activity_question.*
@@ -47,6 +48,13 @@ class QuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
+
+        if(App.prefs.schoolEditText == "관심있는 학교를 선택해 주세요")
+        {
+            startActivity(Intent(this, MainActivity::class.java))
+            Toast.makeText(applicationContext, "학교를 먼저 선택해 주세요.", Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
         questionImageAdapter = EditFeedSetImageAdapter(imageBitmap, applicationContext)
         question_image_recyclerview.adapter = questionImageAdapter
@@ -81,6 +89,7 @@ class QuestionActivity : AppCompatActivity() {
                 val body = MultipartBody.Builder().setType(MultipartBody.FORM).apply {
                     addFormDataPart("title", question_title.text.toString())
                     addFormDataPart("content", question_contents.text.toString())
+                    addFormDataPart("school", App.prefs.schoolEditText)
                     var index = 0
                     imageList.forEach {
                         addFormDataPart("image${index + 1}", imageNameList[index], it)

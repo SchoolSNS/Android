@@ -4,7 +4,7 @@ data class CommentOwner (
     val id : Int,
     val email : String,
     val username : String,
-    val image : String,
+    val profile : String,
     val school : String,
     val identity : String
 )

@@ -111,7 +111,7 @@ class ChattingActivity : AppCompatActivity() {
     }
 
     private fun setRecyclerView() {
-        chatAdapter = ChatAdapter(viewModel.arrayList)
+        chatAdapter = ChatAdapter(viewModel.arrayList, applicationContext)
 
         chat_recyclerview.adapter = chatAdapter
 

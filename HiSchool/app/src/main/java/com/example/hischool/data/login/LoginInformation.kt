@@ -4,7 +4,7 @@ data class LoginInformation(
     val id: String,
     val email: String,
     val username: String,
-    val image: String,
+    val profile: String,
     val identity: String,
     val school: String
 ) {

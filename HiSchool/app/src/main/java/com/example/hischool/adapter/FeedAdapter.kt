@@ -205,7 +205,7 @@ class FeedAdapter(
             comment1Name.text = item.comment_preview[0].owner.username
             comment1Text.text = item.comment_preview[0].content
             Glide.with(mContext)
-                .load(item.comment_preview[0].owner.image)
+                .load(item.comment_preview[0].owner.profile)
                 .transform(CenterCrop(), RoundedCorners(25))
                 .into(comment1Image)
         }
@@ -215,7 +215,7 @@ class FeedAdapter(
             comment2Name.text = item.comment_preview[1].owner.username
             comment2Text.text = item.comment_preview[1].content
             Glide.with(mContext)
-                .load(item.comment_preview[1].owner.image)
+                .load(item.comment_preview[1].owner.profile)
                 .transform(CenterCrop(), RoundedCorners(25))
                 .into(comment2Image)
         }
