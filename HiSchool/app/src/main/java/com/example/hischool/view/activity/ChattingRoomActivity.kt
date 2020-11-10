@@ -44,11 +44,13 @@ class ChattingRoomActivity : AppCompatActivity() {
     private fun init() {
 
         Glide.with(applicationContext)
-            .load(LoginInformation.loginInfoData.image)
+            .load(LoginInformation.loginInfoData.profile)
             .transform(CenterCrop(), RoundedCorners(1000000000))
             .into(chatting_room_profile)
 
-        Log.d("TAG" ,"image ${LoginInformation.loginInfoData.image}")
+        Log.d("TAG", "image : ${LoginInformation.loginInfoData.profile}")
+
+        Log.d("TAG" ,"image ${LoginInformation.loginInfoData.profile}")
 
         viewModel.chatDb = DataBase.getInstance(applicationContext)
 
@@ -83,7 +85,7 @@ class ChattingRoomActivity : AppCompatActivity() {
                 Log.d("TAG", it.toString())
                 if (it) {
                     toast("입장")
-                    noFinishStartActivity(ChattingActivity::class.java)
+                    startActivity(Intent(this@ChattingRoomActivity, ChattingActivity::class.java))
                 } else {
                     toast("실패")
                 }
@@ -98,10 +100,8 @@ class ChattingRoomActivity : AppCompatActivity() {
 
 
     private fun setAdapter() {
-        roomAdapter = RoomListAdapter(viewModel.arrayList) { item: ChatDataBase ->
-            viewModel.tryRoomConnect(
-                item
-            )
+        roomAdapter = RoomListAdapter(viewModel.arrayList) {
+            viewModel.tryRoomConnect()
         }
 
         chat_room_recyclerview.adapter = roomAdapter
