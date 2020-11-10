@@ -8,6 +8,7 @@ import com.example.hischool.sharedpreferences.App.Companion.prefs
 import com.example.hischool.R
 import com.example.hischool.adapter.SelectSchoolAdapter
 import com.example.hischool.data.SearchSchoolRecyclerViewData
+import com.example.hischool.data.login.LoginInformation
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import kotlinx.android.synthetic.main.activity_select_school.*
@@ -57,7 +58,8 @@ class SelectSchoolActivity : AppCompatActivity() {
 
     fun getSchoolList() {
         myAPI = retrofit.create(Service::class.java)
-        myAPI.getSearchSchool(page = 1, query = (select_search_edit.text.toString()).trim())
+        Log.d("TAG", "schoolName : ${select_search_edit.text.toString()}")
+        myAPI.getSearchSchool(page = 1, search = (select_search_edit.text.toString()).trim())
             .enqueue(object : Callback<List<SearchSchoolRecyclerViewData>> {
                 override fun onResponse(
                     call: Call<List<SearchSchoolRecyclerViewData>>,

@@ -98,7 +98,7 @@ class SignInFragment : Fragment() {
             sweetAlertDialog
                 .setTitleText("로딩 중")
                 .setCancelable(false)
-            sweetAlertDialog. show()
+            sweetAlertDialog.show()
 
             val signInDialog = SignInDialog()
 
@@ -122,7 +122,8 @@ class SignInFragment : Fragment() {
                                 requireContext(),
                                 loginDataBase,
                                 sweetAlertDialog,
-                                Intent(requireContext(), MainActivity::class.java)
+                                Intent(requireContext(), MainActivity::class.java),
+                                myAPI, retrofit
                             )
                         }
 

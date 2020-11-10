@@ -3,7 +3,9 @@ package com.example.hischool.view.activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hischool.sharedpreferences.App.Companion.prefs
 import com.example.hischool.R
+import com.example.hischool.data.login.LoginInformation
 import com.example.hischool.widget.noFinishStartActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,8 +26,14 @@ class MainActivity : AppCompatActivity() {
     //}
 
     override fun onResume() {
-
-        school_name_text.text =  prefs.schoolEditText
+        if(LoginInformation.loginInfoData.identity == "junior") {
+            school_name_text.text = prefs.schoolEditText
+        }
+        if(LoginInformation.loginInfoData.identity == "senior")
+        {
+            school_name_text.text = LoginInformation.loginInfoData.school
+            prefs.schoolEditText = LoginInformation.loginInfoData.school
+        }
         super.onResume()
     }
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -43,7 +52,14 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         navView.setupWithNavController(navController)
         school_name_text.setOnClickListener {
-            noFinishStartActivity(SelectSchoolActivity::class.java)
+            Log.d("TAG", "identity : ${LoginInformation.loginInfoData.identity}")
+            if(LoginInformation.loginInfoData.identity == "junior") {
+                startActivity(Intent(this, ChattingRoomActivity::class.java))
+            }
+            if(LoginInformation.loginInfoData.identity == "senior")
+            {
+                Toast.makeText(applicationContext, "재학중인 학생은 학교 선택이 불가능합니다.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         floatingButton.setOnClickListener {
