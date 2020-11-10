@@ -1,6 +1,7 @@
 package com.example.hischool.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,7 +69,7 @@ class CommentAdapter(
             message.text = item.content
 
             Glide.with(mContext)
-                .load(item.owner.image)
+                .load(item.owner.profile)
                 .transform(CenterCrop(), RoundedCorners(25))
                 .into(profile)
 
