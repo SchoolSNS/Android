@@ -26,13 +26,13 @@ class MyFireBaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         Log.d("FCM Log", "알림 메세지: " + remoteMessage.collapseKey)
 
-//        if (remoteMessage.notification != null) {
-//            sendNotification(
-//                remoteMessage.notification!!.body.toString(),
-//                remoteMessage.notification!!.title.toString()
-//            )
-//        } else
-            if (remoteMessage.data.isNotEmpty()) {
+        //if (remoteMessage.notification != null) {
+        //    sendNotification(
+        //        remoteMessage.notification!!.body.toString(),
+        ////        remoteMessage.notification!!.title.toString()
+        //    )
+        //} else
+        if (remoteMessage.data.isNotEmpty()) {
             sendNotification(
                 remoteMessage.data["text"].toString(),
                 remoteMessage.data["title"].toString()

@@ -43,7 +43,9 @@ class ChattingViewModel : ViewModel(), SocketListeners {
     var arrayList = arrayListOf<ChatDataBase>()
 
     var chatDb: DataBase? = null
-
+    companion object{
+        var without : Boolean = false;
+    }
     fun connect() {
         Log.d("TAG", "connect")
         mSocket = SocketManager.getSocket()
@@ -78,7 +80,7 @@ class ChattingViewModel : ViewModel(), SocketListeners {
     }
 
     override fun onMessageReceive(model: ChatModel) {
-
+        Log.d("TAG", "REC")
         sender = model.name
         receiveMessage = model.message
         receiveDate = model.date
@@ -88,6 +90,9 @@ class ChattingViewModel : ViewModel(), SocketListeners {
 
     override fun onConnect() {
         Log.d("TAG", "Connect!")
+        without = true;
+
+        tryRoomConnect()
     }
 
     override fun onDisconnect() {
@@ -95,10 +100,12 @@ class ChattingViewModel : ViewModel(), SocketListeners {
     }
 
     override fun onUserConnect(success: Boolean) {
-        finishUserConnect.value = success
+        Log.d("TAG", "USERCONNECT WITH $without")
+        if(!without) finishUserConnect.value = success
     }
 
     override fun onUserSendMessage(success: Boolean) {
+        Log.d("TAG", "END")
         finishSend.value = success
     }
 
@@ -134,9 +141,13 @@ class ChattingViewModel : ViewModel(), SocketListeners {
 
     fun setFragmentRecyclerViewData() {
         arrayList.clear()
-
+        chatDb!!.dao().getRecentMessage(userName).forEach { Log.d("TAG", it.message) }
+        Log.d("TAG", "user name is $userName")
         arrayList.addAll(
-            chatDb?.dao()?.getRecentMessage(userName)!! as ArrayList<ChatDataBase>
+            chatDb!!.dao().getRecentMessage(userName).
+                distinctBy {
+                    it.receiver
+                }.toList()
         )
 
     }

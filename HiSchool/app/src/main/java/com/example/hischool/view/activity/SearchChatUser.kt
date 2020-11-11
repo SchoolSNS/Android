@@ -86,12 +86,13 @@ class SearchChatUser : AppCompatActivity() {
         with(viewModel) {
             finishUserConnect.observe(this@SearchChatUser, {
                 Log.d("TAG", it.toString())
-                if (it) {
-                    toast("입장")
+                if(!ChattingViewModel.without)
                     startActivity(Intent(this@SearchChatUser, ChattingActivity::class.java))
-                } else {
-                    toast("실패")
-                }
+
+            })
+
+            finishReceiveMessage.observe(this@SearchChatUser, {
+                insertReceiveData()
             })
         }
     }
@@ -111,6 +112,7 @@ class SearchChatUser : AppCompatActivity() {
                     Log.d("TAG", "data : $userList")
                     Log.d("TAG", "edit : ${search_chat_edit.text.toString()}")
                     userListAdapter = UserListAdapter(userList, applicationContext){
+                        ChattingViewModel.without = false
                         viewModel.tryRoomConnect()
                         viewModel.targetProfile = it.profile
                     }
