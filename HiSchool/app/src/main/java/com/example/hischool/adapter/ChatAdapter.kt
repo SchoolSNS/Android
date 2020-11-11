@@ -13,6 +13,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.hischool.R
 import com.example.hischool.data.UserListData
 import com.example.hischool.data.login.LoginInformation
+import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.room.ChatDataBase
 import retrofit2.Call
@@ -48,7 +49,6 @@ class ChatAdapter(var arrayList: ArrayList<ChatDataBase>, var context: Context) 
         //onCreateViewHolder에서 리턴받은 뷰홀더가 Holder2라면 상대의 채팅, item_your_chat의 뷰들을 초기화 해줌
         else if (holder is Holder2) {
             holder.chat_Text.text = arrayList[position].message
-            holder.chat_name.text = arrayList[position].sender
             holder.getProfile(arrayList[position].sender)
         }
     }
@@ -72,6 +72,7 @@ class ChatAdapter(var arrayList: ArrayList<ChatDataBase>, var context: Context) 
 
         fun getProfile(receiver : String)
         {
+            retrofit = RetrofitClient.getInstance()
             myAPI = retrofit.create(Service::class.java)
             myAPI.getUserProfile(receiver).enqueue(object : Callback<UserListData> {
                 override fun onResponse(
@@ -82,6 +83,7 @@ class ChatAdapter(var arrayList: ArrayList<ChatDataBase>, var context: Context) 
                         .load(response.body()?.profile)
                         .transform(CenterCrop(), RoundedCorners(10000))
                         .into(chatImage)
+                    chat_name.text = response.body()?.username
                 }
 
                 override fun onFailure(call: Call<UserListData>, t: Throwable) {
