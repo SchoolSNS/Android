@@ -13,12 +13,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.hischool.R
+import com.example.hischool.data.DeviceTokenBody
 import com.example.hischool.data.SignInResponse
+import com.example.hischool.data.SuccessResponse
+import com.example.hischool.data.login.Token
 import com.example.hischool.module.SignInDialog
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.room.LoginDataBase
 import com.example.hischool.view.activity.MainActivity
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 import kotlinx.android.synthetic.main.fragment_sign_in.view.email
 import kotlinx.android.synthetic.main.fragment_sign_in.view.password
@@ -188,5 +192,33 @@ class SignInFragment : Fragment() {
             view?.loginButton?.isEnabled = false
 
         }
+    }
+
+    fun postToken()
+    {
+        retrofit = RetrofitClient.getInstance()
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener {
+                if (!it.isSuccessful) {
+                    Log.d("TAG", "getInstanceId failed${it.exception}")
+                } else {
+                    val token = it.result?.token
+                    myAPI = retrofit.create(Service::class.java)
+                    myAPI.postToken("Token ${Token.token}", DeviceTokenBody(token!!)).enqueue(object : Callback<SuccessResponse>{
+                        override fun onResponse(
+                            call: Call<SuccessResponse>,
+                            response: Response<SuccessResponse>
+                        ) {
+                            Log.d("TAG", "responseDevide :${response.message()}")
+                        }
+
+                        override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
+                            Log.d("TAG", "t.message : ${t.message.toString()}")
+                        }
+
+                    })
+                }
+            }
+
     }
 }

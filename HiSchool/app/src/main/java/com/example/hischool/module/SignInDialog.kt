@@ -18,6 +18,7 @@ import com.example.hischool.network.retrofit.Service
 import com.example.hischool.room.LoginData
 import com.example.hischool.room.LoginDataBase
 import com.example.hischool.view.activity.MainActivity
+import com.example.hischool.view.fragment.SignInFragment
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -68,12 +69,17 @@ class SignInDialog {
                                     ) {
                                         when (response.code()) {
                                             200 -> {
+
+                                                val signInFragment = SignInFragment()
+
                                                 LoginInformation.loginInfoData = response.body()!!
 
                                                 startActivity(context, intent, null)
                                                 (context as Activity).finish()
                                                 ActivityCompat.finishAffinity(context)
                                                 dialog.dismiss()
+
+                                                signInFragment.postToken()
                                             }
                                         }
                                     }

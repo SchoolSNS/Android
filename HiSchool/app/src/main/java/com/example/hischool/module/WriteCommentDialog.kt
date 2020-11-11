@@ -5,6 +5,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.hischool.adapter.CommentImagePreViewAdapter
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.view.activity.CommentActivity
+import kotlinx.android.synthetic.main.activity_comment.*
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -31,6 +32,8 @@ class WriteCommentDialog {
                         dialog.dismiss()
                     }
                     .show()
+
+                val commentActivity = CommentActivity()
             }
 
             401 -> {

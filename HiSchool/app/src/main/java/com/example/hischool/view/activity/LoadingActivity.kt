@@ -40,7 +40,6 @@ class LoadingActivity : AppCompatActivity() {
 
         retrofit = RetrofitClient.getInstance()
 
-        postDeviceToken()
 
         loginDataBase = LoginDataBase.getInstance(applicationContext)!!
 
@@ -61,6 +60,7 @@ class LoadingActivity : AppCompatActivity() {
                                 LoginInformation.loginInfoData = response.body()!!
                                 Log.d("token", "token: ${Token.token}")
                                 Log.d("token", "user: ${LoginInformation.loginInfoData}")
+                                postDeviceToken()
                                 startActivity(
                                     Intent(
                                         applicationContext,
@@ -92,12 +92,14 @@ class LoadingActivity : AppCompatActivity() {
                     Log.d("TAG", "getInstanceId failed${it.exception}")
                 } else {
                     val token = it.result?.token
+                    Log.d("TAG", "device : ${token}")
                     myAPI = retrofit.create(Service::class.java)
                     myAPI.refreshToken("Token ${Token.token}", DeviceTokenBody(token!!)).enqueue(object : Callback<SuccessResponse>{
                         override fun onResponse(
                             call: Call<SuccessResponse>,
                             response: Response<SuccessResponse>
                         ) {
+                            Log.d("TAG" ,"rcode : ${response.code()}")
                         }
 
                         override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {

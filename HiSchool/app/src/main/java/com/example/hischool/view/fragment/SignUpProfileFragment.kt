@@ -245,30 +245,4 @@ class SignUpProfileFragment : Fragment() {
             }
         }
     }
-
-    fun postToken()
-    {
-        FirebaseInstanceId.getInstance().instanceId
-            .addOnCompleteListener {
-                if (!it.isSuccessful) {
-                    Log.d("TAG", "getInstanceId failed${it.exception}")
-                } else {
-                    val token = it.result?.token
-                    myAPI = retrofit.create(Service::class.java)
-                    myAPI.postToken("Token ${Token.token}", DeviceTokenBody(token!!)).enqueue(object : Callback<SuccessResponse>{
-                        override fun onResponse(
-                            call: Call<SuccessResponse>,
-                            response: Response<SuccessResponse>
-                        ) {
-
-                        }
-
-                        override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
-                        }
-
-                    })
-                }
-            }
-
-    }
 }

@@ -11,6 +11,7 @@ import com.example.hischool.data.feed.FeedRecyclerViewDataOwner
 import com.example.hischool.data.login.LoginInformation
 import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.http.*
 
 interface Service {
@@ -133,9 +134,20 @@ interface Service {
         @Body deviceTokenBody: DeviceTokenBody
     ) : Call<SuccessResponse>
 
-    @PUT("/post-alarm/device-token")
+    @PUT("/push-alarm/device-token")
     fun refreshToken(
         @Header("Authorization") token: String,
         @Body deviceTokenBody: DeviceTokenBody
+    ) : Call<SuccessResponse>
+
+    @GET("/push-alarm/notification-list")
+    fun getNotification(
+        @Header("Authorization") token: String
+    ) : Call<List<NotificationRecyclerViewData>>
+
+    @GET("/push-alarm/comment")
+    fun postAlarm(
+        @Header("Authorization") token: String,
+        @Query("post_id") post_id: Int
     ) : Call<SuccessResponse>
 }

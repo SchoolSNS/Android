@@ -23,6 +23,7 @@ import com.example.hischool.adapter.CommentAdapter
 import com.example.hischool.adapter.CommentImagePreViewAdapter
 import com.example.hischool.adapter.CommentSetImageAdapter
 import com.example.hischool.bottomSheet.DetailFeedBottomSheet
+import com.example.hischool.data.SuccessResponse
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
@@ -122,7 +123,7 @@ class CommentActivity : AppCompatActivity() {
         super.onRestart()
     }
 
-    private fun getComment() {
+    fun getComment() {
         postId = intent.getIntExtra("id", 0)
         Log.d("TAG", "post : $postId")
         myAPI = retrofit.create(Service::class.java)
@@ -254,6 +255,7 @@ class CommentActivity : AppCompatActivity() {
                         count = 1
                         imageCount = 0
                         getComment()
+                        sendAlarm()
                     }
 
                     override fun onFailure(call: Call<WriteCommentResponse>, t: Throwable) {
@@ -363,5 +365,24 @@ class CommentActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "좋아요 실패", Toast.LENGTH_SHORT).show()
                 }
             })
+    }
+
+    fun sendAlarm()
+    {
+        myAPI = retrofit.create(Service::class.java)
+        myAPI.postAlarm("Token ${Token.token}", postId).enqueue(object : Callback<SuccessResponse>{
+            override fun onResponse(
+                call: Call<SuccessResponse>,
+                response: Response<SuccessResponse>
+            ) {
+                Log.d("TAG", "Alarm : ${response.code()}")
+                Log.d("TAG", "Alarm : ${response.message()}")
+            }
+
+            override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
+                Log.d("TAG", "Alarm : ${t.message}")
+            }
+
+        })
     }
 }
