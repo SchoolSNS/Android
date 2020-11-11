@@ -80,10 +80,10 @@ class ChattingViewModel : ViewModel(), SocketListeners {
     override fun onMessageReceive(model: ChatModel) {
 
         sender = model.name
-        sender = sender.substring(0, sender.length - 8)
         receiveMessage = model.message
         receiveDate = model.date
         finishReceiveMessage.value = true
+        Log.d("TAG" , "ChattingReceiver")
     }
 
     override fun onConnect() {

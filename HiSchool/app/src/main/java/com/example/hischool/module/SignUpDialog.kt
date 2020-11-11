@@ -23,7 +23,6 @@ class SignUpDialog {
                 sweetAlertDialog.dismiss()
 
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-                val signUpProfileFragment = SignUpProfileFragment()
 
                 dialog.setCancelable(false)
 
@@ -34,7 +33,6 @@ class SignUpDialog {
                     }
                     .show()
 
-                signUpProfileFragment.postToken()
             }
 
             400 -> {
