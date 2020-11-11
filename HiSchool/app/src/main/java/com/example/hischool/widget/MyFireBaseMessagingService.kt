@@ -7,10 +7,10 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.example.hischool.R
 import com.example.hischool.view.activity.LoadingActivity
-import com.example.hischool.view.activity.MainActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -22,20 +22,26 @@ class MyFireBaseMessagingService : FirebaseMessagingService() {
     }
 
     //메세지 들어온거 받아서 띄움
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        Log.d("FCM Log", "알림 메세지: " + remoteMessage.data)
+        Log.d("FCM Log", "알림 메세지: " + remoteMessage.collapseKey)
 
-        if(remoteMessage.notification != null)
-        {
-            sendNotification(remoteMessage.notification!!.body.toString(), remoteMessage.notification!!.title.toString())
-        }
-        else if(remoteMessage.data.isNotEmpty())
-        {
-            sendNotification(remoteMessage.data["text"].toString(), remoteMessage.data["title"].toString())
+//        if (remoteMessage.notification != null) {
+//            sendNotification(
+//                remoteMessage.notification!!.body.toString(),
+//                remoteMessage.notification!!.title.toString()
+//            )
+//        } else
+            if (remoteMessage.data.isNotEmpty()) {
+            sendNotification(
+                remoteMessage.data["text"].toString(),
+                remoteMessage.data["title"].toString()
+            )
         }
     }
 
-    private fun sendNotification(messageBody : String, messageTitle : String){
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun sendNotification(messageBody: String, messageTitle: String) {
         val intent = Intent(this, LoadingActivity::class.java)
         val pendingIntent =
             PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
@@ -49,12 +55,10 @@ class MyFireBaseMessagingService : FirebaseMessagingService() {
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channelName = "Channel Name"
-            val channel =
-                NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH)
-            notificationManager.createNotificationChannel(channel)
-        }
+        val channelName = "Channel Name"
+        val channel =
+            NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH)
+        notificationManager.createNotificationChannel(channel)
         notificationManager.notify(0, notificationBuilder.build())
 
     }
