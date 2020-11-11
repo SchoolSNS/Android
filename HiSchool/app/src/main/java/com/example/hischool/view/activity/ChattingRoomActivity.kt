@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -77,18 +78,21 @@ class ChattingRoomActivity : AppCompatActivity() {
         viewModel.socketReset()
         viewModel.setFragmentRecyclerViewData()
         setAdapter()
+        Log.d("TAG", "roomResume")
     }
 
     private fun observerViewModel() {
         with(viewModel) {
             finishUserConnect.observe(this@ChattingRoomActivity, {
                 Log.d("TAG", it.toString())
-                if (it) {
-                    toast("입장")
-                    startActivity(Intent(this@ChattingRoomActivity, ChattingActivity::class.java))
-                } else {
-                    toast("실패")
-                }
+                if(!ChattingViewModel.without) startActivity(Intent(this@ChattingRoomActivity, ChattingActivity::class.java))
+            })
+
+            finishReceiveMessage.observe(this@ChattingRoomActivity, {
+
+                insertReceiveData()
+                setFragmentRecyclerViewData()
+                setAdapter()
             })
         }
     }
@@ -100,7 +104,11 @@ class ChattingRoomActivity : AppCompatActivity() {
 
 
     private fun setAdapter() {
+        viewModel.arrayList.forEach {
+            Log.d("TAG", it.message)
+        }
         roomAdapter = RoomListAdapter(viewModel.arrayList) {
+            ChattingViewModel.without = false
             viewModel.tryRoomConnect()
         }
 

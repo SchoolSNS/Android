@@ -19,7 +19,7 @@ object SocketManager {
             Log.d("TAG", socket.toString())
             if (socket == null) {
                 Log.d("TAG", "asdf")
-                socket = IO.socket("http://192.168.10.171:8080")
+                socket = IO.socket("https://narushachatsv.herokuapp.com/")
                 socket!!.on(Socket.EVENT_CONNECT) {
                     for (observer in observers) {
                         GlobalScope.launch {
