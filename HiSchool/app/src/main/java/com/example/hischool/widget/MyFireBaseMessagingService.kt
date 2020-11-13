@@ -34,14 +34,14 @@ class MyFireBaseMessagingService : FirebaseMessagingService() {
         //} else
         if (remoteMessage.data.isNotEmpty()) {
             sendNotification(
-                remoteMessage.data["text"].toString(),
+              //  remoteMessage.data["text"].toString(),
                 remoteMessage.data["title"].toString()
             )
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun sendNotification(messageBody: String, messageTitle: String) {
+    private fun sendNotification(messageTitle: String) {
         val intent = Intent(this, LoadingActivity::class.java)
         val pendingIntent =
             PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
@@ -50,7 +50,7 @@ class MyFireBaseMessagingService : FirebaseMessagingService() {
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(messageTitle)
-            .setContentText(messageBody)
+           // .setContentText(messageBody)
             .setAutoCancel(true)
             .setSound(defaultSoundUri)
             .setContentIntent(pendingIntent)
