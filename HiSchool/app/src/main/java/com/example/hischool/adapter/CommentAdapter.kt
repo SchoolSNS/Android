@@ -70,7 +70,7 @@ class CommentAdapter(
 
             Glide.with(mContext)
                 .load(item.owner.profile)
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(100000))
                 .into(profile)
 
 
@@ -91,7 +91,7 @@ class CommentAdapter(
         private fun setOneImage(item: CommentRecyclerViewData) {
             Glide.with(mContext)
                 .load(item.image_urls[0])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(imageList)
         }
 
@@ -99,7 +99,7 @@ class CommentAdapter(
             setOneImage(item)
             Glide.with(mContext)
                 .load(item.image_urls[1])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(imageList2)
         }
 

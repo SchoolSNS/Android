@@ -166,7 +166,7 @@ class CommentActivity : AppCompatActivity() {
         comment_time_text.text = intent.getStringExtra("time")
         Glide.with(applicationContext)
             .load(intent.getStringExtra("profile"))
-            .transform(CenterCrop(), RoundedCorners(25))
+            .transform(CenterCrop(), RoundedCorners(100000))
             .into(comment_profile_image)
         title = intent.getStringExtra("title").toString()
         comment_title_text.text = title

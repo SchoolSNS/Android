@@ -26,7 +26,7 @@ class CommentImagePreViewAdapter(private val commentImageList : ArrayList<Bitmap
 
         Glide.with(context)
             .load(commentImageList[position])
-            .transform(CenterCrop(), RoundedCorners(25))
+            .transform(CenterCrop(), RoundedCorners(10))
             .into(holder.imageViewList)
 
     }

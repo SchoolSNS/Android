@@ -28,4 +28,12 @@ class SharedPreferences(context: Context) {
     fun setEmail(string: String) {
         prefs!!.edit().putString("targetEmail", string).apply()
     }
+
+    fun setTheme(bol: Boolean) {
+        prefs!!.edit().putBoolean("permission", bol).apply()
+    }
+
+    fun getTheme(defValue: Boolean): Boolean {
+        return prefs!!.getBoolean("permission", defValue)
+    }
 }

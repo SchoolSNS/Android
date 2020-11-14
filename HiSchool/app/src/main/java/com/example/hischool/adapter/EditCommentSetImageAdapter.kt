@@ -27,7 +27,7 @@ class EditCommentSetImageAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(context)
             .load(commentImageList[position])
-            .transform(CenterCrop(), RoundedCorners(25))
+            .transform(CenterCrop(), RoundedCorners(10))
             .into(holder.imageViewList)
     }
 

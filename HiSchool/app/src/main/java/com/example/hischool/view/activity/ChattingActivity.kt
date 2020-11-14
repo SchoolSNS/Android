@@ -11,12 +11,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hischool.R
+import com.example.hischool.adapter.ChatAdapter
 import com.example.hischool.databinding.ActivityChattingBinding
 import com.example.hischool.room.ChatDataBase
 import com.example.hischool.room.DataBase
 import com.example.hischool.viewModel.ChattingViewModel
 import com.example.hischool.widget.toast
-import com.example.hischool.adapter.ChatAdapter
 import kotlinx.android.synthetic.main.activity_chatting.*
 import java.time.LocalDateTime
 import java.time.ZoneOffset
@@ -38,8 +38,7 @@ class ChattingActivity : AppCompatActivity() {
 
     }
 
-    private fun viewModelProvider()
-    {
+    private fun viewModelProvider() {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_chatting)
         viewModel = ViewModelProvider(this)[ChattingViewModel::class.java]
         mBinding.viewModel = viewModel
