@@ -189,7 +189,7 @@ class FeedAdapter(
         private fun setOneFeedImage(item: FeedRecyclerViewData) {
             Glide.with(mContext)
                 .load(item.image_urls[0])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(feedImage1)
         }
 
@@ -197,7 +197,7 @@ class FeedAdapter(
             setOneFeedImage(item)
             Glide.with(mContext)
                 .load(item.image_urls[1])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(feedImage2)
         }
 
@@ -206,7 +206,7 @@ class FeedAdapter(
             comment1Text.text = item.comment_preview[0].content
             Glide.with(mContext)
                 .load(item.comment_preview[0].owner.profile)
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(100000))
                 .into(comment1Image)
         }
 
@@ -216,14 +216,14 @@ class FeedAdapter(
             comment2Text.text = item.comment_preview[1].content
             Glide.with(mContext)
                 .load(item.comment_preview[1].owner.profile)
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(100000))
                 .into(comment2Image)
         }
 
         private fun setOneImageCommentOne(item: FeedRecyclerViewData) {
             Glide.with(mContext)
                 .load(item.comment_preview[0].image_urls[0])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(comment1ImageList)
         }
 
@@ -231,14 +231,14 @@ class FeedAdapter(
             setOneImageCommentOne(item)
             Glide.with(mContext)
                 .load(item.comment_preview[0].image_urls[1])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(comment1ImageList2)
         }
 
         private fun setOneImageCommentTwo(item: FeedRecyclerViewData) {
             Glide.with(mContext)
                 .load(item.comment_preview[1].image_urls[0])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(comment2ImageList)
         }
 
@@ -246,7 +246,7 @@ class FeedAdapter(
             setOneImageCommentTwo(item)
             Glide.with(mContext)
                 .load(item.comment_preview[1].image_urls[1])
-                .transform(CenterCrop(), RoundedCorners(25))
+                .transform(CenterCrop(), RoundedCorners(10))
                 .into(comment2ImageList2)
         }
 

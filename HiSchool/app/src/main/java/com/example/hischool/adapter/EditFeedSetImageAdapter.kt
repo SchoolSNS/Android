@@ -23,7 +23,7 @@ class EditFeedSetImageAdapter(private val feedImageList : ArrayList<Bitmap>, pri
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(context)
             .load(feedImageList[position])
-            .transform(CenterCrop(), RoundedCorners(25))
+            .transform(CenterCrop(), RoundedCorners(10))
             .into(holder.imageViewList)
     }
 

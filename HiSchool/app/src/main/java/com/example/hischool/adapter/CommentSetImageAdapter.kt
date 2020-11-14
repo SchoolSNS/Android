@@ -25,7 +25,7 @@ class CommentSetImageAdapter(private val imageList : ArrayList<String>, private 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(context)
             .load(imageList[position])
-            .transform(CenterCrop(), RoundedCorners(25))
+            .transform(CenterCrop(), RoundedCorners(100000))
             .into(holder.imageViewList)
     }
 

@@ -15,6 +15,6 @@ interface LoginDao {
     @Insert
     fun insert(loginData: LoginData)
 
-    @Delete
-    fun delete(loginData: LoginData)
+    @Query("DELETE FROM login")
+    fun delete()
 }

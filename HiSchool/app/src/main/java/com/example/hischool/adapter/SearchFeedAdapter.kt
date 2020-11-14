@@ -160,7 +160,7 @@ class SearchFeedAdapter(private val searchFeedList: ArrayList<SearchFeedRecycler
             if (mContext != null) {
                 Glide.with(mContext)
                     .load(item.image_urls[0])
-                    .transform(CenterCrop(), RoundedCorners(25))
+                    .transform(CenterCrop(), RoundedCorners(10))
                     .into(feedImage1)
             }
         }
@@ -170,7 +170,7 @@ class SearchFeedAdapter(private val searchFeedList: ArrayList<SearchFeedRecycler
             if (mContext != null) {
                 Glide.with(mContext)
                     .load(item.image_urls[1])
-                    .transform(CenterCrop(), RoundedCorners(25))
+                    .transform(CenterCrop(), RoundedCorners(10))
                     .into(feedImage2)
             }
         }
