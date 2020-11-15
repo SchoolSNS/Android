@@ -11,7 +11,11 @@ android {
     buildFeatures{
         dataBinding = true
     }
-
+    sourceSets{
+        main{
+            res.srcDirs = ['src/main/res','src/main/res/values/themes']
+        }
+    }
     defaultConfig {
         applicationId "com.example.hischool"
         minSdkVersion 23
