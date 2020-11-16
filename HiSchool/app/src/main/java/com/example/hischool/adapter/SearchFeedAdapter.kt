@@ -28,6 +28,7 @@ import com.example.hischool.module.FeedTime
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
+import com.example.hischool.view.activity.OtherPeopleProfile
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -125,6 +126,12 @@ class SearchFeedAdapter(private val searchFeedList: ArrayList<SearchFeedRecycler
                             .into(liked)
                     }
                 }
+            }
+
+            profile.setOnClickListener {
+                val intent = Intent(context, OtherPeopleProfile::class.java)
+                intent.putExtra("id", item.owner.id)
+                itemView.context.startActivity(intent)
             }
 
             liked.setOnClickListener {

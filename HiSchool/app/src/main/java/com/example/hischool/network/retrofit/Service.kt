@@ -7,11 +7,9 @@ import com.example.hischool.data.comment.WriteCommentResponse
 import com.example.hischool.data.feed.CheckLike
 import com.example.hischool.data.feed.DelPostResponse
 import com.example.hischool.data.feed.FeedRecyclerViewData
-import com.example.hischool.data.feed.FeedRecyclerViewDataOwner
 import com.example.hischool.data.login.LoginInformation
 import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.http.*
 
 interface Service {
@@ -150,4 +148,28 @@ interface Service {
         @Header("Authorization") token: String,
         @Query("post_id") post_id: Int
     ) : Call<SuccessResponse>
+
+    @GET("/user/{user_id}/posts")
+    fun getQuestionList(
+        @Header("Authorization") token: String,
+        @Path ("user_id") userId: String
+    ) : Call<List<FeedRecyclerViewData>>
+
+    @PUT("/auth/update")
+    fun updateUserData(
+        @Header("Authorization") token: String,
+        @Body UpdateProfileBody: RequestBody,
+    ) : Call<SuccessString>
+
+    @GET("/user/{user_id}")
+    fun getOtherUserInfo(
+        @Header("Authorization") token: String,
+        @Path ("user_id") userId: String
+    ) : Call<UserListData>
+
+    @GET("/user/{user_id}/comments")
+    fun getAnswerList(
+        @Header("Authorization") token: String,
+        @Path ("user_id") userId: String
+    ) : Call<List<FeedRecyclerViewData>>
 }

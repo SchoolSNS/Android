@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HiSchool">
-        <activity android:name=".view.activity.SettingActivity"></activity>
+        <activity android:name=".view.activity.OtherPeopleProfile"></activity>
+        <activity android:name=".view.activity.EditProfileActivity" />
+        <activity android:name=".view.activity.SettingActivity" />
         <activity android:name=".view.activity.SearchChatUser" />
         <activity android:name=".view.activity.LoadingActivity">
             <intent-filter>

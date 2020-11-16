@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/select_search_edit"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/select_school_next_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

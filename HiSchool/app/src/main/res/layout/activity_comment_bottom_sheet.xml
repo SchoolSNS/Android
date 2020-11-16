@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="@+id/comment_bottom_sheet_textView"
         app:layout_constraintTop_toBottomOf="@+id/comment_bottom_sheet_textView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/comment_edit_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="@+id/comment_edit_btn"
         app:layout_constraintTop_toBottomOf="@+id/comment_edit_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/comment_del_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"

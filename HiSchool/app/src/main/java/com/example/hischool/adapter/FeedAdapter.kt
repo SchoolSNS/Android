@@ -25,6 +25,7 @@ import com.example.hischool.module.FeedTime
 import com.example.hischool.network.retrofit.RetrofitClient
 import com.example.hischool.network.retrofit.Service
 import com.example.hischool.view.activity.CommentActivity
+import com.example.hischool.view.activity.OtherPeopleProfile
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -153,6 +154,24 @@ class FeedAdapter(
                         setLike(item)
                     }
                 }
+            }
+
+            profile.setOnClickListener {
+                val intent = Intent(context, OtherPeopleProfile::class.java)
+                intent.putExtra("id", item.owner.id)
+                itemView.context.startActivity(intent)
+            }
+
+            comment1Image.setOnClickListener {
+                val intent = Intent(context, OtherPeopleProfile::class.java)
+                intent.putExtra("id", item.comment_preview[0].owner.id)
+                itemView.context.startActivity(intent)
+            }
+
+            comment2Image.setOnClickListener {
+                val intent = Intent(context, OtherPeopleProfile::class.java)
+                intent.putExtra("id", item.comment_preview[1].owner.id)
+                itemView.context.startActivity(intent)
             }
 
             moreBtn.setOnClickListener {

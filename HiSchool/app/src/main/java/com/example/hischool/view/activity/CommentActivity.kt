@@ -116,6 +116,12 @@ class CommentActivity : AppCompatActivity() {
         comment_post_btn.setOnClickListener {
             writeComment()
         }
+
+        comment_profile_image.setOnClickListener {
+            val intent = Intent(applicationContext, OtherPeopleProfile::class.java)
+            intent.putExtra("id", postId)
+            startActivity(intent)
+        }
     }
 
     override fun onRestart() {
