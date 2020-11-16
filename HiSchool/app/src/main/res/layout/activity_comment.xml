@@ -100,7 +100,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/comment_profile_image"
         app:layout_constraintStart_toEndOf="@+id/comment_profile_image" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/comment_more_btn"
         android:layout_width="23dp"
         android:layout_height="24dp"

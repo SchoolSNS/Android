@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/feed_edit_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="@+id/feed_edit_btn"
         app:layout_constraintTop_toBottomOf="@+id/feed_edit_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/feed_del_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"

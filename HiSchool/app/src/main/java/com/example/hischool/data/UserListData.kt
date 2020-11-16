@@ -6,5 +6,6 @@ data class UserListData (
     val username : String,
     val profile : String,
     val identity : String,
-    val school : String
+    val school : String,
+    val introduce : String
 )

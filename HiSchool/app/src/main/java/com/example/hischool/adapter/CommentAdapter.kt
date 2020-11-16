@@ -1,6 +1,7 @@
 package com.example.hischool.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.hischool.R
 import com.example.hischool.bottomSheet.CommentBottomSheet
 import com.example.hischool.data.comment.CommentRecyclerViewData
 import com.example.hischool.data.login.LoginInformation
+import com.example.hischool.view.activity.OtherPeopleProfile
 
 class CommentAdapter(
     val commentArrayList: ArrayList<CommentRecyclerViewData>,
@@ -73,6 +75,12 @@ class CommentAdapter(
                 .transform(CenterCrop(), RoundedCorners(100000))
                 .into(profile)
 
+
+            profile.setOnClickListener {
+                val intent = Intent(context, OtherPeopleProfile::class.java)
+                intent.putExtra("id", item.owner.id)
+                itemView.context.startActivity(intent)
+            }
 
             itemView.setOnLongClickListener {
                 if(LoginInformation.loginInfoData.email == item.owner.email) {

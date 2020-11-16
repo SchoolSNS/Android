@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="@+id/detail_feed_bottom_sheet_textView"
         app:layout_constraintTop_toBottomOf="@+id/detail_feed_bottom_sheet_textView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/detail_feed_edit_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="@+id/detail_feed_edit_btn"
         app:layout_constraintTop_toBottomOf="@+id/detail_feed_edit_btn" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/detail_feed_del_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
