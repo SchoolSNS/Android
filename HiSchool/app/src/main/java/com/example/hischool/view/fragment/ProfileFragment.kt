@@ -111,7 +111,7 @@ class ProfileFragment : Fragment(){
                 Log.d("TAG", "data $questionList")
 
                 val mAdapter = QuestionAdapter(questionList)
-                profile_question_recyclerview.setHasFixedSize(true)
+                profile_question_recyclerview?.setHasFixedSize(true)
                 profile_question_recyclerview.adapter = mAdapter
             }
 
