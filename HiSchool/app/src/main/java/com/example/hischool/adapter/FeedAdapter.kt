@@ -77,6 +77,7 @@ class FeedAdapter(
         val comment2ImageList2: ImageView = itemView.findViewById(R.id.feed_comment2_image_list2)
         val mContext = context
         val heartBtn: ImageButton = itemView.findViewById(R.id.feed_heart_btn)
+        val messageBtn : Button = itemView.findViewById(R.id.feed_message_btn)
         val moreBtn: Button = itemView.findViewById(R.id.feed_more_btn)
         val feedImage1: ImageView = itemView.findViewById(R.id.feed_image1)
         val feedImage2: ImageView = itemView.findViewById(R.id.feed_image2)
@@ -188,6 +189,23 @@ class FeedAdapter(
                     )
                 }
             }
+
+            messageBtn.setOnClickListener {
+                val intent = (Intent(itemView.context, CommentActivity::class.java))
+                intent.putExtra("id", item.id)
+                intent.putExtra("ownerName", item.owner.username)
+                intent.putExtra("time", feedTime.calFeedTime(item.created_at))
+                intent.putExtra("profile", item.owner.profile)
+                intent.putExtra("title", item.title)
+                intent.putExtra("content", item.content)
+                intent.putExtra("heartCount", item.like_count)
+                intent.putExtra("commentCount", item.comment_count)
+                intent.putExtra("isLike", item.is_liked)
+                intent.putExtra("imageUrls", item.image_urls)
+                Log.d("TAG", "image url : ${item.image_urls}")
+                itemView.context.startActivity(intent)
+            }
+
             itemView.setOnClickListener {
                 val intent = (Intent(itemView.context, CommentActivity::class.java))
                 intent.putExtra("id", item.id)

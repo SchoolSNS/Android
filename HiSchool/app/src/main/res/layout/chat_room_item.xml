@@ -10,6 +10,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,8 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/chat_room_message"
+        android:textSize="14sp"
+        android:fontFamily="@font/nixgon_bold"
+        android:textColor="@color/colorBlack"
         app:layout_constraintStart_toEndOf="@+id/chat_room_image"
         app:layout_constraintTop_toTopOf="@+id/chat_room_image"
         tools:text="양세연" />
@@ -29,9 +31,12 @@
         android:id="@+id/chat_room_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:text="TextView"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/chat_room_image"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintStart_toStartOf="@+id/chat_room_name"
         app:layout_constraintTop_toBottomOf="@+id/chat_room_name" />
 
