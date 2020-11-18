@@ -104,14 +104,11 @@
         android:id="@+id/comment_more_btn"
         android:layout_width="23dp"
         android:layout_height="24dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/more"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/comment_name_text"
-        app:layout_constraintTop_toTopOf="@+id/comment_name_text" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/comment_title_text"
