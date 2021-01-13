@@ -20,6 +20,8 @@
 ![image](https://user-images.githubusercontent.com/56965398/104442284-30812900-55d8-11eb-9a62-6e0a3662ee78.png)
 - Python   
 ![image](https://user-images.githubusercontent.com/56965398/104442484-776f1e80-55d8-11eb-9235-60caee092883.png)
+- Django  
+![image](https://user-images.githubusercontent.com/56965398/104448292-4eeb2280-55e0-11eb-849c-0a54be09044b.png)   
 - NodeJs
 ![image](https://user-images.githubusercontent.com/56965398/104442609-a7b6bd00-55d8-11eb-9789-9dbca9e8d3ae.png)      
 
