@@ -47,16 +47,17 @@
 ## [⛏ 프로젝트 설계 및 구현 내용]   
 - UI/UX 설계   
 ![image](https://user-images.githubusercontent.com/56965398/104445149-206b4880-55dc-11eb-8e4e-ec8912934d97.png)
-![image](https://user-images.githubusercontent.com/56965398/104445548-940d5580-55dc-11eb-9dd8-3dfbebaf2347.png)
-- Client  
+![image](https://user-images.githubusercontent.com/56965398/104445548-940d5580-55dc-11eb-9dd8-3dfbebaf2347.png)  
+
+- **Client**  
 Room 라이브러리  
 
-- Server  
+- **Server**  
 테스트 버전 호스팅: heroku  
 언어: python  
 프레임워크: Django  
 
-- 구현 내용
+- **구현 내용**
   1. **학교 선택**  
     선배의 경우 재학중인 학교를 선택, 후배는 원하는 고등학교를 선택하여 해당하는 게시물을 볼 수 있음  
     
@@ -67,6 +68,5 @@ Room 라이브러리
     후배가 묻고 싶은 선배의 계정으로 채팅을 보내면 선배가 1:1 상담  
     
   4. **학교와 관련한 행사, 대회 홍보**  
-    프로필 탭에서 학교 교내 대회나 행사를 홍보하고, 입학설명회도 홍보가   
-    <span style="color:red">Red Text</span>
+    프로필 탭에서 학교 교내 대회나 행사를 홍보하고, 입학설명회도 홍보가
     
