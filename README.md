@@ -1,6 +1,6 @@
 # Hi! School (고등학교 입시를 위한 선후배 매칭 서비스)
-![Frame 3](https://user-images.githubusercontent.com/56965398/104407081-2c3b1880-55a4-11eb-8df1-60d831e22af2.png)
-![Frame 4](https://user-images.githubusercontent.com/56965398/104407113-3fe67f00-55a4-11eb-9587-2681240126a1.png)   
+|<img src="https://user-images.githubusercontent.com/56965398/104407081-2c3b1880-55a4-11eb-8df1-60d831e22af2.png"  width="100%">|<img src="https://user-images.githubusercontent.com/56965398/104407113-3fe67f00-55a4-11eb-9587-2681240126a1.png"  width="100%">|
+|---|---|
 
 ------------
 
@@ -15,23 +15,23 @@
 
 ------------
 
-## [👨‍💻개발 언어]   
-- Kotlin   
-<img src="https://user-images.githubusercontent.com/56965398/104442284-30812900-55d8-11eb-9a62-6e0a3662ee78.png"  width="40%">   
-- Python   
-<img src="https://user-images.githubusercontent.com/56965398/104442484-776f1e80-55d8-11eb-9235-60caee092883.png"  width="40%">   
-- Django  
-<img src="https://user-images.githubusercontent.com/56965398/104448292-4eeb2280-55e0-11eb-849c-0a54be09044b.png"  width="40%">   
-- NodeJs
-<img src="https://user-images.githubusercontent.com/56965398/104442609-a7b6bd00-55d8-11eb-9789-9dbca9e8d3ae.png"  width="40%">        
+## [👨‍💻개발 언어/프레임워크]   
+
+|Kotlin|<img src="https://user-images.githubusercontent.com/56965398/104442284-30812900-55d8-11eb-9a62-6e0a3662ee78.png"  width="40%">|
+|---|---|
+Python|<p align="center"><img src="https://user-images.githubusercontent.com/56965398/104442484-776f1e80-55d8-11eb-9235-60caee092883.png"  width="40%"><p/>|
+Django|<p align="center"><img src="https://user-images.githubusercontent.com/56965398/104448292-4eeb2280-55e0-11eb-849c-0a54be09044b.png"  width="30%"><p/>||
+NodeJs|<p align="center"><img src="https://user-images.githubusercontent.com/56965398/104442609-a7b6bd00-55d8-11eb-9789-9dbca9e8d3ae.png"  width="30%"><p/>|| 
 
 ------------    
 
-## [🛠개발 도구]
-- Android Studio  
-![image](https://user-images.githubusercontent.com/56965398/104442860-0419dc80-55d9-11eb-9e18-37877e1c49e1.png)
-- VsCode  
-![image](https://user-images.githubusercontent.com/56965398/104442943-1d228d80-55d9-11eb-9808-112595d5913d.png)     
+## [🛠개발/디자인 툴]   
+
+|Android Studio|<img src="https://user-images.githubusercontent.com/56965398/104442860-0419dc80-55d9-11eb-9e18-37877e1c49e1.png"  width="40%">|
+|---|---|
+|VsCode|<p align="center"><img src="https://user-images.githubusercontent.com/56965398/104442943-1d228d80-55d9-11eb-9808-112595d5913d.png"  width="40%"><p/>
+|Figma|<p align="center"><img src="https://user-images.githubusercontent.com/56965398/104545589-c4510480-566d-11eb-996f-6daec08e4917.png" width="40%"><p/>|
+ 
 
 ------------ 
 
@@ -47,17 +47,12 @@
 ------------
    
 ## [⛏ 프로젝트 설계 및 구현 내용]   
-- UI/UX 설계   
-![image](https://user-images.githubusercontent.com/56965398/104445149-206b4880-55dc-11eb-8e4e-ec8912934d97.png)
-![image](https://user-images.githubusercontent.com/56965398/104445548-940d5580-55dc-11eb-9dd8-3dfbebaf2347.png)  
-
-- **Client**  
-Room 라이브러리  
-
-- **Server**  
-테스트 버전 호스팅: heroku  
-언어: python  
-프레임워크: Django  
+|UI/UX|![image](https://user-images.githubusercontent.com/56965398/104445149-206b4880-55dc-11eb-8e4e-ec8912934d97.png)![image](https://user-images.githubusercontent.com/56965398/104445548-940d5580-55dc-11eb-9dd8-3dfbebaf2347.png)|
+|---|---|
+|ClientDataBase|Room|
+TestServer|heroku|
+ServerLanguage|python/JS|
+ServerFrameWork|Django/NodeJs|
 
 - **구현 내용**
   1. **학교 선택**  
@@ -88,4 +83,17 @@ Room 라이브러리
 중학생 친구들이 자신이 가고 싶은 고등학교에 대해서 직접 선배들 한테 정보를 얻고, 
 학교에 오기전에 갖춰야 할 것들을 알게됨으로써 자신의 고등학교 생활에 대해서 미리 
 준비 할 수 있습니다.   
-~~~
+~~~   
+    
+------------   
+    
+## [🚴‍♂️ 발전 가능성(앞으로 수정할 부분)]
+- 디자인 리펙토링
+- MVVM 아키텍처 적용
+- 서버 리뉴얼(학생증 인중 시스템)
+위의 부분들을 수정/적용 하여 서비스를 출시하는 것이 저희 서비스의 최종 목표입니다.   
+    
+------------   
+    
+## [📖참고 문헌]  
+Android Developers JetPack
